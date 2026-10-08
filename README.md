@@ -84,6 +84,12 @@ bit common-basis theorem and other global interfaces remain assumptions.
 
 ## Earlier work and attribution
 
+The ongoing [search toward `kappa > 2^-10`](research/exploration/README.md) has
+not reached that target. It includes exact obstructions for the current network
+family, rejected finite candidates, an attributed audit of a newer public bit
+network, and a lower-precision combination still under review. These research
+files do not replace the main certificate above.
+
 The earlier `kappa = 59/10^11` rectangle extension is preserved in
 [its archived note](notes/archive/complex-rectangles-note.tex),
 [its summary](notes/archive/rectangles-README.md), and the existing

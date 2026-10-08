@@ -1,0 +1,91 @@
+python3 scripts/experiments/verify_indexed_cycle.py
+built 23 65726 regions
+augment 100 47331
+matched 47347 seconds 9.198057889938354
+carry exchanges 0 1273
+carry exchanges 1 183
+carry exchanges 2 36
+carry two-cycles 0 103
+carry two-cycles 1 0
+compile 23 0 7 reclaimed 0 seconds 19.904112815856934
+compile 23 5000 18161 reclaimed 0 seconds 20.770960807800293
+compile 23 10000 19735 reclaimed 865 seconds 21.249195098876953
+compile 23 15000 20628 reclaimed 1177 seconds 21.619120836257935
+compile 23 20000 21251 reclaimed 1391 seconds 21.919574975967407
+compile 23 25000 21655 reclaimed 1601 seconds 22.242697954177856
+compile 23 30000 21955 reclaimed 1606 seconds 22.535701036453247
+compile 23 35000 22165 reclaimed 1631 seconds 22.813055992126465
+compile 23 40000 22577 reclaimed 1779 seconds 23.19043779373169
+compile 23 45000 22906 reclaimed 1921 seconds 23.6526038646698
+compile 23 50000 23589 reclaimed 2052 seconds 24.101921796798706
+compile 23 55000 25975 reclaimed 2591 seconds 25.114711046218872
+compile 23 60000 26748 reclaimed 2608 seconds 25.630701780319214
+compile 23 65000 26834 reclaimed 2608 seconds 26.001436948776245
+PASS h=23: full dirty basis, exact frame path, every fixed-basis profile
+built 25 86505 regions
+matched 63175 seconds 10.299714088439941
+carry exchanges 0 1478
+carry exchanges 1 40
+carry exchanges 2 36
+carry two-cycles 0 119
+carry two-cycles 1 0
+compile 25 0 8 reclaimed 0 seconds 26.91025996208191
+compile 25 5000 21938 reclaimed 0 seconds 28.05878520011902
+compile 25 10000 24656 reclaimed 776 seconds 28.696261882781982
+compile 25 15000 26162 reclaimed 1631 seconds 29.291860103607178
+compile 25 20000 27304 reclaimed 1763 seconds 29.680623292922974
+compile 25 25000 27714 reclaimed 1919 seconds 30.00048589706421
+compile 25 30000 28129 reclaimed 2083 seconds 30.346447229385376
+compile 25 35000 28417 reclaimed 2180 seconds 30.684093952178955
+compile 25 40000 28876 reclaimed 2317 seconds 31.07186508178711
+compile 25 45000 29129 reclaimed 2377 seconds 31.430785179138184
+compile 25 50000 29416 reclaimed 2399 seconds 31.81178307533264
+compile 25 55000 29801 reclaimed 2593 seconds 32.30335021018982
+compile 25 60000 30035 reclaimed 2693 seconds 32.758928298950195
+compile 25 65000 30481 reclaimed 2701 seconds 33.3360161781311
+compile 25 70000 32546 reclaimed 3077 seconds 34.41525721549988
+compile 25 75000 34955 reclaimed 3507 seconds 35.728326082229614
+compile 25 80000 35348 reclaimed 3507 seconds 36.30543804168701
+compile 25 85000 35348 reclaimed 3507 seconds 36.769062995910645
+PASS h=25: full dirty basis, exact frame path, every fixed-basis profile
+PASS finite conditional kappa=261356445457/5000000000000000; bit saving=408390793141/7812500000000000
+PASS exact recurrence, 47 strict inequalities, seven margins, eventual cutoffs
+python3 scripts/experiments/audit_indexed_cycle_completion.py
+{"status": "PASS actual future unit completion and literal invertible synthesis", "source_sha256": "a4a582339430662e13c905d5a4701f4e488ff1830a72dc1c71da57066ad2ea38", "tested_independent_completions": 2250, "tested_literal_xors": 34141}
+python3 scripts/experiments/audit_indexed_cycle_exchange.py
+{"status": "PASS actual bounded single-exchange legality", "source_sha256": "a4a582339430662e13c905d5a4701f4e488ff1830a72dc1c71da57066ad2ea38", "random_matroid_cases": 800, "targeted_cases": 5, "total_exchanges_checked": 787, "exercised_exchange_types": {"same_region": 684, "same_future_use": 205, "different_region": 103, "new_future_use": 582}}
+python3 scripts/experiments/audit_indexed_cycle_cycles.py
+{"status": "PASS actual atomic two-cycle legality and adverse fixtures", "source_sha256": "a4a582339430662e13c905d5a4701f4e488ff1830a72dc1c71da57066ad2ea38", "cases": 1204, "accepted_cycles_checked": 231, "duplicate_group_use_key_rejected": true}
+python3 scripts/experiments/audit_indexed_cycle_retired.py
+{"status": "PASS actual ordered retired index and frame lifecycle", "source_sha256": "a4a582339430662e13c905d5a4701f4e488ff1830a72dc1c71da57066ad2ea38", "mutations": 23572, "ordered_queries": 11799, "actual_raise_fixture": true}
+python3 scripts/experiments/audit_indexed_cycle_pending.py
+{"status": "PASS actual ordered two-envelope pending index and frame lifecycle", "source_sha256": "a4a582339430662e13c905d5a4701f4e488ff1830a72dc1c71da57066ad2ea38", "mutations": 27926, "ordered_queries": 13971, "actual_raise_fixture": true, "future_containment_negative_fixture": true}
+python3 -m unittest discover -s tests -p 'test_indexed_cycle*.py' -v
+test_aliased_terminal_role_is_rejected (test_indexed_cycle.SplitPairControls.test_aliased_terminal_role_is_rejected) ... ok
+test_all_threshold_dependent_bridge_fields_are_checked (test_indexed_cycle.SplitPairControls.test_all_threshold_dependent_bridge_fields_are_checked) ... ok
+test_complete_pr79_profile_fails_new_bit_saving (test_indexed_cycle.SplitPairControls.test_complete_pr79_profile_fails_new_bit_saving) ... ok
+test_failed_compilation_restores_engine_graph_and_schedule (test_indexed_cycle.SplitPairControls.test_failed_compilation_restores_engine_graph_and_schedule) ... ok
+test_failed_graph_build_restores_original_providers (test_indexed_cycle.SplitPairControls.test_failed_graph_build_restores_original_providers) ... ok
+test_mass_preserving_profile_mutation_is_rejected (test_indexed_cycle.SplitPairControls.test_mass_preserving_profile_mutation_is_rejected) ... ok
+test_missing_copied_center_is_rejected (test_indexed_cycle.SplitPairControls.test_missing_copied_center_is_rejected) ... ok
+test_missing_profile_pin_is_rejected (test_indexed_cycle.SplitPairControls.test_missing_profile_pin_is_rejected) ... ok
+test_next_fine_grid_points_and_old_assembly_controls_reject (test_indexed_cycle.SplitPairControls.test_next_fine_grid_points_and_old_assembly_controls_reject) ... ok
+test_non_nested_operation_frame_is_rejected (test_indexed_cycle.SplitPairControls.test_non_nested_operation_frame_is_rejected) ... ok
+test_omitted_literal_xor_is_rejected (test_indexed_cycle.SplitPairControls.test_omitted_literal_xor_is_rejected) ... ok
+test_omitted_transition_cannot_reduce_paid_profile (test_indexed_cycle.SplitPairControls.test_omitted_transition_cannot_reduce_paid_profile) ... ok
+test_optimized_python_is_rejected_by_every_new_entry (test_indexed_cycle.SplitPairControls.test_optimized_python_is_rejected_by_every_new_entry) ... ok
+test_private_import_preserves_path_and_arithmetic_module (test_indexed_cycle.SplitPairControls.test_private_import_preserves_path_and_arithmetic_module) ... ok
+test_recursive_weighted_exclusions_and_contraction (test_indexed_cycle.SplitPairControls.test_recursive_weighted_exclusions_and_contraction) ... ok
+test_selected_words_pass_independent_replay (test_indexed_cycle.SplitPairControls.test_selected_words_pass_independent_replay) ... ok
+test_self_xor_is_rejected (test_indexed_cycle.SplitPairControls.test_self_xor_is_rejected) ... ok
+test_uncertified_configurations_are_rejected (test_indexed_cycle.SplitPairControls.test_uncertified_configurations_are_rejected) ... ok
+test_understated_physical_width_is_rejected (test_indexed_cycle.SplitPairControls.test_understated_physical_width_is_rejected) ... ok
+test_every_selected_word_roundtrips_full_coordinate_inverse (test_indexed_cycle_coordinates.CoordinateControls.test_every_selected_word_roundtrips_full_coordinate_inverse) ... ok
+test_invalid_permutation_and_scatter_source_are_rejected (test_indexed_cycle_coordinates.CoordinateControls.test_invalid_permutation_and_scatter_source_are_rejected) ... ok
+test_relabel_preserves_physical_operations_and_frame_inclusions (test_indexed_cycle_coordinates.CoordinateControls.test_relabel_preserves_physical_operations_and_frame_inclusions) ... ok
+test_selected_permutations_are_exact_integer_bijections (test_indexed_cycle_coordinates.CoordinateControls.test_selected_permutations_are_exact_integer_bijections) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 25.744s
+
+OK

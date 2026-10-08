@@ -1,0 +1,18 @@
+{
+  "author": "Chafik Boukhalfa, with the contributor chain retained in UPSTREAM-NOTICE",
+  "commit": "88ca39571907343a49e97f328971ec7bcd26fbfd",
+  "files": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "NOTICE": "7d59d255960091cbd1c62ec1e7439023599687cdfdb7059904fe56578dac2333",
+    "certificates/indexed-cycle-compiler.json": "0281a40390f880f733cfdc1591a7e19148d014dbe5ac333bc09baaad07e74966",
+    "certificates/indexed-cycle-kappa.json": "c2ca8f70fd7bfc962b675d4784941a93d4d756530d7b4ec26a116bdb2c6f8315",
+    "certificates/indexed-cycle-profiles-23.json": "263c516190c53723bf103dd603309efbbceac1e30193ed1781f92df19e0e08bc",
+    "certificates/indexed-cycle-profiles-25.json": "a74d3c0bccfbfb96b8e416536d3c52a2e9c0d99faa5f1c35b90d4d5647153ddb",
+    "certificates/indexed-cycle-word-23.json.gz": "6a43dd2ea918a26ca5e3f64a4f95be130ddb0a8bc9be47a0f9b90ba749ef6eb3",
+    "certificates/indexed-cycle-word-25.json.gz": "7ff8557640fe90eb44895dd74b081ac992476fc75792a03c880ad6a445c39382",
+    "research/indexed-cycle/SOURCE.json": "c5b314b4acff73f8fcd31802db2609f848ef6fcc2b63740fd985c353d994a612"
+  },
+  "license": "Apache-2.0",
+  "pull_request": "https://github.com/CrocSwap/integer-mult-bounds/pull/84",
+  "repo": "https://github.com/chafreaky/integer-mult-bounds"
+}

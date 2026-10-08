@@ -1,0 +1,30 @@
+[
+  {
+    "h": 23,
+    "source_sha256": "c67fb6efa490db56814c743a48044c99397f3067f0038ce80673930c2f0ed829",
+    "roles": 26834,
+    "unique_output_roles": 5336,
+    "literal_xors": 176951,
+    "retained_centres": 23,
+    "scatter_xors": 10626,
+    "actual_events": 168766,
+    "rank_mass": 617688,
+    "scalar_identity": true,
+    "literal_scatter_linked": true,
+    "arbitrary_dirty_identity": "M J M^-1 V M J M^-1 V over F2"
+  },
+  {
+    "h": 25,
+    "source_sha256": "ec153b2cd0ef6edeb626dbb2831abc5ce7a59c99870ec6a5e08afb5a1530c845",
+    "roles": 35348,
+    "unique_output_roles": 6925,
+    "literal_xors": 234549,
+    "retained_centres": 25,
+    "scatter_xors": 13800,
+    "actual_events": 222678,
+    "rank_mass": 884300,
+    "scalar_identity": true,
+    "literal_scatter_linked": true,
+    "arbitrary_dirty_identity": "M J M^-1 V M J M^-1 V over F2"
+  }
+]
