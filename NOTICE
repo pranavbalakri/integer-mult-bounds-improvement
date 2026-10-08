@@ -3,8 +3,8 @@ This artifact bundle derives from CrocSwap/integer-mult-bounds, commit
 that project and describes its authorship, files, and upstream provenance.
 Paths in the retained notice refer to the original project, not this bundle.
 
-The additional complex stage-sharing extension, note, and revised patch in
-this bundle were prepared with OpenAI Codex at the repository owner's request.
+The additional complex stage-sharing and signed-rectangle extensions, note,
+and revised patch in this bundle were prepared with OpenAI Codex at the repository owner's request.
 They are conditional research artifacts without independent mathematical review.
 The Apache-2.0 license is included as LICENSE.
 
