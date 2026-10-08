@@ -1,0 +1,64 @@
+[
+  {
+    "a": 5,
+    "b": 5,
+    "N": 100,
+    "first_centre_rank": 50,
+    "second_centre_rank": 50,
+    "mixed_centre_rank": 25,
+    "missing_two_corrections_rank": 100,
+    "mixed_totals_do_not_span_the_complete_correction": true
+  },
+  {
+    "a": 5,
+    "b": 6,
+    "N": 200,
+    "first_centre_rank": 100,
+    "second_centre_rank": 60,
+    "mixed_centre_rank": 30,
+    "missing_two_corrections_rank": 160,
+    "mixed_totals_do_not_span_the_complete_correction": true
+  },
+  {
+    "a": 6,
+    "b": 6,
+    "N": 400,
+    "first_centre_rank": 120,
+    "second_centre_rank": 120,
+    "mixed_centre_rank": 36,
+    "missing_two_corrections_rank": 240,
+    "mixed_totals_do_not_span_the_complete_correction": true,
+    "centre_commutator_equals_diagonal_mixed_transvection": true,
+    "shared_arbitrary_mixed_roles": 36,
+    "all_dirty_basis_dimension": 836,
+    "shared_dirty_bank_restored_after_each_data_bank": true,
+    "omitted_cleanup_detected": true,
+    "scope": "Complete scalar identities only; common-frame implementation is not supplied."
+  },
+  {
+    "a": 6,
+    "b": 7,
+    "N": 700,
+    "first_centre_rank": 210,
+    "second_centre_rank": 140,
+    "mixed_centre_rank": 42,
+    "missing_two_corrections_rank": 350,
+    "mixed_totals_do_not_span_the_complete_correction": true
+  },
+  {
+    "a": 6,
+    "b": 10,
+    "N": 2400,
+    "first_centre_rank": 720,
+    "second_centre_rank": 200,
+    "mixed_centre_rank": 60,
+    "missing_two_corrections_rank": 920,
+    "mixed_totals_do_not_span_the_complete_correction": true,
+    "centre_commutator_equals_diagonal_mixed_transvection": true,
+    "shared_arbitrary_mixed_roles": 60,
+    "all_dirty_basis_dimension": 4860,
+    "shared_dirty_bank_restored_after_each_data_bank": true,
+    "omitted_cleanup_detected": true,
+    "scope": "Complete scalar identities only; common-frame implementation is not supplied."
+  }
+]

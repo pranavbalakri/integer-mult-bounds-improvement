@@ -1,0 +1,195 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "a": 6,
+      "b": 6,
+      "data_coordinates": 400,
+      "witness_first_triples": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          4
+        ]
+      ],
+      "witness_second_triple": [
+        0,
+        1,
+        2
+      ],
+      "witness_mixed_totals_zero": true,
+      "witness_cleanup_residue_weight": 40,
+      "late_residue_map_rank": 120,
+      "mixed_total_map_rank": 36,
+      "minimum_additional_linear_observations": 84,
+      "scope": "Arbitrary second-bank data; correction sees only mixed totals"
+    },
+    {
+      "a": 10,
+      "b": 14,
+      "data_coordinates": 43680,
+      "witness_first_triples": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          4
+        ]
+      ],
+      "witness_second_triple": [
+        0,
+        1,
+        2
+      ],
+      "witness_mixed_totals_zero": true,
+      "witness_cleanup_residue_weight": 664,
+      "late_residue_map_rank": 1680,
+      "mixed_total_map_rank": 140,
+      "minimum_additional_linear_observations": 1540,
+      "scope": "Arbitrary second-bank data; correction sees only mixed totals"
+    },
+    {
+      "a": 12,
+      "b": 12,
+      "data_coordinates": 48400,
+      "witness_first_triples": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          4
+        ]
+      ],
+      "witness_second_triple": [
+        0,
+        1,
+        2
+      ],
+      "witness_mixed_totals_zero": true,
+      "witness_cleanup_residue_weight": 436,
+      "late_residue_map_rank": 2640,
+      "mixed_total_map_rank": 144,
+      "minimum_additional_linear_observations": 2496,
+      "scope": "Arbitrary second-bank data; correction sees only mixed totals"
+    },
+    {
+      "a": 18,
+      "b": 18,
+      "data_coordinates": 665856,
+      "witness_first_triples": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          4
+        ]
+      ],
+      "witness_second_triple": [
+        0,
+        1,
+        2
+      ],
+      "witness_mixed_totals_zero": true,
+      "witness_cleanup_residue_weight": 1264,
+      "late_residue_map_rank": 14688,
+      "mixed_total_map_rank": 324,
+      "minimum_additional_linear_observations": 14364,
+      "scope": "Arbitrary second-bank data; correction sees only mixed totals"
+    },
+    {
+      "a": 23,
+      "b": 25,
+      "data_coordinates": 4073300,
+      "witness_first_triples": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          4
+        ]
+      ],
+      "witness_second_triple": [
+        0,
+        1,
+        2
+      ],
+      "witness_mixed_totals_zero": true,
+      "witness_cleanup_residue_weight": 2776,
+      "late_residue_map_rank": 44275,
+      "mixed_total_map_rank": 575,
+      "minimum_additional_linear_observations": 43700,
+      "scope": "Arbitrary second-bank data; correction sees only mixed totals"
+    }
+  ]
+}

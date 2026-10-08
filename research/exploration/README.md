@@ -41,6 +41,46 @@ underlying producer. No claim is made about priority over later public work.
 
 ## What the search established
 
+- [Augmented triple motif](asymmetric-fit-target-10/README.md): adjoining
+  coordinate-difference labels gives `binomial(h+1,3)` indices in dimension
+  `h` over both fields for odd `h>9`. At `h=19`, there are 1,140 labels and
+  dyadic centre factorizations of cost 342 on each side; all required source
+  hyperplanes are nondegenerate. These finite identities pass exact checks,
+  but the larger endpoint deficit is not a certified multiplication saving.
+- [Augmented complex producer](augmented-complex-target-10/README.md): a
+  signed producer supplies the missing finite circuit for the h19 complex
+  side. Its source identities and frame transitions pass exact checks; the
+  resulting moment lies between `0.0000548119` and `0.0000548120`. This is
+  below the existing h18 complex saving, so it does not improve either
+  candidate assembly above. Its scalar envelope fits the retained linear
+  guard budget under the inherited layer interfaces.
+- [Exceptional rectangular motif](exceptional-rectangle-target-10/README.md):
+  an explicit dyadic h9 quotient has rational rank eight and binary rank nine.
+  Pairing it with h19 gives a positive endpoint deficit of 13,680 in ambient
+  dimensions 152 and 171. Side costs and a recursive moment remain unproved.
+  The note also excludes adding higher-norm vectors under the fixed E8 parity
+  rule and one specific extra-source recoding; general overcomplete source
+  factorizations remain open.
+- [Typed phase interfaces](typed-phase-target-10/README.md): exact relative
+  mixer and four-channel identities do close algebraically. However, making
+  a batched two-bank endpoint free using pointwise maps around a common full
+  phase requires exactly `2^f` channels for `f` active directions. A separate
+  normalization check rejects free endpoint charts with unchanged full-phase
+  children. Both conclusions are scoped to the interfaces proved in the note.
+- [Coupled centres](coupled-centres-target-10/README.md): a shared arbitrary
+  auxiliary bank implements the mixed centre transvection and restores its
+  original values. A hypothetical joint profile would clear the target, but
+  no valid frame schedule realizes it. Direct visits to all product stars
+  cost too much; delaying one source cleanup loses information not recoverable
+  from mixed point totals alone. The scalar mechanism remains available for
+  a different schedule.
+- [Auxiliary unmixing at the sink](sink-unmixing-target-10/README.md): a new
+  scalar word uses dirty references to remove each producer role's dependence
+  on data before restoring the auxiliary block at the common full frame.
+  Complete input-basis checks pass in both orientations at h5 through h8.
+  This permits a different first-stage retirement schedule, but all added
+  reference paths and actual cleanup frames still need a complete histogram.
+  No moment saving is claimed.
 - [Borrowed-source limits](borrowed-ceiling-target-10/README.md): keeping the
   specified data endpoints and centre copies cannot reach the target with two
   auxiliary roles per output, even if all internal paths are ideally batched.
@@ -150,6 +190,14 @@ python3 research/exploration/borrowed-ceiling-target-10/zero_discard.py
 python3 research/exploration/block-labels-target-10/check_interfaces.py
 python3 research/exploration/polynomial-motif-target-10/check_polynomial.py
 python3 research/exploration/fractional-motif-target-10/check_fractional_motif.py
+python3 research/exploration/asymmetric-fit-target-10/check_augmented.py
+python3 research/exploration/augmented-complex-target-10/check_word.py 7 11 19 --dirty-small
+python3 research/exploration/exceptional-rectangle-target-10/check_exceptional.py
+python3 research/exploration/typed-phase-target-10/check_typed.py
+python3 research/exploration/coupled-centres-target-10/scalar_coupling.py
+python3 research/exploration/coupled-centres-target-10/check_delayed_inverse.py
+python3 research/exploration/coupled-centres-target-10/tensor_relaxation.py
+python3 research/exploration/sink-unmixing-target-10/scalar_word.py
 ```
 
 The independent literal-word replay needs the separately obtained pinned PR84
@@ -160,9 +208,11 @@ of the target.
 
 ## Remaining research questions
 
-The most concrete remaining directions are a larger symmetry-breaking fitting
-matrix with cheaper centre transfers, or a recursive output encoding whose
-direction-dependent parent mixers can be implemented cheaply. A circuit with
+The most concrete remaining directions are profiling the new auxiliary
+unmixing word, a cheaper complete producer for the augmented motif, a joint
+frame schedule for the coupled-centre identity,
+or a recursive output encoding whose direction-dependent parent mixers can
+be implemented cheaply. A circuit with
 substantially fewer auxiliary roles must also preserve enough rank credit;
 the paid-reset and discarded-output checks show why role count alone is
 insufficient. These results do not rule out other finite motifs or transfer

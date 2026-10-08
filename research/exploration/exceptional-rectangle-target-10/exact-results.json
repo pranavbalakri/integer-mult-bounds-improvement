@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "h9_indices": 120,
+  "rational_rank": 8,
+  "binary_rank": 9,
+  "ordered_fitting_pairs_checked": 14400,
+  "dyadic_quotient_denominator": 8,
+  "binary_source_costs": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "complex_source_costs": [
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9
+  ],
+  "cost_per_axis": 72,
+  "rectangles": [
+    {
+      "other_h": 13,
+      "data_indices": 43680,
+      "bit_ambient": 104,
+      "complex_ambient": 117,
+      "bit_endpoint_deficit": -1248,
+      "complex_endpoint_deficit": -1368,
+      "scope": "Endpoint rank bookkeeping only; no side costs or child moment"
+    },
+    {
+      "other_h": 15,
+      "data_indices": 67200,
+      "bit_ambient": 120,
+      "complex_ambient": 135,
+      "bit_endpoint_deficit": 1680,
+      "complex_endpoint_deficit": 1560,
+      "scope": "Endpoint rank bookkeeping only; no side costs or child moment"
+    },
+    {
+      "other_h": 17,
+      "data_indices": 97920,
+      "bit_ambient": 136,
+      "complex_ambient": 153,
+      "bit_endpoint_deficit": 6528,
+      "complex_endpoint_deficit": 6408,
+      "scope": "Endpoint rank bookkeeping only; no side costs or child moment"
+    },
+    {
+      "other_h": 19,
+      "data_indices": 136800,
+      "bit_ambient": 152,
+      "complex_ambient": 171,
+      "bit_endpoint_deficit": 13680,
+      "complex_endpoint_deficit": 13680,
+      "scope": "Endpoint rank bookkeeping only; no side costs or child moment"
+    },
+    {
+      "other_h": 25,
+      "data_indices": 312000,
+      "bit_ambient": 200,
+      "complex_ambient": 225,
+      "bit_endpoint_deficit": 52800,
+      "complex_endpoint_deficit": 52680,
+      "scope": "Endpoint rank bookkeeping only; no side costs or child moment"
+    },
+    {
+      "other_h": 33,
+      "data_indices": 718080,
+      "bit_ambient": 264,
+      "complex_ambient": 297,
+      "bit_endpoint_deficit": 160512,
+      "complex_endpoint_deficit": 160392,
+      "scope": "Endpoint rank bookkeeping only; no side costs or child moment"
+    }
+  ],
+  "one_auxiliary_toggle_orthogonal_pairs_checked": 7560,
+  "multiplication_target": "Unmet; no complete recursive word in this package"
+}

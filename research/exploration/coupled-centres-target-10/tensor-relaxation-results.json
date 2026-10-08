@@ -1,0 +1,231 @@
+{
+  "fitting_identity": [
+    {
+      "first_intersection": 0,
+      "second_intersection": 0,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "1/4",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 0,
+      "second_intersection": 1,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "0",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 0,
+      "second_intersection": 2,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "-1/4",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 0,
+      "second_intersection": 3,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "-1/2",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 1,
+      "second_intersection": 0,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "0",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 1,
+      "second_intersection": 1,
+      "binary_centre_coefficient": 1,
+      "rational_gram": "0",
+      "side_coefficient": 1
+    },
+    {
+      "first_intersection": 1,
+      "second_intersection": 2,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "0",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 1,
+      "second_intersection": 3,
+      "binary_centre_coefficient": 1,
+      "rational_gram": "0",
+      "side_coefficient": 1
+    },
+    {
+      "first_intersection": 2,
+      "second_intersection": 0,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "-1/4",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 2,
+      "second_intersection": 1,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "0",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 2,
+      "second_intersection": 2,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "1/4",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 2,
+      "second_intersection": 3,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "1/2",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 3,
+      "second_intersection": 0,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "-1/2",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 3,
+      "second_intersection": 1,
+      "binary_centre_coefficient": 1,
+      "rational_gram": "0",
+      "side_coefficient": 1
+    },
+    {
+      "first_intersection": 3,
+      "second_intersection": 2,
+      "binary_centre_coefficient": 0,
+      "rational_gram": "1/2",
+      "side_coefficient": 0
+    },
+    {
+      "first_intersection": 3,
+      "second_intersection": 3,
+      "binary_centre_coefficient": 1,
+      "rational_gram": "1",
+      "side_coefficient": 0
+    }
+  ],
+  "hypothetical_moments": [
+    {
+      "a": 10,
+      "b": 14,
+      "m": 140,
+      "N": 43680,
+      "auxiliary_ratio": 2,
+      "hypothetical_product_centre_count": 140,
+      "hypothetical_product_centre_rank": 117,
+      "hypothetical_total_centre_rank": 16380,
+      "old_total_centre_rank": 54600,
+      "hypothetical_centre_rank_fraction": "3/8",
+      "old_centre_rank_fraction": "5/4",
+      "relaxed_root_interval": {
+        "lower": "325333683/250000000000",
+        "upper": "1301334733/1000000000000"
+      },
+      "target_moment_interval": [
+        "399925873496476988513206294629431478542910852036220803866197877782821/400000000000000000000000000000000000000000000000000000000000000000000",
+        "1999629367482384942566031473147157392714554565800480918470882070978289/2000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "missing_step": "No routing with this centre loss and these inherited data/auxiliary profiles is supplied.",
+      "hypothetical_profile_passes_1_over_800": true,
+      "exact_hypothetical_moment_gap": "293857150083487351371327480442276414918741385537252292114713184209/10000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "a": 12,
+      "b": 12,
+      "m": 144,
+      "N": 48400,
+      "auxiliary_ratio": 2,
+      "hypothetical_product_centre_count": 144,
+      "hypothetical_product_centre_rank": 121,
+      "hypothetical_total_centre_rank": 17424,
+      "old_total_centre_rank": 58080,
+      "hypothetical_centre_rank_fraction": "9/25",
+      "old_centre_rank_fraction": "6/5",
+      "relaxed_root_interval": {
+        "lower": "1314198811/1000000000000",
+        "upper": "328549703/250000000000"
+      },
+      "target_moment_interval": [
+        "9998100534427108481089870635319032795318657025619035315629006860981713/10000000000000000000000000000000000000000000000000000000000000000000000",
+        "2499525133606777120272467658829758198829664654497674826368727333841079/2500000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "missing_step": "No routing with this centre loss and these inherited data/auxiliary profiles is supplied.",
+      "hypothetical_profile_passes_1_over_800": true,
+      "exact_hypothetical_moment_gap": "72457329297489916932973217874202479576178317636270579428646025099/2000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "a": 23,
+      "b": 25,
+      "m": 575,
+      "N": 4073300,
+      "auxiliary_ratio": 2,
+      "hypothetical_product_centre_count": 575,
+      "hypothetical_product_centre_rank": 528,
+      "hypothetical_total_centre_rank": 303600,
+      "old_total_centre_rank": 2226400,
+      "hypothetical_centre_rank_fraction": "12/161",
+      "old_centre_rank_fraction": "88/161",
+      "relaxed_root_interval": {
+        "lower": "389822231/500000000000",
+        "upper": "779644463/1000000000000"
+      },
+      "target_moment_interval": [
+        "5000340823270313074813106111734136444051406448375381932465509624684023/5000000000000000000000000000000000000000000000000000000000000000000000",
+        "5000340823270313074813106111734136444051411396152720178197191613551717/5000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "missing_step": "No routing with this centre loss and these inherited data/auxiliary profiles is supplied."
+    }
+  ],
+  "direct_frame_path_bounds": [
+    {
+      "a": 6,
+      "b": 6,
+      "product_star_visits_per_data_role": 9,
+      "minimum_switch_count": 8,
+      "minimum_extra_rank_per_data_role": 80,
+      "initial_plus_final_rank": 35,
+      "direct_in_place_route_cannot_fit_available_credit": true,
+      "qualification": "Literal visit to all nine product-star frames. Other producer factorizations are not covered."
+    },
+    {
+      "a": 10,
+      "b": 14,
+      "product_star_visits_per_data_role": 9,
+      "minimum_switch_count": 8,
+      "minimum_extra_rank_per_data_role": 160,
+      "initial_plus_final_rank": 139,
+      "direct_in_place_route_cannot_fit_available_credit": true,
+      "qualification": "Literal visit to all nine product-star frames. Other producer factorizations are not covered."
+    },
+    {
+      "a": 12,
+      "b": 12,
+      "product_star_visits_per_data_role": 9,
+      "minimum_switch_count": 8,
+      "minimum_extra_rank_per_data_role": 176,
+      "initial_plus_final_rank": 143,
+      "direct_in_place_route_cannot_fit_available_credit": true,
+      "qualification": "Literal visit to all nine product-star frames. Other producer factorizations are not covered."
+    },
+    {
+      "a": 23,
+      "b": 25,
+      "product_star_visits_per_data_role": 9,
+      "minimum_switch_count": 8,
+      "minimum_extra_rank_per_data_role": 360,
+      "initial_plus_final_rank": 574,
+      "direct_in_place_route_cannot_fit_available_credit": true,
+      "qualification": "Literal visit to all nine product-star frames. Other producer factorizations are not covered."
+    }
+  ],
+  "status": "Useful scalar/fitting ingredients and exact hypothetical budgets; no new certified exponent."
+}

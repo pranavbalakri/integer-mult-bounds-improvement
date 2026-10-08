@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "new_multiplication_bound_claimed": false,
+  "operator_identities": {
+    "relative_two_bank_basis_checks": 8,
+    "four_channel_regular_closure_basis_checks": 16,
+    "free_chart_similarity_basis_checks": 16,
+    "controlled_increment_truth_table": [
+      0,
+      3,
+      2,
+      5,
+      4,
+      7,
+      6,
+      1
+    ],
+    "non_affine_second_difference": 4
+  },
+  "pointwise_channel_lift_ranks": [
+    {
+      "active_directions": 1,
+      "minimum_common_F_channels_for_two_bank_endpoint": 2,
+      "literal_four_channel_lift_common_F_kernel_rank": 6,
+      "mode_kernel_ranks": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "active_directions": 2,
+      "minimum_common_F_channels_for_two_bank_endpoint": 4,
+      "literal_four_channel_lift_common_F_kernel_rank": 10,
+      "mode_kernel_ranks": [
+        1,
+        4,
+        1,
+        4
+      ]
+    },
+    {
+      "active_directions": 3,
+      "minimum_common_F_channels_for_two_bank_endpoint": 8,
+      "literal_four_channel_lift_common_F_kernel_rank": 18,
+      "mode_kernel_ranks": [
+        1,
+        8,
+        1,
+        8
+      ]
+    },
+    {
+      "active_directions": 4,
+      "minimum_common_F_channels_for_two_bank_endpoint": 16,
+      "literal_four_channel_lift_common_F_kernel_rank": 34,
+      "mode_kernel_ranks": [
+        1,
+        16,
+        1,
+        16
+      ]
+    },
+    {
+      "active_directions": 5,
+      "minimum_common_F_channels_for_two_bank_endpoint": 32,
+      "literal_four_channel_lift_common_F_kernel_rank": 66,
+      "mode_kernel_ranks": [
+        1,
+        32,
+        1,
+        32
+      ]
+    }
+  ],
+  "conditional_rank_budget": {
+    "h": 18,
+    "m": 324,
+    "data_pairs_N": 665856,
+    "copied_centre_rank": 501024,
+    "corrected_full_phase_rank_deficit": 164832,
+    "uncorrected_if_incorrectly_counted_as_full_phase": 830688,
+    "proper_free_chart_full_phase_children_deficit": -501024,
+    "literal_relative_T_rank_cost_per_unequal_mixer": 2,
+    "literal_regular_lift_rank_cost_per_unequal_mixer": 4,
+    "two_bank_mixer_count_needed_to_keep_positive_rank_deficit_strictly_below": 415344,
+    "qualification": "Conditional rank budgets only; no closed global encoded word is claimed."
+  }
+}

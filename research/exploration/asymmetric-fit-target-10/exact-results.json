@@ -1,0 +1,727 @@
+{
+  "status": "PASS",
+  "profiles": [
+    {
+      "h": 11,
+      "indices": 220,
+      "ordered_pairs_checked": 48400,
+      "rational_rank": 11,
+      "binary_rank": 11,
+      "tensor_ambient": 121,
+      "binary_source_frame_ranks": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "complex_low_source_frame_ranks": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "all_source_frames_nondegenerate": true,
+      "subset_normal_exceptional_eigenvalues": [
+        "-18",
+        "-45",
+        "-72",
+        "-99",
+        "-126",
+        "-153",
+        "-180",
+        "-207",
+        "-234",
+        "-261",
+        "-288"
+      ],
+      "minimal_scalar_centre_cost": 110,
+      "dyadic_flag_complex_centre_cost": 111,
+      "all_low_source_factorization_dyadic": true,
+      "selected_dyadic_complex_centre_cost": 110,
+      "bit_endpoint_deficit": 0,
+      "complex_endpoint_deficit": 0,
+      "binary_functional_orbits": [
+        {
+          "weight": 1,
+          "rational_support_rank": 10,
+          "functionals_in_orbit": 11
+        },
+        {
+          "weight": 2,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 55
+        },
+        {
+          "weight": 3,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 165
+        },
+        {
+          "weight": 4,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 330
+        },
+        {
+          "weight": 5,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 462
+        },
+        {
+          "weight": 6,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 462
+        },
+        {
+          "weight": 7,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 330
+        },
+        {
+          "weight": 8,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 165
+        },
+        {
+          "weight": 9,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 55
+        },
+        {
+          "weight": 10,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 11
+        },
+        {
+          "weight": 11,
+          "rational_support_rank": 11,
+          "functionals_in_orbit": 1
+        }
+      ],
+      "scope": "Finite fitting matrices and source frames only; no side network or child histogram"
+    },
+    {
+      "h": 13,
+      "indices": 364,
+      "ordered_pairs_checked": 132496,
+      "rational_rank": 13,
+      "binary_rank": 13,
+      "tensor_ambient": 169,
+      "binary_source_frame_ranks": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "complex_low_source_frame_ranks": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "all_source_frames_nondegenerate": true,
+      "subset_normal_exceptional_eigenvalues": [
+        "-9",
+        "-27",
+        "-45",
+        "-63",
+        "-81",
+        "-99",
+        "-117",
+        "-135",
+        "-153",
+        "-171",
+        "-189",
+        "-207",
+        "-225"
+      ],
+      "minimal_scalar_centre_cost": 156,
+      "dyadic_flag_complex_centre_cost": 157,
+      "all_low_source_factorization_dyadic": false,
+      "selected_dyadic_complex_centre_cost": 157,
+      "bit_endpoint_deficit": 18928,
+      "complex_endpoint_deficit": 18200,
+      "binary_functional_orbits": [
+        {
+          "weight": 1,
+          "rational_support_rank": 12,
+          "functionals_in_orbit": 13
+        },
+        {
+          "weight": 2,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 78
+        },
+        {
+          "weight": 3,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 286
+        },
+        {
+          "weight": 4,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 715
+        },
+        {
+          "weight": 5,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 1287
+        },
+        {
+          "weight": 6,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 1716
+        },
+        {
+          "weight": 7,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 1716
+        },
+        {
+          "weight": 8,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 1287
+        },
+        {
+          "weight": 9,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 715
+        },
+        {
+          "weight": 10,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 286
+        },
+        {
+          "weight": 11,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 78
+        },
+        {
+          "weight": 12,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 13
+        },
+        {
+          "weight": 13,
+          "rational_support_rank": 13,
+          "functionals_in_orbit": 1
+        }
+      ],
+      "scope": "Finite fitting matrices and source frames only; no side network or child histogram"
+    },
+    {
+      "h": 15,
+      "indices": 560,
+      "ordered_pairs_checked": 313600,
+      "rational_rank": 15,
+      "binary_rank": 15,
+      "tensor_ambient": 225,
+      "binary_source_frame_ranks": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "complex_low_source_frame_ranks": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "all_source_frames_nondegenerate": true,
+      "subset_normal_exceptional_eigenvalues": [
+        "-6",
+        "-21",
+        "-36",
+        "-51",
+        "-66",
+        "-81",
+        "-96",
+        "-111",
+        "-126",
+        "-141",
+        "-156",
+        "-171",
+        "-186",
+        "-201",
+        "-216"
+      ],
+      "minimal_scalar_centre_cost": 210,
+      "dyadic_flag_complex_centre_cost": 211,
+      "all_low_source_factorization_dyadic": false,
+      "selected_dyadic_complex_centre_cost": 211,
+      "bit_endpoint_deficit": 78400,
+      "complex_endpoint_deficit": 77280,
+      "binary_functional_orbits": [
+        {
+          "weight": 1,
+          "rational_support_rank": 14,
+          "functionals_in_orbit": 15
+        },
+        {
+          "weight": 2,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 105
+        },
+        {
+          "weight": 3,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 455
+        },
+        {
+          "weight": 4,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 1365
+        },
+        {
+          "weight": 5,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 3003
+        },
+        {
+          "weight": 6,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 5005
+        },
+        {
+          "weight": 7,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 6435
+        },
+        {
+          "weight": 8,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 6435
+        },
+        {
+          "weight": 9,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 5005
+        },
+        {
+          "weight": 10,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 3003
+        },
+        {
+          "weight": 11,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 1365
+        },
+        {
+          "weight": 12,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 455
+        },
+        {
+          "weight": 13,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 105
+        },
+        {
+          "weight": 14,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 15
+        },
+        {
+          "weight": 15,
+          "rational_support_rank": 15,
+          "functionals_in_orbit": 1
+        }
+      ],
+      "scope": "Finite fitting matrices and source frames only; no side network or child histogram"
+    },
+    {
+      "h": 17,
+      "indices": 816,
+      "ordered_pairs_checked": 665856,
+      "rational_rank": 17,
+      "binary_rank": 17,
+      "tensor_ambient": 289,
+      "binary_source_frame_ranks": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "complex_low_source_frame_ranks": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "all_source_frames_nondegenerate": true,
+      "subset_normal_exceptional_eigenvalues": [
+        "-9/2",
+        "-18",
+        "-63/2",
+        "-45",
+        "-117/2",
+        "-72",
+        "-171/2",
+        "-99",
+        "-225/2",
+        "-126",
+        "-279/2",
+        "-153",
+        "-333/2",
+        "-180",
+        "-387/2",
+        "-207",
+        "-441/2"
+      ],
+      "minimal_scalar_centre_cost": 272,
+      "dyadic_flag_complex_centre_cost": 273,
+      "all_low_source_factorization_dyadic": false,
+      "selected_dyadic_complex_centre_cost": 273,
+      "bit_endpoint_deficit": 221952,
+      "complex_endpoint_deficit": 220320,
+      "binary_functional_orbits": [
+        {
+          "weight": 1,
+          "rational_support_rank": 16,
+          "functionals_in_orbit": 17
+        },
+        {
+          "weight": 2,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 136
+        },
+        {
+          "weight": 3,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 680
+        },
+        {
+          "weight": 4,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 2380
+        },
+        {
+          "weight": 5,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 6188
+        },
+        {
+          "weight": 6,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 12376
+        },
+        {
+          "weight": 7,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 19448
+        },
+        {
+          "weight": 8,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 24310
+        },
+        {
+          "weight": 9,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 24310
+        },
+        {
+          "weight": 10,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 19448
+        },
+        {
+          "weight": 11,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 12376
+        },
+        {
+          "weight": 12,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 6188
+        },
+        {
+          "weight": 13,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 2380
+        },
+        {
+          "weight": 14,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 680
+        },
+        {
+          "weight": 15,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 136
+        },
+        {
+          "weight": 16,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 17
+        },
+        {
+          "weight": 17,
+          "rational_support_rank": 17,
+          "functionals_in_orbit": 1
+        }
+      ],
+      "scope": "Finite fitting matrices and source frames only; no side network or child histogram"
+    },
+    {
+      "h": 19,
+      "indices": 1140,
+      "ordered_pairs_checked": 1299600,
+      "rational_rank": 19,
+      "binary_rank": 19,
+      "tensor_ambient": 361,
+      "binary_source_frame_ranks": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "complex_low_source_frame_ranks": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "all_source_frames_nondegenerate": true,
+      "subset_normal_exceptional_eigenvalues": [
+        "-18/5",
+        "-81/5",
+        "-144/5",
+        "-207/5",
+        "-54",
+        "-333/5",
+        "-396/5",
+        "-459/5",
+        "-522/5",
+        "-117",
+        "-648/5",
+        "-711/5",
+        "-774/5",
+        "-837/5",
+        "-180",
+        "-963/5",
+        "-1026/5",
+        "-1089/5",
+        "-1152/5"
+      ],
+      "minimal_scalar_centre_cost": 342,
+      "dyadic_flag_complex_centre_cost": 343,
+      "all_low_source_factorization_dyadic": true,
+      "selected_dyadic_complex_centre_cost": 342,
+      "bit_endpoint_deficit": 519840,
+      "complex_endpoint_deficit": 519840,
+      "binary_functional_orbits": [
+        {
+          "weight": 1,
+          "rational_support_rank": 18,
+          "functionals_in_orbit": 19
+        },
+        {
+          "weight": 2,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 171
+        },
+        {
+          "weight": 3,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 969
+        },
+        {
+          "weight": 4,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 3876
+        },
+        {
+          "weight": 5,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 11628
+        },
+        {
+          "weight": 6,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 27132
+        },
+        {
+          "weight": 7,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 50388
+        },
+        {
+          "weight": 8,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 75582
+        },
+        {
+          "weight": 9,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 92378
+        },
+        {
+          "weight": 10,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 92378
+        },
+        {
+          "weight": 11,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 75582
+        },
+        {
+          "weight": 12,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 50388
+        },
+        {
+          "weight": 13,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 27132
+        },
+        {
+          "weight": 14,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 11628
+        },
+        {
+          "weight": 15,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 3876
+        },
+        {
+          "weight": 16,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 969
+        },
+        {
+          "weight": 17,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 171
+        },
+        {
+          "weight": 18,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 19
+        },
+        {
+          "weight": 19,
+          "rational_support_rank": 19,
+          "functionals_in_orbit": 1
+        }
+      ],
+      "scope": "Finite fitting matrices and source frames only; no side network or child histogram"
+    }
+  ],
+  "multiplication_target": "Unmet: full compiler and recurrence costs have not been certified",
+  "precision_scope": "Central coefficients remain dyadic; no new global precision bound is claimed"
+}

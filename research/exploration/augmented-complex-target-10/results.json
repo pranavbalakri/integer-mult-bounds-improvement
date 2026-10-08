@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "profiles": [
+    {
+      "h": 7,
+      "v": 56,
+      "R": 1171,
+      "active_nodes": 601,
+      "signed_pieces": 647,
+      "inlined_arguments_to_repair_alternating_residuals": 0,
+      "scalar": {
+        "clean_producer_checked_on_all_source_columns": true,
+        "complete_shear_matrix_entries_checked": 3136,
+        "scalar_common_denominator": 4
+      },
+      "elementary_scalar_gates": 8620,
+      "chronological_trace": {
+        "scalar_gates_with_chronological_frame_trace": 8620,
+        "trace_sha256": "59c9ad7714596a6acb9010dd9a00b3862062b32e05aa78791ea6bcff06f222c8",
+        "ordinary_inverse_transpose_incidences_unchanged": true,
+        "copied_centre_bridges_per_local_invocation": 7,
+        "local_data_growth_per_role": 6,
+        "stage_two_interstage_join_rank": 36,
+        "stage_two_rule": "Same order; G maps to G^-T; D_U=(a_perp tensor F)+(a tensor U); no bank swap"
+      },
+      "m": 49,
+      "W": 137424,
+      "total_rank": 6735344,
+      "rank_deficit": -1568,
+      "local_history": {
+        "1": 2054,
+        "2": 428,
+        "3": 481,
+        "4": 326,
+        "5": 508
+      },
+      "child_histogram": {
+        "1": 233184,
+        "2": 47936,
+        "3": 53872,
+        "4": 36512,
+        "5": 56896,
+        "6": 13328,
+        "36": 6272,
+        "42": 131152
+      },
+      "distinct_frame_edges_checked": 2432,
+      "moment": {
+        "positive_rank_deficit": false,
+        "saving_claimed": null
+      },
+      "guard": {
+        "forward_scalar_envelope": "8116",
+        "inverse_transpose_scalar_envelope": "29504",
+        "combined_two_stage_endpoint_envelope": "478908928",
+        "ceil_log2_combined": 29,
+        "scalar_denominator_bits_per_stage": [
+          2,
+          2
+        ],
+        "constant_prefix_charge": 64,
+        "recursive_guard_coefficient": 24,
+        "fits_retained_128_layer_coefficient_budget": true,
+        "scope": "Conditional on the inherited whole-residual width and layer interfaces"
+      },
+      "dirty_register_basis_audit": {
+        "basis_dimension": 1283,
+        "balanced_digit_stride_bits": 17,
+        "numerator_coefficient_bound": "29512",
+        "all_dirty_columns_checked_exactly": true,
+        "forward_shear_and_inverse_transpose": true,
+        "omitted_cancellation_negative_control": true
+      }
+    },
+    {
+      "h": 11,
+      "v": 220,
+      "R": 6684,
+      "active_nodes": 3820,
+      "signed_pieces": 3059,
+      "inlined_arguments_to_repair_alternating_residuals": 80,
+      "scalar": {
+        "clean_producer_checked_on_all_source_columns": true,
+        "complete_shear_matrix_entries_checked": 48400,
+        "scalar_common_denominator": 8
+      },
+      "elementary_scalar_gates": 50984,
+      "chronological_trace": {
+        "scalar_gates_with_chronological_frame_trace": 50984,
+        "trace_sha256": "e60f8103e7cae997829fcf5fdf36d281b2d2beb615e7e03a99e1cfac63d47d3b",
+        "ordinary_inverse_transpose_incidences_unchanged": true,
+        "copied_centre_bridges_per_local_invocation": 11,
+        "local_data_growth_per_role": 10,
+        "stage_two_interstage_join_rank": 100,
+        "stage_two_rule": "Same order; G maps to G^-T; D_U=(a_perp tensor F)+(a tensor U); no bank swap"
+      },
+      "m": 121,
+      "W": 3037760,
+      "total_rank": 367568960,
+      "rank_deficit": 0,
+      "local_history": {
+        "1": 9113,
+        "2": 2237,
+        "3": 2032,
+        "4": 2034,
+        "5": 1587,
+        "6": 1503,
+        "7": 1274,
+        "8": 713,
+        "9": 1570
+      },
+      "child_histogram": {
+        "1": 4058120,
+        "2": 984280,
+        "3": 894080,
+        "4": 894960,
+        "5": 698280,
+        "6": 661320,
+        "7": 560560,
+        "8": 313720,
+        "9": 690800,
+        "10": 198440,
+        "100": 96800,
+        "110": 2940960
+      },
+      "distinct_frame_edges_checked": 14462,
+      "moment": {
+        "positive_rank_deficit": false,
+        "saving_claimed": null
+      },
+      "guard": {
+        "forward_scalar_envelope": "96832",
+        "inverse_transpose_scalar_envelope": "309656",
+        "combined_two_stage_endpoint_envelope": "59969219584",
+        "ceil_log2_combined": 36,
+        "scalar_denominator_bits_per_stage": [
+          3,
+          3
+        ],
+        "constant_prefix_charge": 64,
+        "recursive_guard_coefficient": 28,
+        "fits_retained_128_layer_coefficient_budget": true,
+        "scope": "Conditional on the inherited whole-residual width and layer interfaces"
+      }
+    },
+    {
+      "h": 19,
+      "v": 1140,
+      "R": 44672,
+      "active_nodes": 27268,
+      "signed_pieces": 18043,
+      "inlined_arguments_to_repair_alternating_residuals": 672,
+      "scalar": {
+        "clean_producer_checked_on_all_source_columns": true,
+        "complete_shear_matrix_entries_checked": 1299600,
+        "scalar_common_denominator": 16
+      },
+      "elementary_scalar_gates": 357200,
+      "chronological_trace": {
+        "scalar_gates_with_chronological_frame_trace": 357200,
+        "trace_sha256": "db13107bbd846b7bfde36567cf0a5179a8ab4157af7c00bc4c0fb79eabdb5308",
+        "ordinary_inverse_transpose_incidences_unchanged": true,
+        "copied_centre_bridges_per_local_invocation": 19,
+        "local_data_growth_per_role": 18,
+        "stage_two_interstage_join_rank": 324,
+        "stage_two_rule": "Same order; G maps to G^-T; D_U=(a_perp tensor F)+(a tensor U); no bank swap"
+      },
+      "m": 361,
+      "W": 104451360,
+      "total_rank": 37706421120,
+      "rank_deficit": 519840,
+      "local_history": {
+        "1": 51973,
+        "2": 13804,
+        "3": 9664,
+        "4": 9897,
+        "5": 7187,
+        "6": 5293,
+        "7": 4901,
+        "8": 4212,
+        "9": 4262,
+        "10": 4047,
+        "11": 3663,
+        "12": 4431,
+        "13": 5018,
+        "14": 4982,
+        "15": 5270,
+        "16": 2787,
+        "17": 7882
+      },
+      "child_histogram": {
+        "1": 119798040,
+        "2": 31473120,
+        "3": 22033920,
+        "4": 22565160,
+        "5": 16386360,
+        "6": 12068040,
+        "7": 11174280,
+        "8": 9603360,
+        "9": 9717360,
+        "10": 9227160,
+        "11": 8351640,
+        "12": 10102680,
+        "13": 11441040,
+        "14": 11358960,
+        "15": 12015600,
+        "16": 6354360,
+        "17": 17970960,
+        "18": 5241720,
+        "324": 2599200,
+        "342": 101852160
+      },
+      "distinct_frame_edges_checked": 99449,
+      "moment": {
+        "positive_rank_deficit": true,
+        "saving_lower": "548119/10000000000",
+        "saving_upper": "13703/250000000",
+        "acceptance_gap": "92965916639681080799682256594154728787505334229794808696849/5000000000000000000000000000000000000000000000000000000000000000000000",
+        "next_grid_rejection_gap": "65609564508107815318890269254810496111685570374016519263307/10000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "guard": {
+        "forward_scalar_envelope": "1631376",
+        "inverse_transpose_scalar_envelope": "5045272",
+        "combined_two_stage_endpoint_envelope": "16461471308544",
+        "ceil_log2_combined": 44,
+        "scalar_denominator_bits_per_stage": [
+          4,
+          4
+        ],
+        "constant_prefix_charge": 64,
+        "recursive_guard_coefficient": 42,
+        "fits_retained_128_layer_coefficient_budget": true,
+        "scope": "Conditional on the inherited whole-residual width and layer interfaces"
+      }
+    }
+  ],
+  "scope": "Finite complex word and moment only; all-size compiler/global multiplication integration not claimed"
+}
