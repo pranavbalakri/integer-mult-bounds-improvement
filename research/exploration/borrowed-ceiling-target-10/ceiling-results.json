@@ -1,0 +1,28 @@
+[
+  {
+    "selected_profile": "flag",
+    "minimum_aux_per_v": 2,
+    "necessary_saving_bound": "a_bit < 1/2500",
+    "finite_pairs": 20027,
+    "finite_minimum_slack": "6536204763446675659862177306273963/130158518262105636864000000000000",
+    "finite_minimum_slack_pair": [
+      24,
+      24
+    ],
+    "tail": "max(a,b)>=209",
+    "target_unattainable": true
+  },
+  {
+    "selected_profile": "perfect",
+    "minimum_aux_per_v": 2,
+    "necessary_saving_bound": "a_bit < 1/1700",
+    "finite_pairs": 20837,
+    "finite_minimum_slack": "493666818560528111702834595108079/26031703652421127372800000000000",
+    "finite_minimum_slack_pair": [
+      24,
+      24
+    ],
+    "tail": "max(a,b)>=213",
+    "target_unattainable": true
+  }
+]

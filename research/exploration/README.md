@@ -41,6 +41,36 @@ underlying producer. No claim is made about priority over later public work.
 
 ## What the search established
 
+- [Borrowed-source limits](borrowed-ceiling-target-10/README.md): keeping the
+  specified data endpoints and centre copies cannot reach the target with two
+  auxiliary roles per output, even if all internal paths are ideally batched.
+  Exact all-dimension ceilings are 1/2500 with the current selected edges and
+  1/1700 with ideal selected edges. Stronger target-specific checks require
+  at least one axis to use fewer than 0.2 auxiliary roles per output (0.4 with
+  ideal selected edges). These are conditional profile limits, not general
+  lower bounds on circuits. Discarding zero auxiliaries and a particular
+  in-place point-star implementation also fail their paid rank budgets.
+- [Encoded endpoints](block-labels-target-10/README.md): an exact formula
+  multiplies values while retaining the two-stage output encoding. But
+  different directions give different encodings, which do not commute with
+  the current parent mixers. The tempting single-direction simplification
+  fails for batched endpoints. Thus no endpoint child has been deleted from
+  the certified moment. The same note records the known triple-clique bound
+  and its implication for larger labels.
+- [Five-subset polynomial motif](polynomial-motif-target-10/README.md): the
+  full family has valid complementary rational/binary fitting matrices.
+  Its rational label dimension grows quadratically; with the specified
+  centre copies and symmetric two-stage transfer, even zero auxiliary roles
+  and ideal data paths give a bit saving below 1/1672. This rejects the
+  tested transfer without claiming every possible five-subset circuit fails.
+- [Symmetry-breaking triple fit](fractional-motif-target-10/README.md): at h=8,
+  affine planes give a rational rank-seven fit, which is optimal by a Fano
+  clique. This is a valid smaller-dimensional motif, but its checked centre
+  costs still give a negative rank deficit. In contrast, any block fit whose
+  entries depend only on intersection size has normalized rational rank at
+  least h for h>=7, except h=9 where the sharp value is eight. This excludes
+  arbitrary block coefficients within that symmetry class, not asymmetric
+  or other symmetry-breaking fits.
 - [Rectangular obstruction](rectangular-target-10/README.md): if the two-stage
   network retains the specified centre losses, endpoint correction and at least
   three side-output roles per triple, its bit saving is strictly less than
@@ -113,6 +143,13 @@ python3 research/exploration/centre-rectangles-target-10/check_rectangles.py --d
 python3 research/exploration/centre-rectangles-target-10/inplace_complex_audit.py 8
 python3 research/exploration/centre-rectangles-target-10/inplace_complex_guard.py
 python3 research/exploration/new-motif-target-10/check_e8.py
+python3 research/exploration/borrowed-ceiling-target-10/check_ceiling.py
+python3 research/exploration/borrowed-ceiling-target-10/requirements.py
+python3 research/exploration/borrowed-ceiling-target-10/point_stars.py
+python3 research/exploration/borrowed-ceiling-target-10/zero_discard.py
+python3 research/exploration/block-labels-target-10/check_interfaces.py
+python3 research/exploration/polynomial-motif-target-10/check_polynomial.py
+python3 research/exploration/fractional-motif-target-10/check_fractional_motif.py
 ```
 
 The independent literal-word replay needs the separately obtained pinned PR84
@@ -123,8 +160,11 @@ of the target.
 
 ## Remaining research questions
 
-The obstructions leave open different fitting matrices, redundant central
-factorizations with smaller transfer cost, nonzero intermediate read frames,
-different endpoint transfers, and entirely different finite motifs. Any such
-candidate must pay for its full scalar word, frames, recursive children and
-assembly before an exponent improvement can be claimed.
+The most concrete remaining directions are a larger symmetry-breaking fitting
+matrix with cheaper centre transfers, or a recursive output encoding whose
+direction-dependent parent mixers can be implemented cheaply. A circuit with
+substantially fewer auxiliary roles must also preserve enough rank credit;
+the paid-reset and discarded-output checks show why role count alone is
+insufficient. These results do not rule out other finite motifs or transfer
+contracts. Any new candidate must pay for its full scalar word, frames,
+recursive children and assembly before an exponent improvement can be claimed.

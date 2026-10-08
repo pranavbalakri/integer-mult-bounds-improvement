@@ -1,0 +1,192 @@
+{
+  "target_bit_saving": "1/1023",
+  "relaxed_profiles": [
+    {
+      "name": "fixed indexed data; no auxiliary roles",
+      "a": 23,
+      "b": 25,
+      "root_interval": {
+        "lower": "20938777/40000000000",
+        "upper": "261734713/500000000000"
+      },
+      "target_moment_excess_lower": "1712625195462084265986731625131119754675069314866847192742630133983/5000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "fixed indexed data; two auxiliary roles per target",
+      "a": 23,
+      "b": 25,
+      "root_interval": {
+        "lower": "273221711/1000000000000",
+        "upper": "17076357/62500000000"
+      },
+      "target_moment_excess_lower": "135701239506492172568346242951207189051960261052944257892775020363/400000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "ideal data; flag selected edges; finite-scan maximizer",
+      "a": 24,
+      "b": 25,
+      "root_interval": {
+        "lower": "191167599/500000000000",
+        "upper": "382335199/1000000000000"
+      },
+      "target_moment_excess_lower": "2019284893817477857358253513212892856257312221852558062878510885287/10000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "ideal data and selected edges; finite-scan maximizer",
+      "a": 24,
+      "b": 25,
+      "root_interval": {
+        "lower": "286250327/500000000000",
+        "upper": "114500131/200000000000"
+      },
+      "target_moment_excess_lower": "114709567251522516825491741864808032474688375637109109482272103571/1250000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "ideal data; no centres; two auxiliary roles per target",
+      "a": 23,
+      "b": 25,
+      "root_interval": {
+        "lower": "842373283/1000000000000",
+        "upper": "210593321/250000000000"
+      },
+      "target_moment_excess_lower": "46558748363872309707938123505927094829624241142908520598297753989/1000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "ideal data; no auxiliary roles; retained centres",
+      "a": 24,
+      "b": 25,
+      "root_interval": {
+        "lower": "575364389/500000000000",
+        "upper": "1150728779/1000000000000"
+      },
+      "target_numerically_possible": true,
+      "qualification": "An unrealizable zero-role relaxation, not a producer."
+    },
+    {
+      "name": "hypothetical deletion of the paid endpoint copy",
+      "a": 13,
+      "b": 13,
+      "root_interval": {
+        "lower": "843083107/500000000000",
+        "upper": "337233243/200000000000"
+      },
+      "target_numerically_possible": true,
+      "qualification": "No circuit removing that endpoint charge is supplied."
+    }
+  ],
+  "required_aux_ratios": [
+    {
+      "a": 23,
+      "b": 25,
+      "data": "ideal",
+      "retained_centre_cost_present": true,
+      "maximum_uniform_aux_ratio_interval": [
+        "435171/2500000",
+        "348137/2000000"
+      ]
+    },
+    {
+      "a": 23,
+      "b": 25,
+      "data": "indexed",
+      "retained_centre_cost_present": false,
+      "maximum_uniform_aux_ratio_interval": [
+        "1988413/5000000",
+        "3976827/10000000"
+      ]
+    }
+  ],
+  "rank_one_reset_budgets": [
+    {
+      "h": 6,
+      "v": 20,
+      "extra_aux_roles_per_invocation": 40,
+      "maximum_rank_one_charges_per_invocation": 8,
+      "next_integer_budget_rejected": 9,
+      "current_retained_centre_rank": 30,
+      "accepted_target_moment_gap": "43476401809155715614138483643280797869366277285410757335443037731/625000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "790050600847057972656513462760750162678478767232813161405383480791/2000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 7,
+      "v": 35,
+      "extra_aux_roles_per_invocation": 70,
+      "maximum_rank_one_charges_per_invocation": 13,
+      "next_integer_budget_rejected": 14,
+      "current_retained_centre_rank": 42,
+      "accepted_target_moment_gap": "911635477792311655487221948895451352371896067357086230915340600217/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "1039407411481039474893747191453144352187456578865783413260801413747/10000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 8,
+      "v": 56,
+      "extra_aux_roles_per_invocation": 112,
+      "maximum_rank_one_charges_per_invocation": 20,
+      "next_integer_budget_rejected": 21,
+      "current_retained_centre_rank": 56,
+      "accepted_target_moment_gap": "215702227210050164023406965522382088410518858233238953153623917447/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "718146037505791719449550300313669481592957406439008432748920186523/10000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 10,
+      "v": 120,
+      "extra_aux_roles_per_invocation": 240,
+      "maximum_rank_one_charges_per_invocation": 37,
+      "next_integer_budget_rejected": 38,
+      "current_retained_centre_rank": 90,
+      "accepted_target_moment_gap": "64611684319225237520180415540126736245381540185486170567529961771/5000000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "149807681418418693677982899146606568720038358883322891887297742599/10000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 12,
+      "v": 220,
+      "extra_aux_roles_per_invocation": 440,
+      "maximum_rank_one_charges_per_invocation": 57,
+      "next_integer_budget_rejected": 58,
+      "current_retained_centre_rank": 132,
+      "accepted_target_moment_gap": "40159260026089160508834412491705233434425577457211955671180618347/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "13114400038294016641631453399380971495432420002967252032095304549/2000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 14,
+      "v": 364,
+      "extra_aux_roles_per_invocation": 728,
+      "maximum_rank_one_charges_per_invocation": 75,
+      "next_integer_budget_rejected": 76,
+      "current_retained_centre_rank": 182,
+      "accepted_target_moment_gap": "25236842255543101720215874961126065415032568515193997940200216499/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "1086341290261930903280822535891905186444656042114202394791915201/500000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 16,
+      "v": 560,
+      "extra_aux_roles_per_invocation": 1120,
+      "maximum_rank_one_charges_per_invocation": 85,
+      "next_integer_budget_rejected": 86,
+      "current_retained_centre_rank": 240,
+      "accepted_target_moment_gap": "1289816951214619044496841482320486891327865155074625077190273753/1250000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "13059329516133452714486118053025465642695666130827555016846115453/10000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 18,
+      "v": 816,
+      "extra_aux_roles_per_invocation": 1632,
+      "maximum_rank_one_charges_per_invocation": 78,
+      "next_integer_budget_rejected": 79,
+      "current_retained_centre_rank": 306,
+      "accepted_target_moment_gap": "1540266672739948121205927151474574918301361079946834679864672509/2500000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "3259151679732141457834893715145163828965509925569509300815191009/5000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "h": 20,
+      "v": 1140,
+      "extra_aux_roles_per_invocation": 2280,
+      "maximum_rank_one_charges_per_invocation": 43,
+      "next_integer_budget_rejected": 44,
+      "current_retained_centre_rank": 380,
+      "accepted_target_moment_gap": "1325310283256608688672512956952276407829505951038722088650848411/2000000000000000000000000000000000000000000000000000000000000000000000",
+      "rejected_target_moment_excess": "726328287177484230554890663629544184253788074518178672438767231/10000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "status": "Quantitative necessary changes and optimistic budgets only; no target-achieving circuit."
+}

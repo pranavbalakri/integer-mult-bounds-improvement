@@ -1,0 +1,296 @@
+{
+  "status": "PASS",
+  "new_multiplication_bound_claimed": false,
+  "exact_field": "Q(i)",
+  "encoding": {
+    "address_dimension": 2,
+    "endpoint_basis_checks": 16,
+    "encoded_product_bilinear_basis_checks": 128,
+    "naive_product_negative_control": {
+      "bank": 1,
+      "address": 1,
+      "left": [
+        "1/2",
+        "1/2"
+      ],
+      "right": [
+        "0",
+        "0"
+      ]
+    },
+    "single_direction_translation_factorization_checks": 16,
+    "two_block_translation_factorization_negative_control": {
+      "input_column": 4,
+      "bank": 1,
+      "address": 0,
+      "left": [
+        "1/2",
+        "-1/2"
+      ],
+      "right": [
+        "0",
+        "-1/2"
+      ]
+    },
+    "different_direction_parent_mixer_commutator": {
+      "input_column": 8,
+      "bank": 1,
+      "address": 1,
+      "left": [
+        "1",
+        "0"
+      ],
+      "right": [
+        "0",
+        "0"
+      ]
+    },
+    "uniform_encoding_parent_mixer_positive_control": true
+  },
+  "triple_graph_block_label_cliques": [
+    {
+      "h": 4,
+      "orthogonal_clique": 4
+    },
+    {
+      "h": 5,
+      "orthogonal_clique": 4
+    },
+    {
+      "h": 6,
+      "orthogonal_clique": 4
+    },
+    {
+      "h": 7,
+      "orthogonal_clique": 4
+    },
+    {
+      "h": 8,
+      "orthogonal_clique": 8
+    },
+    {
+      "h": 9,
+      "orthogonal_clique": 8
+    },
+    {
+      "h": 10,
+      "orthogonal_clique": 8
+    },
+    {
+      "h": 11,
+      "orthogonal_clique": 8
+    },
+    {
+      "h": 12,
+      "orthogonal_clique": 12
+    },
+    {
+      "h": 13,
+      "orthogonal_clique": 12
+    },
+    {
+      "h": 14,
+      "orthogonal_clique": 12
+    },
+    {
+      "h": 15,
+      "orthogonal_clique": 12
+    },
+    {
+      "h": 16,
+      "orthogonal_clique": 16
+    },
+    {
+      "h": 17,
+      "orthogonal_clique": 16
+    },
+    {
+      "h": 18,
+      "orthogonal_clique": 16
+    },
+    {
+      "h": 19,
+      "orthogonal_clique": 16
+    },
+    {
+      "h": 20,
+      "orthogonal_clique": 20
+    },
+    {
+      "h": 21,
+      "orthogonal_clique": 20
+    },
+    {
+      "h": 22,
+      "orthogonal_clique": 20
+    },
+    {
+      "h": 23,
+      "orthogonal_clique": 20
+    },
+    {
+      "h": 24,
+      "orthogonal_clique": 24
+    },
+    {
+      "h": 25,
+      "orthogonal_clique": 24
+    },
+    {
+      "h": 26,
+      "orthogonal_clique": 24
+    },
+    {
+      "h": 27,
+      "orthogonal_clique": 24
+    },
+    {
+      "h": 28,
+      "orthogonal_clique": 28
+    },
+    {
+      "h": 29,
+      "orthogonal_clique": 28
+    },
+    {
+      "h": 30,
+      "orthogonal_clique": 28
+    },
+    {
+      "h": 31,
+      "orthogonal_clique": 28
+    },
+    {
+      "h": 32,
+      "orthogonal_clique": 32
+    },
+    {
+      "h": 33,
+      "orthogonal_clique": 32
+    },
+    {
+      "h": 34,
+      "orthogonal_clique": 32
+    },
+    {
+      "h": 35,
+      "orthogonal_clique": 32
+    },
+    {
+      "h": 36,
+      "orthogonal_clique": 36
+    },
+    {
+      "h": 37,
+      "orthogonal_clique": 36
+    },
+    {
+      "h": 38,
+      "orthogonal_clique": 36
+    },
+    {
+      "h": 39,
+      "orthogonal_clique": 36
+    },
+    {
+      "h": 40,
+      "orthogonal_clique": 40
+    },
+    {
+      "h": 41,
+      "orthogonal_clique": 40
+    },
+    {
+      "h": 42,
+      "orthogonal_clique": 40
+    },
+    {
+      "h": 43,
+      "orthogonal_clique": 40
+    },
+    {
+      "h": 44,
+      "orthogonal_clique": 44
+    },
+    {
+      "h": 45,
+      "orthogonal_clique": 44
+    },
+    {
+      "h": 46,
+      "orthogonal_clique": 44
+    },
+    {
+      "h": 47,
+      "orthogonal_clique": 44
+    },
+    {
+      "h": 48,
+      "orthogonal_clique": 48
+    },
+    {
+      "h": 49,
+      "orthogonal_clique": 48
+    },
+    {
+      "h": 50,
+      "orthogonal_clique": 48
+    },
+    {
+      "h": 51,
+      "orthogonal_clique": 48
+    },
+    {
+      "h": 52,
+      "orthogonal_clique": 52
+    },
+    {
+      "h": 53,
+      "orthogonal_clique": 52
+    },
+    {
+      "h": 54,
+      "orthogonal_clique": 52
+    },
+    {
+      "h": 55,
+      "orthogonal_clique": 52
+    },
+    {
+      "h": 56,
+      "orthogonal_clique": 56
+    },
+    {
+      "h": 57,
+      "orthogonal_clique": 56
+    },
+    {
+      "h": 58,
+      "orthogonal_clique": 56
+    },
+    {
+      "h": 59,
+      "orthogonal_clique": 56
+    },
+    {
+      "h": 60,
+      "orthogonal_clique": 60
+    },
+    {
+      "h": 61,
+      "orthogonal_clique": 60
+    },
+    {
+      "h": 62,
+      "orthogonal_clique": 60
+    },
+    {
+      "h": 63,
+      "orthogonal_clique": 60
+    },
+    {
+      "h": 64,
+      "orthogonal_clique": 64
+    }
+  ]
+}

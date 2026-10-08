@@ -1,0 +1,28 @@
+[
+  {
+    "selected_profile": "flag",
+    "target": "1/1023",
+    "target_rejected_if_both_axis_aux_ratios_at_least": "1/5",
+    "finite_pairs": 21042,
+    "finite_minimum_slack": "2908085439235293338899121171215811/414140739924881571840000000000000",
+    "finite_minimum_slack_pair": [
+      24,
+      24
+    ],
+    "tail": "max(a,b)>=214",
+    "scope": "Retained centre copies and fully batched inherited data; not arbitrary circuits."
+  },
+  {
+    "selected_profile": "perfect",
+    "target": "1/1023",
+    "target_rejected_if_both_axis_aux_ratios_at_least": "2/5",
+    "finite_pairs": 21042,
+    "finite_minimum_slack": "3080998686958266073977521171215811/414140739924881571840000000000000",
+    "finite_minimum_slack_pair": [
+      24,
+      24
+    ],
+    "tail": "max(a,b)>=214",
+    "scope": "Retained centre copies and fully batched inherited data; not arbitrary circuits."
+  }
+]

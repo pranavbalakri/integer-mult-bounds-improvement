@@ -1,0 +1,51 @@
+{
+  "status": "PASS; rejected candidate, no new exponent",
+  "small_cases": [
+    {
+      "h": 5,
+      "vertices": 1,
+      "star_span": 1,
+      "deficit": "-9"
+    },
+    {
+      "h": 6,
+      "vertices": 6,
+      "star_span": 5,
+      "deficit": "-9"
+    }
+  ],
+  "finite_rank_checks": [
+    {
+      "h": 7,
+      "vertices": 21,
+      "rational_rank": 21,
+      "star_span": 15
+    },
+    {
+      "h": 8,
+      "vertices": 56,
+      "rational_rank": 28,
+      "star_span": 21
+    },
+    {
+      "h": 9,
+      "vertices": 126,
+      "rational_rank": 36,
+      "star_span": 28
+    },
+    {
+      "h": 10,
+      "vertices": 252,
+      "rational_rank": 45,
+      "star_span": 36
+    }
+  ],
+  "universal_symmetric_bound": "a_bit < 1/1672",
+  "assumptions": [
+    "full five-subset polynomial fit",
+    "unchanged two-stage data endpoints",
+    "binary point-star centres copied to zero",
+    "symmetric factor dimensions"
+  ],
+  "target_attained": false
+}
