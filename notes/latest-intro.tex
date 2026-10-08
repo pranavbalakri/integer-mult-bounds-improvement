@@ -1,0 +1,47 @@
+\paragraph{Conditional result and scope.}
+Let $n$ be the input bit length. Assuming the global interfaces of
+Swapnil Jain's round-six construction at commit
+\texttt{f2176bc1124821bf17eb63725bd366d7bdc020a3}, the extensions below give
+\[
+ T(n)=O\!\left(n(\log n)^{1-\kappa}\right),\qquad
+ \boxed{\kappa=\frac{36942}{10^9}=0.000036942.}
+\]
+This is approximately $0.7537\%$ larger than that construction's witness
+$\kappa_0=3666565558019/10^{17}$. A second choice, intended to relax several
+overhead parameters, gives $\kappa=3668/10^8=0.00003668>\kappa_0$.
+Neither is a measured runtime improvement.
+
+The proof assumes the original multiplication theorem and inherited
+bit-frame compiler, common flag basis, two-stage phase transfer, copied-centre
+schedule, whole-residual batching, compact-control tape interfaces, segmented
+Gaussian inverse, prime selection and assembly. It does not independently
+prove those global interfaces. The new arguments and finite checks were
+prepared with assistance from OpenAI Codex and have not received independent
+mathematical review or formal verification of the complete theorem.
+
+\paragraph{The three changes.}
+First, we prove a linear exact-arithmetic guard
+$\Delta=128(d+1)$ using the exact values returned by completed recursive calls
+and a bound on each partially executed parent. Second, we replace the bit
+producer's omitted-sum routine with paired trees and reassociate exactly equal
+positive sums. Third, we use the existing complex producer at $h=16$ instead
+of $h=24$. It retains enough exponent saving with $14570080$ complex roles,
+compared with $207387136$ in the comparator. The bit network still has
+$148225616$ roles; the factor $14.23$ applies to the complex network alone.
+
+Write $b=\lceil\log_2n\rceil$. With explicit digits $b'=128b^3$ and precision
+$p=6b'=768b^3$, the new guard and Gaussian numerical condition have comfortable
+margins. This replaces the comparator's conservative precision choice
+$p=\Theta(b^{14696})$. Other eventual thresholds remain enormous: this is a
+reduction of specified overhead requirements, not a practical multiplication
+implementation.
+
+\paragraph{Sources.}
+The comparator and its upstream assumptions are pinned at
+\url{https://github.com/Swapnil-jain/integer-mult-kappa/tree/f2176bc1124821bf17eb63725bd366d7bdc020a3}.
+The phase endpoint correction is pinned to Aurel Prosz's construction at
+\url{https://github.com/Paureel/integer-mult-bounds/blob/c82d09eb4781b68435e3fa3eb6beea72fa900fab/notes/two-stage-phase-transfer.tex}.
+The attribution notices in the accompanying repository identify the prior
+contributions, including Douglas Colkitt's compact controls and OpenAI's
+original pinned manuscript. No claim of priority over contemporaneous work
+is made.

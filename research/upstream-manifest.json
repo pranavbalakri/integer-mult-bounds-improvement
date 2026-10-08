@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/Swapnil-jain/integer-mult-kappa",
+  "commit": "f2176bc1124821bf17eb63725bd366d7bdc020a3",
+  "unmodified_files_sha256": {
+    "independent/two-stage-bit/sidegen.py": "e97ec987bd20d86e73c92f940f2ba2650f39209db14dc5f00b88436481fa4e28",
+    "independent/two-stage-bit/orders.py": "ff0f0515eda0f4dc995d07436e65663c553bfa01748fa2eeec96dcee8d0a34c3",
+    "independent/two-stage-bit/side_chains.py": "98c8b33d5761a6135238983a05b81a4250c0a9f02979096ae110d1104c77970d",
+    "independent/two-stage-bit/rtgm.py": "1cdb902014b3c9d2a72deda999905dd04fbd555f7813d4664ca0e16355b42fdc",
+    "independent/two-stage-bit/cert_rt.py": "b15adc5aa1ea5761fb7dd5873c4dd44d28f15705c6ab2b1df87d3bd4b69e9a77",
+    "independent/two-stage-bit/moment.py": "4ca6b15fa6cf799b7252d9a70d5c66dcbe86f3cc16b03b7c6f03ccda66df41be",
+    "independent/two-stage-bit/gmside.py": "a8cda0c24718980bd02b7983d340b0b97ce91f2241b81ef4127042ba81932847",
+    "scripts/certificate_round3.py": "53deb36c0f5daffc68ee02dabf189d2700f39a2bb3f01b55c663c49cd315b9ae",
+    "scripts/certificate_round4.py": "a6113295a7af30b581d1230e630bba3dc7759be7807d8b2628aeaca31cddf441",
+    "scripts/certificate_round5.py": "6c948d995fdc60df70a36f1fe658b9dd06960fafd48badfce2144fc764a3d2b9",
+    "scripts/certificate_round6.py": "f1d65865357b535ddd4d98b0f3bfc1947b9a434993e7c5ba1536d3a62439948f",
+    "independent/complex-network/fullbatch_cert.py": "c4b0d8b9cdb7dceb881747826356fb6eedd5ad465c483ed7cda0ba2a8d2d90d4",
+    "independent/complex-network/bc.py": "056ca643666dff4405eecfb6f0f8a33da3a50244c65d9bc2e28fa95ea32956e1",
+    "independent/complex-twostage/producer.py": "e1715616ac8cafa8f63b7c0a2e7deacdba7daea94662e0a84626d5374fd27b5c",
+    "independent/complex-twostage/hist.py": "e20d077acfc95e2f8239fcdcc03146cc15607996e2734eb2d00b68ed7d43ec64",
+    "independent/complex-twostage/frames.py": "8629850bd465250cdf298b47b86504f2ac507d5fa044f8c0d2a20b451d19aa0f",
+    "independent/complex-twostage/cert.py": "f9352729213b8441d076708b738d158093caa34d050fa2d838b61e07eb3a298b",
+    "independent/complex-twostage/run.py": "fff6190b4f197689aad55077be882e8c95e0b699d366eadee5882cf8ff08be44"
+  }
+}

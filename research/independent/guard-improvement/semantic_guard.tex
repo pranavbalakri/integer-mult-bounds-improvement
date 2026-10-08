@@ -1,0 +1,283 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Z}{\mathbb Z}
+\title{A linear exact-arithmetic guard for the two-stage complex recursion}
+\author{A proposed conditional refinement of the integer-multiplication construction}
+\date{October 8, 2026}
+\begin{document}
+\maketitle
+
+\paragraph{Scope.}
+This note improves the precision required for an inherited exact complex network.
+It assumes the phase-frame identity, whole-residual recursion and copied
+retained-centre schedule of the construction in
+\texttt{Swapnil-jain/integer-mult-kappa}, commit
+\texttt{f2176bc}, and the interfaces on which that construction depends.
+It does not independently establish its Gaussian inverse, layout, prime-selection
+or full multiplication theorem. The finite checks accompanying this note check
+scalar envelopes and the guard inequalities; they do not replace those assumptions.
+
+\paragraph{Result.}
+For the $h=16$ two-stage complex network, $m=256$, the guard may be taken as
+\[
+                 \boxed{\Delta=128(d+1).}
+\]
+The same bound also covers the $h=18$ and $h=24$ instances verified below.
+In particular the guard exponent is $C_1=1$. The coefficient choice
+$b'=128b^3$ and $p=6b'=768b^3$, $b=\lceil\log_2 n\rceil$, meet this guard for
+$d=\Theta(b^\epsilon)$ and fixed $\epsilon<1$.
+The earlier conservative choice used $p=\Theta(b^{14696})$.
+This removes that particular source of an enormous threshold; it is not a
+runtime measurement or a proof that the complete algorithm is practical.
+
+\section{The distinction between intermediate and returned values}
+Write
+\[
+ C=\frac{1+\ii}{2}I+\frac{1-\ii}{2}X.
+\]
+A completed $t$-axis recursive call applies $C^{\otimes t}$, up to address
+permutations and inverse/fourth-root wrappers. Its entries belong to
+$2^{-t}\Z[\ii]$ and its induced infinity norm is at most $2^t$.
+Consequently its returned values consume at most $t$ extra fractional bits
+and $t$ magnitude bits, however many arithmetic operations were performed
+inside the call. Exact fixed-point representations already contain zeros in
+the unused low positions. No truncation, rounding or numerical approximation
+is required to exploit this fact.
+
+A depth-first computation has only one currently active descendant at each
+level. The extra precision needed inside completed siblings therefore does
+not accumulate. For example, concatenating all children only at their
+\emph{returned} formats gives a guard recurrence
+\[
+ D(e)\le E+\frac{s}{m}e+\max_j D(t_j),\qquad
+ t_j=w_j\lfloor e/m\rfloor,
+\]
+where $E$ is a fixed scalar charge, $\sum_jw_j=s$ and
+$w_j\le m-h$. This alone yields a linear guard with a large fixed
+coefficient. The next argument considerably reduces that coefficient.
+
+\section{A bound for every paused parent prefix}
+Let $H_e$ be the normalized Walsh matrix on $e$ bits. For an arbitrary
+function $\phi:\mathbb F_2^e\to\Z/4\Z$, put
+\[
+ F_\phi=H_e\operatorname{diag}(\ii^{\phi})H_e.
+\]
+The phase-frame invariant of the inherited network places every role in such
+a frame. Within each stage, scalar gates act on roles at a common frame. Copied centres are
+included: a copy has the same logical value, its phase conversion changes
+only its frame, and erasing it discards a temporary rather than an original
+scratch role.
+
+\begin{lemma}[Frame ratios]
+Every entry of $F_\phi F_\psi^{-1}$ lies in $2^{-e}\Z[\ii]$, and
+\[
+               \|F_\phi F_\psi^{-1}\|_\infty\le 2^{e/2}.
+\]
+\end{lemma}
+\begin{proof}
+The ratio is $H_e\operatorname{diag}(\ii^{\phi-\psi})H_e$.
+Expanding its entries gives $2^{-e}$ times a sum of fourth roots of unity
+with signs. It is unitary, so every row has Euclidean norm one and has
+at most $2^e$ entries. Cauchy--Schwarz proves the infinity-norm bound.
+\end{proof}
+
+Refine a scalar prefix to include each addition, multiplication by a fixed
+integer, halving, copy and erase operation. Let $M$ be its scalar matrix
+in logical coordinates. This matrix can be rectangular when a temporary is
+created or removed. The block from initial role $i$ to current role $j$ is
+\[
+                 M_{ji}F_{\mathrm{current},j}F_{\mathrm{initial},i}^{-1}.
+\]
+Let $B$ bound the denominator exponent of every entry of every such $M$,
+and let $G$ bound all its absolute row sums. The lemma shows that this
+prefix increases the fractional exponent by at most $e+B$ and the
+base-two magnitude bound by at most $e/2+\log_2G$.
+This statement allows different initial frames on different roles and
+arbitrary initial scratch values.
+
+A partial residual edge, after any completed whole child blocks, still has
+an arbitrary Walsh-diagonal phase frame. The coordinate changes used to
+implement an edge are address permutations, and so do not increase either
+numerical bound. Thus the same estimate holds immediately before every
+child call, not merely between scalar gates.
+
+\section{Finite scalar envelope}
+The program \texttt{semantic\_guard.py} builds the actual producer and
+compiled role program. It assigns every scalar input row norm one and
+propagates nonnegative absolute row-sum bounds through every addition.
+Inverse words reverse the compiled operations and use their inverse order;
+ignoring signs is conservative. Integer numerators are charged before a
+halving, so intermediate products are included. Denominator exponents
+propagate by taking a maximum and adding one at a factor $1/2$.
+
+The retained scatter requires particular care. Let
+$T=\sum_t x_t$ and $E_i=\sum_{t\not\ni i}x_t$, retaining $E_i$ for
+$i<h-1$. Its value for target triple $S$ is
+\[
+ \begin{cases}
+ T-\frac12\sum_{i\in S}E_i,&h-1\notin S,\\[2pt]
+ \frac12\bigl((5-h)T+\sum_{i<h-1,\ i\notin S}E_i\bigr),&h-1\in S.
+ \end{cases}
+\]
+The second formula follows from $\sum_{i=0}^{h-1}E_i=(h-3)T$.
+Some of its coefficients have magnitude larger than one; the verifier
+includes them explicitly.
+
+Stage-one invocations have disjoint banks, and the same holds for stage two.
+Their uniform envelopes therefore compose by multiplication, rather than
+by raising them to the number of invocations. The inherited endpoint
+correction copies output $A$, applies the inverse rank-one phase child
+$P^{-1}$ to its copy, adds it to output $B$, and erases the copy.
+Indeed its logical expressions are
+\[
+ A=-Fy,\qquad B=FP^{-2}x+Ey,\qquad E=FP^{-1},
+\]
+so $B+P^{-1}A=FP^{-2}x$. The copy and erase add no arithmetic growth,
+and the one addition costs at most a factor two in the scalar envelope.
+Its phase child is already included in the recursive rank histogram.
+The endpoint addition is handled separately from the common-frame assertion:
+multiplying the copied row by $P^{-1}$ preserves the family of Walsh-diagonal
+phase operators. Adding it to the other row adds their scalar row-sum bounds,
+without enlarging the common $2^{-e}\Z[\ii]$ denominator grid. No alignment
+of the two endpoint frames is needed for this separate bound.
+Signs and fourth-root corrections preserve these bounds.
+
+The exact envelope results are
+\[
+\begin{array}{c|r|r|r|r}
+ h&G_{\mathrm{forward}}&G_{\mathrm{inverse}}&
+       G=2G_{\mathrm{forward}}G_{\mathrm{inverse}}&B\\\hline
+16&135386&256057&69333066004&2\\
+18&250444&476800&238823398400&2\\
+24&1006577&1925603&3876535381862&2
+\end{array}
+\]
+All satisfy $G<2^{48}$ and $B\le8$. We deliberately use the looser
+common bound
+\[
+               \text{paused parent guard}\le 2e+64.       \tag{1}
+\]
+This includes the scalar intermediates in the verifier, rather than just
+the final scalar outputs.
+
+\section{Integer widths and the linear induction}
+The integer-width interface supplies children of width
+$w\lfloor e/m\rfloor$, with $w\le m-h$.
+For an input width not divisible by $m$, first evaluate its fewer than $m$
+remainder axes individually and apply the network to the other
+$m\lfloor e/m\rfloor$ axes. A completed individual kernel costs one
+semantic fractional bit and at most one magnitude bit; its own
+intermediates use the usual eight-bit-per-axis allowance.
+These remainder operations introduce only additional phase frames in the
+prefix argument. They do not introduce new axes. For fewer than $m$ axes,
+or at the original stopping threshold, evaluate all kernels individually.
+
+For the divisible internal call, (1) and the one-active-child observation give
+\[
+ D(e)\le 2e+64+\max_j D(t_j),\qquad
+ t_j\le\frac{h-1}{h}e,\quad e\ge h^2.
+\]
+Choose
+\[
+ C\ge8,\qquad \frac{C}{h}\ge 2+\frac{64}{h^2}.
+\]
+Then induction proves $D(e)\le Ce$: the second inequality makes
+$2e+64+C(h-1)e/h\le Ce$, and the first covers leaves. A remainder of
+$r$ individually evaluated axes followed by a block of $e-r$ axes
+costs at most $\max\{8r,r+C(e-r)\}\le Ce$, so the same bound covers
+all integer widths. Verified integer choices are
+\[
+       (h,C)=(16,36),\quad(18,40),\quad(24,51).
+\]
+This induction is independent of the stopping exponent $\beta$.
+
+\begin{theorem}[Whole-layer guard]
+Under the inherited exact interfaces and the scalar/phase invariants above,
+$\Delta=128(d+1)$ suffices for one normalized butterfly layer in each
+of the three verified instances.
+\end{theorem}
+\begin{proof}
+Top-level active-axis pieces are disjoint and their total width is at most
+$d$. Completed earlier pieces apply the exact tensor phase operator, so
+collectively they consume at most $d$ semantic guard bits.
+During the currently active piece its extra guard is at most $Cd$.
+Individually handled preprocessing and tail axes contribute at most $8d$;
+this conservatively charges their intermediates as well as their returns.
+The outer phase factors preserve magnitude and denominator. The conversion
+$\mathfrak b^D$, with $\mathfrak b=(1-\ii)/2$, uses at most $d+9$ further guard bits,
+including its binary shift and its possible final factor $\mathfrak b$.
+Thus $(C+10)d+9$ suffices. Since $C\le51$, this is below $128(d+1)$.
+Padding, splitting, copying and changes of address basis do not perform
+arithmetic on coefficient values. The usual fixed-width exact format with
+$p+\Delta$ fractional bits and $\Delta+3$ integer/sign bits therefore
+represents every intermediate value without rounding or overflow.
+\end{proof}
+
+\paragraph{Cubic precision with a finite numerical margin.}
+Use the longer digit width $b'=128b^3$ and precision $p=6b'=768b^3$;
+in the notation of the inherited assembly this is $x=2$.
+Set $d=\lfloor b^\epsilon\rfloor$ and $y=\epsilon$, with $0<\epsilon<1$.
+For every integer $b\ge1$, the guard itself satisfies
+\[
+ \Delta=128(d+1)\le256b\le768b^3=p.
+\]
+This inequality is a numerical guard cutoff only: the complete layout and
+prime-selection hypotheses still have to hold.
+
+The inherited Gaussian choices are
+\[
+ \alpha^2=\left\lfloor\frac{p}{48d}\right\rfloor
+          =\left\lfloor\frac{16b^3}{d}\right\rfloor,
+ \qquad \eta=\frac1{4dL^\epsilon}.
+\]
+Once the inherited prime-selection step supplies the constant-factor band
+$\theta_i\ge\eta/2$, use $d\le b^\epsilon$ and $L\le b$.
+Since $b^3/d\ge1$, the floor costs at most one unit and
+\[
+ \alpha^2\ge\frac{15b^3}{d},\qquad
+ \alpha^2\theta_i\ge
+ \frac{15b^3}{8d^2L^\epsilon}
+ \ge\frac{15}{8}b^{3-3\epsilon}\ge\frac{15}{8}>1.
+\]
+Thus no eventual domination of a factor $1/32$ is needed for this particular
+Gaussian inequality. Moreover
+$\gamma=2d\alpha^2\le32b^3=b'/4$, as required by the inherited final
+error estimate. These bounds do not establish the remaining hypotheses of
+that estimate.
+
+The guard condition is now $\epsilon<3$, and the inherited segmented-inverse
+precision condition is $3\epsilon<3$, both automatic for fixed
+$\epsilon<1$. A factor $p^\delta$ contributes exponent $3\delta$ in powers
+of $b$. Choices of $\epsilon,\delta,\beta$ must still satisfy the final
+saving and all other assembly inequalities.
+
+\paragraph{Inherited prime intervals and remaining thresholds.}
+The prime-interval argument is the one in
+\href{https://github.com/Swapnil-jain/integer-mult-kappa/blob/f2176bc/notes/stack-notes.tex}
+{\texttt{notes/stack-notes.tex}, Section 1}; it is not a new prime-gap result
+proved here. It uses the classical prime number theorem with an error term
+$O(X\exp(-c\sqrt{\log X}))$, for a positive constant $c$.
+Here $\log X=\Theta(L/d)$ and the relative interval length
+$\eta=1/(4dL^\epsilon)$ is a fixed inverse power of $L$, hence a fixed
+inverse power of $\log X$ for each fixed $\epsilon<1$.
+The interval main term $\eta X/\log X$ eventually dominates that error
+and supplies more than $d$ primes in each required interval. The constant-factor band
+used above is part of that inherited eventual selection argument.
+This note supplies no explicit common cutoff for the prime intervals,
+record lengths, axis widths, or remaining asymptotic estimates. In
+particular, a small numerical guard cutoff does not make the whole
+multiplication algorithm practical or yield a benchmark.
+
+\paragraph{Reproduction and attribution.}
+From the accompanying \texttt{research} directory, run
+\texttt{python3 independent/guard-improvement/semantic\_guard.py 16 18 24}
+and the adjacent unit tests. The phase-frame construction, scalar
+producer, copied-centre schedule and endpoint transfer are inherited;
+this note's refinement is to charge returned semantic values and use
+phase-prefix cancellation to prove a linear exact-arithmetic guard.
+\end{document}

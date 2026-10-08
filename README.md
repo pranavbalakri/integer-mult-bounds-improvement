@@ -1,110 +1,100 @@
-# A conditional improvement beyond 2^-31
+# A stronger conditional bound with a linear precision guard
 
-Starting from [CrocSwap/integer-mult-bounds at commit
-6e564879f51ae16f23d392e9e196c605f36d90df](https://github.com/CrocSwap/integer-mult-bounds/tree/6e564879f51ae16f23d392e9e196c605f36d90df),
-this proposed conditional research extension derives
+Building on [Swapnil Jain's round-six construction](https://github.com/Swapnil-jain/integer-mult-kappa/tree/f2176bc1124821bf17eb63725bd366d7bdc020a3), this proposed extension gives
 
 $$
 T(n)=O\!\left(n(\log n)^{1-\kappa}\right),\qquad
-\kappa=\frac{59}{10^{11}}=5.9\times10^{-10}>2^{-31}.
+\kappa=\frac{36942}{10^9}=0.000036942>2^{-15}.
 $$
 
-The previous extension gave `125/10^12 = 1.25e-10 > 2^-33`.
-The new exponent saving is **4.72 times larger**, and approximately **7.108
-times** the original repository's `83/10^12` witness. These are asymptotic
-exponent comparisons, not measured runtime improvements.
+This exponent saving is **0.7537% larger** than that repository's witness
+`3666565558019/10^17`. The more substantial change concerns overhead:
 
-The original theorem and the repository's compact-control, paired-bit,
-Gaussian and other retained extensions remain assumptions. The additional
-argument was prepared with OpenAI Codex and has not received independent
-mathematical review.
+- An exact **linear guard**, `Delta = 128(d+1)`, replaces the conservative guard exponent `14694`.
+- Coefficient precision becomes **`p = 768 b^3`**, where `b = ceil(log2 n)`, instead of a choice proportional to `b^14696`.
+- The complex network uses **14,570,080 roles**, down from 207,387,136: **14.23 times fewer complex roles**. The bit network still has 148,225,616 roles.
+- A second parameter choice still beats the comparator while increasing the axis-width exponent about **191 times** and allowing much more arithmetic slack.
 
-## What changes
+These are **conditional, unreviewed mathematical improvements**. They assume the linked construction's phase transfer, bit-frame compiler, batching, Gaussian inverse, layout, prime-selection and original theorem interfaces. They are not a multiplication implementation, a benchmark, or evidence of practical acceleration. The complete algorithm remains galactic.
 
-Replace individual complex side corrections with **signed rectangle sums**.
-Disjoint triple pairs receive coefficient `+1/2`; intersection-two pairs
-receive `-1/2`. Reversible mixers share each rectangle's intermediate sum
-while restoring arbitrary initial scratch values.
+## Two certified choices
 
-Four explicit binary frame choices handle singleton source families,
-singleton target families, disjoint families, and intersection-two families.
-Their residuals are nondegenerate and nonalternating in both circuit
-directions, supplying the orthonormal bases needed for the phase interface.
-First/third-stage auxiliary banks are then shared as in the preceding proof.
+Both use the new bit saving `a_b = 36943733/10^12`, the smaller complex network's
+`a_c = 9912567/250000000000`, `beta = 1/16`, and cubic precision with an explicit digit prefactor.
 
-At `h=25`, the construction has:
+| | Higher saving | Lower overhead |
+|---|---:|---:|
+| Exponent saving kappa | 0.000036942 | 0.00003668 |
+| Improvement over linked witness | 0.7537% | 0.03912% |
+| epsilon | 0.99996 | 0.993 |
+| Axis-width power `1-epsilon` | 0.00004 | 0.007 |
+| Arithmetic allowance delta | 0.000001 | 0.002 |
+| Each strict exponent gap | `10^-11` | `10^-9` |
 
-| Quantity | Value |
-| --- | ---: |
-| Rectangles per invocation | 33,951 |
-| Side roles per invocation | 455,434 |
-| Total roles W | 4,843,100,800,000 |
-| Total residual dimension s | 75,673,446,297,000,000 |
-| Preserved absolute deficit Wm-s | 3,703,000,000 |
-| Relative deficit | 7 / 143,050,000 |
-| Certified complex exponent saving | 5 / 10^9 |
+The comparator uses `1-epsilon ≈ 0.0000366657`, arithmetic allowance about
+`6.8e-27`, and strict exponent gaps `10^-16`. Bigger allowances reduce some
+asymptotic thresholds; these comparisons do not establish an end-to-end crossover.
+For example, even reaching 256 active axes remains an enormous input-size requirement.
 
-Keep the bit saving `296/10^11` and choose
+## What changed
 
-```
-epsilon = 1999/10000     c = 1
-beta = 1/10             zeta = 1/10000
-delta = 1/10^6          C1 = 46001/10000
-lambda = 1-2959/10^12   lambda' = 1-2958/10^12
-```
+**Bit circuit.** Replace prefix/suffix omitted-sum calculations with recursive
+paired trees, then reassociate 368 sums using exactly equal source supports.
+All positive sums and frame subspaces remain valid. The role count stays 40,077
+per invocation; the recursive child widths improve. An exact rational moment
+certificate establishes the new bit saving. No optimality is claimed.
 
-Now `sigma < tau`, so the internal layer exponent is `tau`. All constraints
-hold strictly. The minimum assembly margin is
-`G = 2956521/(5*10^15) = 5.913042e-10`, leaving the positive gap
-`G-kappa = 6521/(5*10^15)`. Conservative unshared guard constants still
-cover the new scalar gates; the time recurrence uses the new role counts.
+**Precision proof.** A completed recursive phase transform has a known exact
+denominator, regardless of its internal operation count. Only one descendant
+is active at a time. Telescoping the common phase frames bounds every paused
+parent prefix, giving a maximum-over-children guard recurrence rather than
+adding the internal precision needs of completed siblings. The proof uses exact
+arithmetic; it introduces no numerical rounding.
 
-The fixed bit exponent and retained Gaussian/assembly inequalities give the
-scoped ceiling `kappa < (1-tau)/5 = 5.92e-10 < 2^-30`. The new witness
-reaches about 99.66% of it. This is not a ceiling for other bit primitives
-or multiplication algorithms.
+**Smaller complex circuit.** Use the inherited producer at `h=16` instead of
+`h=24`. Its exact moment still exceeds the new bit saving. Every binary frame
+and residual is checked at the chosen size.
 
-## Included artifacts
+## Proof and reproducibility
 
-This repository contains the three requested research artifacts:
+- [Standalone proof note](notes/complex-reuse-note.tex), including both assembly choices.
+- [Exact certificate and finite-check results](certificates/latest.json).
+- [Reproduction driver](research/verify.py).
+- [Pinned-source provenance](research/upstream-manifest.json) and [upstream attribution](research/UPSTREAM-NOTICE).
 
-1. This summary (`README.md`).
-2. [Complete standalone proof note](notes/complex-reuse-note.tex).
-3. [Independent manuscript patch](patches/complex-rectangles-31.patch).
-
-The original project's license and attribution are retained in
-[LICENSE](LICENSE) and [NOTICE](NOTICE).
-
-## Applying the patch
-
-The patch applies directly to the unmodified pinned manuscript bundled in
-the baseline repository. It includes the necessary prior refinements and is
-an alternative to the earlier patches, not an additional patch to layer on top.
-From this repository's root:
+With Python 3.10 or newer, run from this repository:
 
 ```sh
-git clone https://github.com/CrocSwap/integer-mult-bounds.git source
-git -C source checkout 6e564879f51ae16f23d392e9e196c605f36d90df
-git -C source apply --check --directory=upstream ../patches/complex-rectangles-31.patch
-git -C source apply --directory=upstream ../patches/complex-rectangles-31.patch
+python3 research/verify.py
 ```
 
-The note is a self-contained LaTeX file. The manuscript patch modifies the
-baseline's `upstream/build` sources. This three-artifact bundle does not include
-the additional certificate generators or test files mentioned in the note;
-those were used in the development checkout. Running the baseline's test suite
-alone does not reproduce the new extension's verification.
+Only the standard library is required. The needed upstream files are included
+unchanged and checked against a SHA-256 manifest. The verifier recomputes:
 
-## Verification and scope
+- all 2,047 small omitted-sum zero patterns, all 36,512 active bit-source nodes,
+  5,313 side outputs, 23 retained totals, 40,077 slot chains, and 1,970 local ranks;
+- all 313,600 complex matrix coefficients and all 33,956 frame/residual checks;
+- a complete smaller two-stage scalar network, restoring 100,912 arbitrary scratch values;
+- both exact moments, scalar-prefix bounds, guard inequalities and assembly margins;
+- nine unit tests, including negative controls and source integrity checks.
 
-In the development checkout on October 7, 2026, the certificate generators, all 175 tests,
-and all 19 independent patch-application checks passed. Earlier tracked
-certificates, patches, and upstream sources regenerated without changes.
-The standalone proof note compiled successfully in the desktop LaTeX editor.
-These are arithmetic, finite-identity, and integration checks, not formal
-verification of the multiplication theorem or independent review of this proof.
+These finite checks support the new arguments. They are not a formal proof or
+independent review of the complete multiplication algorithm. The inherited
+bit common-basis theorem and other global interfaces remain assumptions.
 
-The baseline research is by Douglas Colkitt, building on OpenAI's pinned
-manuscript. The additional complex stage-sharing and signed-rectangle extensions were prepared with
-OpenAI Codex at the repository owner's request. It is not an official OpenAI
-release or endorsement. See the proof note for assumptions and attribution.
+## Earlier work and attribution
+
+The earlier `kappa = 59/10^11` rectangle extension is preserved in
+[its archived note](notes/archive/complex-rectangles-note.tex),
+[its summary](notes/archive/rectangles-README.md), and the existing
+[manuscript patch](patches/complex-rectangles-31.patch). That patch represents the
+earlier result; it does **not** implement this new extension. The new result is
+specified by the proof note and reproducible research bundle above.
+
+This work builds on Swapnil Jain's round-six construction, Douglas Colkitt's
+compact controls, OpenAI's pinned manuscript, and the prior contributors named
+in [NOTICE](NOTICE) and [research/UPSTREAM-NOTICE](research/UPSTREAM-NOTICE),
+including Aurel Prosz's two-stage transfer and the copied-centre/full-batching work.
+The new arguments, implementation and checks were prepared with OpenAI Codex
+at the repository owner's request. AI cross-checks are not independent review.
+No claim of priority over unreviewed or contemporaneous work is made.

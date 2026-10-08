@@ -1,0 +1,124 @@
+\section{The smaller complex instance}
+Use the inherited paired-exclusion producer with retained totals and copied
+centres at $h=16$. The exact construction has
+\[
+ m=256,\quad v=560,\quad N=313600,\quad R=12449,\quad
+ W=14570080,\quad s=3729896800.
+\]
+Its largest recursive width is $240=15m/16$, and
+$Wm-s=43680>0$. Rebuilding its complete residual histogram and checking
+its exact rational moment gives
+\[
+ a_c=\frac{9912567}{250000000000}=0.000039650268.
+\]
+The source labels are reconstructed as in the inherited producer: a single
+triple line, the span of triples sharing a pair, or the coordinate span of
+their covered points. At this dimension the checker verifies all 33,956
+entry, exit, producer and piece residual conditions, including nesting,
+nondegeneracy and nonalternation. An independent scalar checker verifies all
+313,600 ordered triple coefficients of the retained scatter plus side pieces.
+The exact rank histogram, positive moment slack and check totals are included
+in \path{certificates/latest.json}.
+
+\section{Two assembly choices}
+Set $\beta=1/16$, $x=2$, $y=\epsilon$, $\tau=1-a_b$ and $\sigma=1-a_c$.
+Then $\sigma<\tau$, the internal exponent is $\chi=\tau$, and
+\[
+ (1-\beta)a_c=0.00003717212625>a_b=0.000036943733.
+\]
+For the respective gap $g$ below, set
+$\lambda=\tau+g$ and $\lambda'=\tau+2g$.
+The exact assembly choices are
+\[
+\begin{array}{c|c|c|c|c}
+ &\epsilon&\delta&g&\kappa\\\hline
+ \text{higher saving}&24999/25000&10^{-6}&10^{-11}&36942/10^9\\
+ \text{lower overhead}&993/1000&1/500&10^{-9}&3668/10^8
+\end{array}
+\]
+Both exceed $\kappa_0$. The respective relative improvements are approximately
+$0.753687\%$ and $0.0391222\%$.
+
+The inherited cost margins, now with $(1+x)\delta=3\delta$, are
+\[
+ 1-\epsilon,\quad \epsilon(1-\lambda'),\quad
+ 1-\epsilon-3\delta,\quad\epsilon,\quad\epsilon a_b.
+\]
+They cover prefix moves, simultaneous butterflies, fine-field/Gaussian/chirp/
+reserved-axis work, packed products, and CRT reversal, respectively.
+Each margin strictly exceeds its chosen $\kappa$. The butterfly row binds,
+with exact remaining gaps
+\[
+ \frac{23525148}{10^{17}}>0
+ \quad\hbox{and}\quad
+ \frac{3140869}{10^{15}}>0.
+\]
+The fine-field/Gaussian/chirp/reservation margins themselves are $0.000037$
+and $0.001$. All other constraints also hold:
+\[
+ \lambda'>\max(\lambda,\sigma+\beta(1-\sigma)),\quad\lambda'<1,
+ \quad\epsilon<\frac1{2-\lambda'},
+\]
+\[
+ \epsilon C_1<3,\qquad 2\epsilon+y=3\epsilon<3,
+ \qquad y\ge\epsilon,\quad0<\delta<1/8.
+\]
+Choose $\mu=(1-\epsilon)/6$ in the record-size condition; then
+$\mu(1+x)=(1-\epsilon)/2<1-\epsilon$.
+The independent exact-rational certificate reports every constraint and margin.
+
+\paragraph{Effect of the precision prefactor.}
+The new coefficient length is $b'=128b^3$, and $p=6b'$.
+The usual digit choice gives $T\in[4n/b',8n/b')$ and therefore
+$Tp=\Theta(n)$, while
+$L=\log_2T=b-3\log_2b+O(1)\sim b$.
+In the nontrivial digit regime $L\le b$; smaller inputs use a base procedure.
+The inherited coefficient capacity and final-error proof uses the same
+$b'$ and $p=6b'$, so it is unaffected by the fixed prefactor.
+The explicit Gaussian bound in the guard section establishes
+$\alpha^2\theta_i>1$ and $2d\alpha^2\le b'/4$.
+
+\paragraph{Other thresholds remain eventual.}
+The segmented-inverse setup requires $\lambda_{\rm block}^2P\le s_i$.
+Here $\lambda_{\rm block}^2=O(b^{3\epsilon})$, $P=O(b^3)$ and
+$s_i=2^{\Theta(b^{1-\epsilon})}$, so it still holds eventually.
+Likewise the record and prime-selection hypotheses are asymptotic statements,
+with the fixed prefactors absorbed by their strict exponent gaps.
+This argument gives no finite crossover for the complete algorithm.
+
+\paragraph{Overhead comparison.}
+The comparator chooses $1-\epsilon\simeq0.0000366657$;
+the lower-overhead profile uses $1-\epsilon=0.007$.
+Thus the power controlling the axis width increases by approximately $191$.
+Its arithmetic allowance is $\delta=0.002$, instead of approximately
+$6.8\cdot10^{-27}$ in the comparator, and its two strict exponent gaps are
+$10^{-9}$ instead of $10^{-16}$.
+The guard exponent is one, and the coefficient precision is cubic rather than
+of degree $14696$. These comparisons address distinct overhead requirements;
+they are not multiplicative runtime speedups. In particular the $h=16$
+complex recursion already needs at least $256$ active axes, and the bit
+recursion uses dimension $529$. The complete construction remains galactic.
+
+\section{Reproduction, limitations and earlier work}
+Run \texttt{python3 research/verify.py} from the accompanying repository using
+Python 3.10 or newer. It uses only the standard library. Eighteen required
+upstream files are included unchanged and checked against a SHA-256 manifest
+pinned to the source commit. The new circuit, moments, scalar guards and
+assembly checks are regenerated into \path{certificates/latest.json}.
+The checker includes nine unit tests with negative controls, all 2,047 small
+omitted-sum zero patterns, all 40,077 bit slot chains, 1,970 local rank checks,
+all 313,600 complex matrix coefficients, and 33,956 complex frame checks.
+A complete smaller scalar network restores 100,912 dirty scratch values
+across 112 invocations; an incorrectly timed retained copy fails its control.
+
+These checks concern exact arithmetic and finite identities. They do not
+constitute formal verification of the inherited multiplication theorem,
+independent review of this proposal, or a timing benchmark. In particular
+no concrete rational bit basis or end-to-end fixed-tape implementation is
+claimed by this bundle.
+
+The earlier signed-rectangle extension with $\kappa=59/10^{11}$ is preserved
+in \path{notes/archive/complex-rectangles-note.tex} and its existing manuscript
+patch. That older patch does not implement the extension in this note.
+The present construction is specified by this note and its reproducible
+research sources, with the inherited assumptions listed at the beginning.

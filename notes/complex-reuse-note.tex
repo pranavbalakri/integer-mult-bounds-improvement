@@ -1,480 +1,542 @@
 \documentclass[11pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
 \usepackage[margin=1in]{geometry}
-\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
-\title{Complex rectangle sums improve the conditional saving beyond $2^{-31}$}
-\author{Research extension prepared with OpenAI Codex}
-\date{October 7, 2026}
+\newtheorem{theorem}{Theorem}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Z}{\mathbb Z}
+\title{Conditional integer-multiplication bounds\\with a linear precision guard}
+\author{A research extension prepared with OpenAI Codex}
+\date{October 8, 2026}
 \begin{document}
 \maketitle
-\begin{abstract}
-Signed rectangle mixers reduce the complex network's side-role count to
-$455434$ per invocation while preserving its absolute rank deficit.
-Four explicit binary frame choices give nondegenerate, nonalternating
-residuals in both circuit directions. Together with first/third-stage
-scratch sharing and the retained bit primitive and compact-control assembly,
-this yields the conditional witness
-$\kappa=59/10^{11}=5.9\cdot10^{-10}>2^{-31}$ in
-$T(n)=O(n(\log n)^{1-\kappa})$.
-This is $4.72$ times the preceding $125/10^{12}$ witness and about $7.108$
-times the original repository's $83/10^{12}$ witness.
-The upstream theorem and previous compact-control extensions remain
-assumptions. The new proof has not received independent review.
-\end{abstract}
-
-\section{Scope and progression}
-The baseline is Douglas Colkitt's \texttt{CrocSwap/integer-mult-bounds},
-commit \texttt{6e564879f51ae16f23d392e9e196c605f36d90df}, and its pinned
-OpenAI manuscript, commit
-\texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}.
-The model remains a fixed finite alphabet and a fixed finite number of
-one-dimensional Turing-machine tapes. We retain the paired bit network at
-$h_{\rm b}=50$, the compact-control movement and reservation proofs,
-local exceptional repair, independent complex arity, generalized stopped
-guard, Gaussian choice, resampling, and final rounding interfaces.
-The latest extension changes the complex scalar circuit and its binary
-frames, shares its scratch banks, and changes the final parameter choices.
-
-Section 2 preserves the first scratch-sharing construction, which supported
-$\kappa=125/10^{12}>2^{-33}$. Its disjoint-image matching is also used by
-the stronger rectangle construction in Section 3. Section 4 supplies the
-latest parameter witness. Finite tests and exact arithmetic support the
-written proofs; they do not formally verify the multiplication theorem.
-
-\section{Earlier stage-sharing construction}
-\subsection{Sharing scratch in the complex network}
-\label{sec:complex-stage-reuse}
-This extension retains every scalar gate and every gate label of the original
-complex network at $h=25$. It identifies certain first-stage scratch roles
-with third-stage scratch roles. The bit network and all its interfaces remain
-unchanged. The following proof supplies the binary residual obligation that
-is additional to rational stage sharing.
-
-Write $F=\mathbb F_2^h$, $\mathcal T=\binom{[h]}3$, $v=\binom h3$,
-$m=h^3$, and $z=\binom{h-3}3+3(h-3)$. Work with the ordinary dot product
-on $F$ and the induced product on $F^{\otimes3}$. Triple indicators have
-norm one. Neighbors are distinct triples with even intersection.
-
-\paragraph{A disjoint-image permutation.}
-Identify $[h]$ with $\mathbb Z/h\mathbb Z$. Partition triples into translation
-orbits. In each orbit choose its lexicographically first representative $T$
-and the least positive shift $k$ with $T\cap(T+k)=\varnothing$; apply that
-same shift to every member of the orbit. Such a shift exists for $h\ge8$,
-because $T-T$ contains at most seven residues. Translation permutes the orbit,
-even if it has a stabilizer. The resulting permutation $\pi$ of all triples
-therefore satisfies $t_A\cdot t_{\pi(A)}=0$ for every $A$.
-
-\paragraph{Two explicit role matchings.}
-Fix a common ordering of triples, and write $n_S(j)$ for the $j$th neighbor
-of $S$, $0\le j<z$. A first-stage side role with fixed second and third
-triples $(A,B)$ and physical first-coordinate target/source pair
-$(S,n_S(j))$ is identified with the third-stage side role having fixed first
-and second triples $(S,\pi(A))$ and third-coordinate target/source pair
-$(B,n_B(j))$. This is bijective: $A$ is recovered by $\pi^{-1}$, while
-$S,B,j$ are read from the third-stage role. Separately, identify central role
-$i\in[h]\cup\{*\}$ of the first-stage invocation $(A,B)$ with central
-role $i$ of the third-stage invocation $(B,\pi(A))$. This is also bijective.
-Second-stage scratch remains separate. No roles used simultaneously are
-identified.
-
-Each invocation restores arbitrary scalar scratch, so these identifications
-preserve the signed exchange $(X,Y)\mapsto(-Y,X)$ and fix every remaining
-scratch role. In particular the argument does not assume zero temporary values.
-
-\paragraph{Nested binary frames.}
-The last first-stage label on either type of shared role is
+\paragraph{Conditional result and scope.}
+Let $n$ be the input bit length. Assuming the global interfaces of
+Swapnil Jain's round-six construction at commit
+\texttt{f2176bc1124821bf17eb63725bd366d7bdc020a3}, the extensions below give
 \[
- E=F\otimes\langle t_A\rangle\otimes\langle t_B\rangle,
- \qquad \dim E=h.
+ T(n)=O\!\left(n(\log n)^{1-\kappa}\right),\qquad
+ \boxed{\kappa=\frac{36942}{10^9}=0.000036942.}
 \]
-For the paired side role the first third-stage label is
-\[
- H_{\rm side}=
- \langle t_S\otimes t_{\pi(A)}\rangle^\perp_{F\otimes F}
- \otimes\langle t_B\rangle,
- \qquad \dim H_{\rm side}=h^2-1.
-\]
-For the paired central role it is
-\[
- H_{\rm center}=
- \langle t_B\otimes t_{\pi(A)}\rangle^\perp_{F\otimes F}
- \otimes F,
- \qquad \dim H_{\rm center}=m-h.
-\]
-The disjointness of $A$ and $\pi(A)$ implies $E\subset H$ in both cases.
-All these spaces are nondegenerate: their defining lines have norm one,
-and they are tensor products of nondegenerate spaces. Hence the new edge
-has nondegenerate orthogonal residual $R=H\cap E^\perp$.
+This is approximately $0.7537\%$ larger than that construction's witness
+$\kappa_0=3666565558019/10^{17}$. A second choice, intended to relax several
+overhead parameters, gives $\kappa=3668/10^8=0.00003668>\kappa_0$.
+Neither is a measured runtime improvement.
 
-Nondegeneracy alone would not suffice over $\mathbb F_2$. For a side bridge,
-choose $x\notin S$ and $y\notin A$. The vector
-$e_x\otimes e_y\otimes t_B$ belongs to $H_{\rm side}\cap E^\perp$
-and has norm one. For a central bridge choose $x\notin B$, $y\notin A$
-and any $q\in[h]$. Then $e_x\otimes e_y\otimes e_q$ belongs to
-$H_{\rm center}\cap E^\perp$ and has norm one. Every new residual is
-therefore nonalternating and admits an orthonormal basis by the original
-binary-space lemma. The side and central residual dimensions are respectively
-$h^2-1-h$ and $m-2h$.
+The proof assumes the original multiplication theorem and inherited
+bit-frame compiler, common flag basis, two-stage phase transfer, copied-centre
+schedule, whole-residual batching, compact-control tape interfaces, segmented
+Gaussian inverse, prime selection and assembly. It does not independently
+prove those global interfaces. The new arguments and finite checks were
+prepared with assistance from OpenAI Codex and have not received independent
+mathematical review or formal verification of the complete theorem.
 
-All other edges retain their original residuals and orthonormal bases.
-For nested labels $H=E\mathbin\perp R$, orthogonal weight additivity gives
+\paragraph{The three changes.}
+First, we prove a linear exact-arithmetic guard
+$\Delta=128(d+1)$ using the exact values returned by completed recursive calls
+and a bound on each partially executed parent. Second, we replace the bit
+producer's omitted-sum routine with paired trees and reassociate exactly equal
+positive sums. Third, we use the existing complex producer at $h=16$ instead
+of $h=24$. It retains enough exponent saving with $14570080$ complex roles,
+compared with $207387136$ in the comparator. The bit network still has
+$148225616$ roles; the factor $14.23$ applies to the complex network alone.
+
+Write $b=\lceil\log_2n\rceil$. With explicit digits $b'=128b^3$ and precision
+$p=6b'=768b^3$, the new guard and Gaussian numerical condition have comfortable
+margins. This replaces the comparator's conservative precision choice
+$p=\Theta(b^{14696})$. Other eventual thresholds remain enormous: this is a
+reduction of specified overhead requirements, not a practical multiplication
+implementation.
+
+\paragraph{Sources.}
+The comparator and its upstream assumptions are pinned at
+\url{https://github.com/Swapnil-jain/integer-mult-kappa/tree/f2176bc1124821bf17eb63725bd366d7bdc020a3}.
+The phase endpoint correction is pinned to Aurel Prosz's construction at
+\url{https://github.com/Paureel/integer-mult-bounds/blob/c82d09eb4781b68435e3fa3eb6beea72fa900fab/notes/two-stage-phase-transfer.tex}.
+The attribution notices in the accompanying repository identify the prior
+contributions, including Douglas Colkitt's compact controls and OpenAI's
+original pinned manuscript. No claim of priority over contemporaneous work
+is made.
+
+\section{The distinction between intermediate and returned values}
+Write
 \[
- q_H(x)-q_E(x)=\operatorname{wt}(P_Rx)
- =\sum_{u\in\mathcal B_R}\operatorname{wt}(u)[u\cdot x]\pmod4.
+ C=\frac{1+\ii}{2}I+\frac{1-\ii}{2}X.
 \]
-Each basis vector has odd weight, so the new edge is implemented by exactly
-$\dim R$ forward or inverse translation kernels, just as in the original
-complex phase interface. This verifies the phase signs, not only the dimensions.
+A completed $t$-axis recursive call applies $C^{\otimes t}$, up to address
+permutations and inverse/fourth-root wrappers. Its entries belong to
+$2^{-t}\Z[\ii]$ and its induced infinity norm is at most $2^t$.
+Consequently its returned values consume at most $t$ extra fractional bits
+and $t$ magnitude bits, however many arithmetic operations were performed
+inside the call. Exact fixed-point representations already contain zeros in
+the unused low positions. No truncation, rounding or numerical approximation
+is required to exploit this fact.
 
-\paragraph{Exact deficit and endpoints.}
-The old two edges on a paired role, $E\to F^{\otimes3}$ and $0\to H$,
-have total residual dimension $m-h+\dim H$. Their replacement $E\to H$
-has dimension $\dim H-h$, saving exactly $m$ per deleted role.
-The total number of deleted roles is
+A depth-first computation has only one currently active descendant at each
+level. The extra precision needed inside completed siblings therefore does
+not accumulate. For example, concatenating all children only at their
+\emph{returned} formats gives a guard recurrence
 \[
- R_0=v^2(vz+h+1)=19540339540000.
+ D(e)\le E+\frac{s}{m}e+\max_j D(t_j),\qquad
+ t_j=w_j\lfloor e/m\rfloor,
 \]
-All central decreases are retained, including those in distinct invocations
-that now share a role. Thus, writing $N=v^3$ and $L=3v^2h(h+1)$,
-\begin{align*}
- W_{\rm c}^{\rm share}&=2N+2v^2(vz+h+1)=39105013080000,\\
- s_{\rm c}^{\rm share}&=W_{\rm c}^{\rm share}m-2N+2L
-                       =611015825672000000,\\
- W_{\rm c}^{\rm share}m-s_{\rm c}^{\rm share}&=3703000000,\\
- \eta_{\rm c}^{\rm share}&=\frac1{165005625}.
-\end{align*}
-Every surviving scratch role still starts with zero label, ends with the
-full label, and is fixed by the scalar permutation. Data endpoints and their
-weight-27 corrections are unchanged. The original signed-exchange correction
-and tensor-column argument consequently give the same completed all-role
-phase interface, with the displayed smaller $W,s$.
+where $E$ is a fixed scalar charge, $\sum_jw_j=s$ and
+$w_j\le m-h$. This alone yields a linear guard with a large fixed
+coefficient. The next argument considerably reduces that coefficient.
 
-\begin{proposition}\label{prop:shared-complex-interface}
-The shared complex network supports the original phase interface with
-$m=15625$, $W=W_{\rm c}^{\rm share}$, $s=s_{\rm c}^{\rm share}$, and
-$\sigma=1-627/10^{12}$.
-\end{proposition}
+\section{A bound for every paused parent prefix}
+Let $H_e$ be the normalized Walsh matrix on $e$ bits. For an arbitrary
+function $\phi:\mathbb F_2^e\to\Z/4\Z$, put
+\[
+ F_\phi=H_e\operatorname{diag}(\ii^{\phi})H_e.
+\]
+The phase-frame invariant of the inherited network places every role in such
+a frame. Within each stage, scalar gates act on roles at a common frame. Copied centres are
+included: a copy has the same logical value, its phase conversion changes
+only its frame, and erasing it discards a temporary rather than an original
+scratch role.
+
+\begin{lemma}[Frame ratios]
+Every entry of $F_\phi F_\psi^{-1}$ lies in $2^{-e}\Z[\ii]$, and
+\[
+               \|F_\phi F_\psi^{-1}\|_\infty\le 2^{e/2}.
+\]
+\end{lemma}
 \begin{proof}
-The frame, residual, and endpoint arguments above prove the interface.
-Exact logarithm enclosures certify
-$\eta_{\rm c}^{\rm share}>(627/10^{12})\log(15625)$.
-Since $e^{-x}>1-x$ for $x>0$, this gives $s/W<m^\sigma$.
+The ratio is $H_e\operatorname{diag}(\ii^{\phi-\psi})H_e$.
+Expanding its entries gives $2^{-e}$ times a sum of fourth roots of unity
+with signs. It is unitary, so every row has Euclidean norm one and has
+at most $2^e$ entries. Cauchy--Schwarz proves the infinity-norm bound.
 \end{proof}
 
-\paragraph{Depth and tape constants.}
-No scalar gate is added, and the number of residual kernels decreases.
-One can retain the original unshared $h=25$ node-depth bound
-$E_{\rm old}=64(W_{\rm old}+m+1)^3$, since its gate schedule is unchanged
-and bridges only delete boundary operations. The old $s_{\rm old}$ also
-dominates $s_{\rm c}^{\rm share}$. Therefore the entire generalized guard
-proof remains valid with $B_{\rm old}=s_{\rm old}+E_{\rm old}$ and its
-original $C_0$. The layer recurrence uses the new $W,s$ for time and row
-splitting, and these conservative old constants only for coefficient depth.
-All matchings, bases, and schedules are fixed finite data, so the retained
-fixed-number-of-tapes argument applies without an input-dependent resource.
-
-\section{Stronger rectangle construction}
-\subsection{Signed rectangle sums for the complex network}
-\label{sec:complex-rectangles}
-Retain $h=25$, $v=\binom h3=2300$, $m=h^3=15625$, and $N=v^3$.
-The complex scalar side matrix has coefficient $+1/2$ on disjoint triples,
-$-1/2$ on triples with intersection two, and zero elsewhere. We replace
-its separate pair roles by signed rectangle mixers, and supply binary
-frames specifically for this complex construction.
-
-\paragraph{An explicit partition.}
-Let $D_{a,b}(n)$ be the ordered disjointness relation between $a$-subsets
-and $b$-subsets of $[n]$, for $0\le a,b\le3$. A plan has counts $(C,L,R)$:
-rectangle count, source memberships, and target memberships. An empty
-relation has counts zero. If $a=0$ or $b=0$, use one complete rectangle
-with counts $(1,\binom na,\binom nb)$. Otherwise compare row stars, column
-stars, and every split $n=l+(n-l)$, in that order with increasing $l$.
-For a split, each admissible pair of sizes $(x,y)$ gives the product
+Refine a scalar prefix to include each addition, multiplication by a fixed
+integer, halving, copy and erase operation. Let $M$ be its scalar matrix
+in logical coordinates. This matrix can be rectangular when a temporary is
+created or removed. The block from initial role $i$ to current role $j$ is
 \[
- D_{x,y}(l)\times D_{a-x,b-y}(n-l).
+                 M_{ji}F_{\mathrm{current},j}F_{\mathrm{initial},i}^{-1}.
 \]
-Use the already chosen unweighted plans for both factors; their three
-counts multiply coordinatewise and the counts of distinct cases add.
-Choose the alternative minimizing $L+R-C$, retaining the first on ties.
-This finite recursion partitions every ordered disjoint pair exactly once.
-It is a restricted construction search, not a global optimum claim.
+Let $B$ bound the denominator exponent of every entry of every such $M$,
+and let $G$ bound all its absolute row sums. The lemma shows that this
+prefix increases the fractional exponent by at most $e+B$ and the
+base-two magnitude bound by at most $e/2+\log_2G$.
+This statement allows different initial frames on different roles and
+arbitrary initial scratch values.
 
-Use $D_{3,3}(25)$ for disjoint triples. For each of the $\binom{25}2$
-possible common pairs $J$, use $D_{1,1}(23)$ on the other points and
-adjoin $J$ to both singleton families. Intersection-two pairs have a
-unique such $J$. The computed counts are
-\[
- D_{3,3}(25):(C,L,R)=(21051,172476,253609),\qquad
- D_{1,1}(23):(C,L,R)=(43,104,107).
-\]
-Thus there are $33951$ rectangles. A rectangle with $a$ sources and $b$
-targets uses $a+b-1$ scratch roles, giving
-\[
- R_{\rm side}=172476+253609-21051
-      +300(104+107-43)=455434.
-\]
-Exhaustive enumeration checks all $3693800$ ordered neighbor pairs.
+A partial residual edge, after any completed whole child blocks, still has
+an arbitrary Walsh-diagonal phase frame. The coordinate changes used to
+implement an edge are address permutations, and so do not increase either
+numerical bound. Thus the same estimate holds immediately before every
+child call, not merely between scalar gates.
 
-\paragraph{Signed mixers and arbitrary scratch.}
-Give each rectangle input slots $i_1,\ldots,i_a$ and output slots
-$o_1,\ldots,o_b$, sharing only $i_1=o_1$, called the pivot.
-The invertible mixer $M$ first adds the other input slots into the pivot,
-then adds the pivot into the other output slots. Its output-by-input
-submatrix is all ones. The inverse reverses these operations and subtracts.
-Let $V$ copy scalar sources to their input slots, and let $J$ inject the
-output slots into their targets with coefficient $+1/2$ for disjoint
-rectangles and $-1/2$ for intersection-two rectangles. The old central
-gather and scatter remain $G,R$. The chronological schedule is
-\[
- M,\ -J,\ M^{-1},\ -R,\ V,\ G,\ R,\ M,\ J,\ M^{-1},\ -G,\ -V.
-\]
-Here a minus sign negates the corresponding additive update.
-For initial side scratch $z$ and center scratch $c$, the early operations
-subtract $JMz+Rc$ and restore $z$. After adding $Vx,Gx$ to the two scratch
-banks, the later operations add $JM(z+Vx)+R(c+Gx)$ and restore both banks.
-The net change is $(JMV+RG)x$. By the exact partition and its signs, this
-equals $x$: it cancels the central coefficient $(|S\cap T|-1)/2$ for
-distinct even-intersection pairs, leaves intersection-one pairs zero,
-and leaves the diagonal coefficient one. Thus the map is $y\gets y+x$
-for arbitrary scratch. The inverse schedule gives $y\gets y-x$.
-The three stages still give $(X,Y)\mapsto(-Y,X)$.
+\section{Finite scalar envelope}
+The program \texttt{semantic\_guard.py} builds the actual producer and
+compiled role program. It assigns every scalar input row norm one and
+propagates nonnegative absolute row-sum bounds through every addition.
+Inverse words reverse the compiled operations and use their inverse order;
+ignoring signs is conservative. Integer numerators are charged before a
+halving, so intermediate products are included. Denominator exponents
+propagate by taking a maximum and adding one at a factor $1/2$.
 
-\paragraph{Four binary frame choices.}
-Work in $F=\mathbb F_2^{25}$ with its ordinary dot product. For a rectangle,
-let $\mathcal X$ be its physical $X$-triple family and $\mathcal Y$ its
-physical $Y$-triple family. They are the logical source and target families
-in forward stages, and are exchanged in the inverse stage. Choose $U$ by
-the following rules in order:
-\begin{enumerate}
-\item If $|\mathcal X|=1$, use its triple line $U=\langle t_X\rangle$.
-\item If $|\mathcal Y|=1$, use $U=t_Y^\perp$.
-\item For a disjoint rectangle with both sizes at least two, let $A$ be
-the union of its physical $X$ triples and take the coordinate space $U=F^A$.
-\item Otherwise the rectangle has intersection two: take
-$U=\operatorname{span}\{t_X:X\in\mathcal X\}$.
-\end{enumerate}
-Every case gives a nondegenerate space with
-$\langle t_X\rangle\subset U\subset t_Y^\perp$ for all participating
-$X,Y$. Moreover each of the following nonzero spaces is nonalternating:
+The retained scatter requires particular care. Let
+$T=\sum_t x_t$ and $E_i=\sum_{t\not\ni i}x_t$, retaining $E_i$ for
+$i<h-1$. Its value for target triple $S$ is
 \[
- U,\quad U^\perp,\quad U\cap t_X^\perp,\quad
- U^\perp\cap t_Y^\perp.
+ \begin{cases}
+ T-\frac12\sum_{i\in S}E_i,&h-1\notin S,\\[2pt]
+ \frac12\bigl((5-h)T+\sum_{i<h-1,\ i\notin S}E_i\bigr),&h-1\in S.
+ \end{cases}
 \]
-Here the last two are precisely the residuals from a source line to $U$
-and from $U$ to a target complement.
+The second formula follows from $\sum_{i=0}^{h-1}E_i=(h-3)T$.
+Some of its coefficients have magnitude larger than one; the verifier
+includes them explicitly.
 
-For the first two cases, residuals are zero, triple lines, triple
-complements, or complements of two orthogonal triple lines. The latter
-contain a coordinate unit outside at most six supported coordinates.
-For the third case, the source union has at least four points, and the
-target union also has at least four points and is disjoint from it.
-Thus $U\cap t_X^\perp$ contains a unit in $A\setminus X$, while
-$U^\perp\cap t_Y^\perp$ contains a unit outside $A\cup Y$; both
-$U$ and $U^\perp$ are coordinate spaces. For the fourth case, distinct
-source triples share their fixed pair and have dot product zero and norm
-one. They are therefore an orthonormal basis for $U$. Removing one source
-line leaves the other basis vectors. A target's singleton coordinate lies
-outside the union of the source supports and supplies a unit in $U^\perp$.
-For a specified target $Y$, the singleton of a different target supplies
-a unit in $U^\perp\cap t_Y^\perp$. Such a target exists because both
-family sizes are at least two. The inclusions between nondegenerate spaces
-make these residuals nondegenerate as well. This proves the required
-orthonormal-basis property in both frame directions.
-
-\paragraph{Gate frames and all residuals.}
-At stage $j$ retain the original decomposition
-$A=F^{\otimes(j-1)}=B\mathbin\perp P$ and future line $Q$.
-Suppressing $Q$, write
+Stage-one invocations have disjoint banks, and the same holds for stage two.
+Their uniform envelopes therefore compose by multiplication, rather than
+by raising them to the number of invocations. The inherited endpoint
+correction copies output $A$, applies the inverse rank-one phase child
+$P^{-1}$ to its copy, adds it to output $B$, and erases the copy.
+Indeed its logical expressions are
 \[
- D_0=B\otimes F,\quad D_1=A\otimes F,\quad
- X_t=(B\otimes F)\mathbin\perp(P\otimes\langle t\rangle),
+ A=-Fy,\qquad B=FP^{-2}x+Ey,\qquad E=FP^{-1},
 \]
-\[
- Y_t=(B\otimes F)\mathbin\perp(P\otimes t^\perp),\qquad
- D_U=(B\otimes F)\mathbin\perp(P\otimes U).
-\]
-The common frames of the twelve forward operations are respectively
-\[
- D_0,D_0,D_0,D_0,X_t,D_1,D_0,D_U,Y_t,D_1,D_1,D_1.
-\]
-For the inverse stage, reverse and invert the scalar operations, but assign
-their physical frames in chronological order as
-\[
- D_0,D_0,D_0,X_t,D_U,D_1,D_0,Y_t,D_1,D_1,D_1,D_1.
-\]
-Each mixer is one gate on the rectangle's entire scratch bank, including
-slots it leaves unchanged. Copy and injection gates are grouped by their
-data triple. Tensor every displayed frame by $Q$.
+so $B+P^{-1}A=FP^{-2}x$. The copy and erase add no arithmetic growth,
+and the one addition costs at most a factor two in the scalar envelope.
+Its phase child is already included in the recursive rank histogram.
+The endpoint addition is handled separately from the common-frame assertion:
+multiplying the copied row by $P^{-1}$ preserves the family of Walsh-diagonal
+phase operators. Adding it to the other row adds their scalar row-sum bounds,
+without enlarging the common $2^{-e}\Z[\ii]$ denominator grid. No alignment
+of the two endpoint frames is needed for this separate bound.
+Signs and fourth-root corrections preserve these bounds.
 
-Input-only roles follow $D_0\subset X_t\subset D_U\subset D_1$;
-output-only roles follow $D_0\subset D_U\subset Y_t\subset D_1$;
-the pivot follows both. These statements exchange their physical descriptions
-in the inverse stage. The four-space argument above verifies all new
-residuals, including direct jumps on roles that skip a copy or injection.
-The other factors are the original nonalternating $P,Q,B$ spaces and their
-original nonzero residuals. A tensor product of nonalternating spaces contains
-a tensor of norm-one vectors; an orthogonal sum with such a summand also
-contains one. Hence all nonzero edge residuals admit orthonormal bases.
-
-The physical data boundaries are unchanged. Every central role has exactly
-one decrease $D_1\to D_0$ of dimension $h$, so
-$L=3v^2h(h+1)=10315500000$. All remaining within-invocation changes are
-increasing. Orthogonal weight additivity therefore factors each phase
-transition into one signed translation kernel per residual basis vector,
-with the same modulo-four signs as the original interface.
-
-\paragraph{Sharing complete auxiliary banks.}
-Every auxiliary first gate has label $D_0\otimes Q$ and every last gate
-has label $D_1\otimes Q$. Use the disjoint-image permutation $\pi$ from
-Section~\ref{sec:complex-stage-reuse}. Match the whole first-stage bank
-of invocation $(A,B)$ with the third-stage bank of invocation $(B,\pi(A))$,
-keeping each local role index. Their bridge labels are
+The exact envelope results are
 \[
- E=F\otimes\langle t_A\rangle\otimes\langle t_B\rangle,
- \qquad H=\langle t_B\otimes t_{\pi(A)}\rangle^\perp\otimes F.
-\]
-They are nested and nondegenerate. A unit
-$e_x\otimes e_y\otimes e_q$, with $x\notin B$, $y\notin A$, proves
-the bridge residual nonalternating. Each identification saves exactly $m$
-residual dimensions, and restoration allows the shared arbitrary inputs.
-Consequently
-\begin{align*}
- W_{\rm c}^{\rm rect}&=2N+2v^2(R_{\rm side}+h+1)=4843100800000,\\
- s_{\rm c}^{\rm rect}&=W_{\rm c}^{\rm rect}m-2N+2L
-                      =75673446297000000,\\
- W_{\rm c}^{\rm rect}m-s_{\rm c}^{\rm rect}&=3703000000,\qquad
- \eta_{\rm c}^{\rm rect}=\frac7{143050000}.
-\end{align*}
-Every data endpoint and its weight-27 correction is unchanged. Every surviving
-scratch role is fixed by the scalar network and still has zero source and full
-sink label. The signed bank-exchange and column-tensor corrections therefore
-give the original all-role complex phase interface with the new $W,s$.
-
-\begin{proposition}\label{prop:rectangle-complex-interface}
-The complex rectangle network supports the original phase interface with
-$m=15625$, $W=W_{\rm c}^{\rm rect}$, $s=s_{\rm c}^{\rm rect}$, and
-$\sigma=1-5/10^9$.
-\end{proposition}
-\begin{proof}
-The scalar, frame, residual, bridge and endpoint arguments above give the
-interface. Exact rational logarithm bounds show
-$\eta_{\rm c}^{\rm rect}>(5/10^9)\log m$. The inequality $e^{-x}>1-x$
-then gives $s/W<m^{1-5/10^9}$.
-\end{proof}
-
-\paragraph{Conservative arithmetic-depth charge.}
-The new scalar schedule has at most
-$3v^2(4C+4v+4)\le6W$ grouped gates, since $C\le R_{\rm side}$.
-Each gate has coefficients in $\{0,\pm1,\pm1/2\}$ and can be implemented
-with at most $8W^2$ component additions and binary denominator shifts,
-including both real and imaginary components.
-The endpoint sign and phase corrections fit within the additional bound
-$8(W+m+1)^2$. Thus the old unshared $h=25$ charge
-\[
- E_{\rm old}=64(58645352620000+m+1)^3
-\]
-dominates the total added scalar dependency depth, as also checked exactly.
-Translation-kernel child calls are charged separately through $s$.
-Since $s<s_{\rm old}<m^5$, the generalized stopped-depth proof may retain
-$B_{\rm old}=s_{\rm old}+E_{\rm old}$ and its conservative $C_0$.
-The new mixer gates are fixed finite linear maps and introduce no
-input-dependent tape count. The compact-control movement and local repair
-proofs continue to apply with the new $W,s$.
-
-\section{Latest parameter witness}
-Let $a_{\rm b}=296/10^{11}$ and $a_{\rm c}=5/10^9$. Choose
-\begin{gather*}
- \tau=1-a_{\rm b},\qquad \sigma=1-a_{\rm c},\qquad
- \epsilon=\frac{1999}{10000},\qquad c=1,\\
- \beta=\frac1{10},\qquad\zeta=\frac1{10000},\qquad
- \delta=\frac1{10^6},\qquad C_1=5-4\beta+\zeta=\frac{46001}{10000},\\
- \lambda=1-\frac{2959}{10^{12}},\qquad
- \lambda'=1-\frac{2958}{10^{12}},\qquad
- \kappa=\frac{59}{10^{11}}.
-\end{gather*}
-Now $\sigma<\tau$, so the internal exponent is
-\[
- \chi=\tau+(1-\beta)\max\{\sigma-\tau,0\}=\tau.
-\]
-The leaf saving is $(1-\beta)(1-\sigma)=4.5\cdot10^{-9}$,
-strictly larger than $1-\lambda'=2.958\cdot10^{-9}$.
-Consequently
-\[
- \max\{\tau,\sigma,\chi\}<\lambda<\lambda'<1,\qquad
- \max\{\sigma+\beta(1-\sigma),1-c,0\}<\lambda'.
-\]
-The guard condition is $\epsilon C_1=91955999/10^8<1$.
-The reservation estimate is valid for every fixed $c>0$ and uses
-$\max\{1-c,0\}$, so $c=1$ is allowed. It reserves only $O(\log p)$
-axes; the full spacing is $K=d=\Theta(p^{1999/10000})$.
-Since $\ell=\Theta(p^{8001/10000})$, we still have $K=o(\ell)$
-and $K/\log p\to\infty$.
-
-All seven assembly margins are
-\[
-\begin{array}{c|c|c}
- &\text{expression}&\text{value}\\\hline
-g_1&1-\epsilon(1+c)&3001/5000\\
-g_2&\epsilon c(1-\tau)&73963/(125\cdot10^{12})\\
-g_3&\epsilon(1-\lambda')&2956521/(5\cdot10^{15})\\
-g_4&(1-\tau)(1-\epsilon)&296037/(125\cdot10^{12})\\
-g_5&1/4-\delta-5\epsilon/4&31/250000\\
-g_6&1-\delta-\epsilon&800099/10^6\\
-g_7&\epsilon&1999/10000
+\begin{array}{c|r|r|r|r}
+ h&G_{\mathrm{forward}}&G_{\mathrm{inverse}}&
+       G=2G_{\mathrm{forward}}G_{\mathrm{inverse}}&B\\\hline
+16&135386&256057&69333066004&2\\
+18&250444&476800&238823398400&2\\
+24&1006577&1925603&3876535381862&2
 \end{array}
 \]
-Therefore
+All satisfy $G<2^{48}$ and $B\le8$. We deliberately use the looser
+common bound
 \[
- G=\min_i g_i=\frac{2956521}{5\cdot10^{15}}
-  =5.913042\cdot10^{-10},\qquad
- G-\kappa=\frac{6521}{5\cdot10^{15}}>0.
+               \text{paused parent guard}\le 2e+64.       \tag{1}
 \]
-The strict positive gap absorbs all retained fixed logarithmic factors.
-The unchanged $\epsilon,\delta$ retain the Gaussian and prime comparisons:
-$\alpha=\Theta(p^{11999/40000})$,
-$\gamma=O(p^{15997/20000})=o(p)$, and $1-2\epsilon>0$.
-The guard is $O(d^{46001/10000})=o(p)$, record size remains superpolynomial,
-and setup and local repair retain their previous charges. Hence
+This includes the scalar intermediates in the verifier, rather than just
+the final scalar outputs.
+
+\section{Integer widths and the linear induction}
+The integer-width interface supplies children of width
+$w\lfloor e/m\rfloor$, with $w\le m-h$.
+For an input width not divisible by $m$, first evaluate its fewer than $m$
+remainder axes individually and apply the network to the other
+$m\lfloor e/m\rfloor$ axes. A completed individual kernel costs one
+semantic fractional bit and at most one magnitude bit; its own
+intermediates use the usual eight-bit-per-axis allowance.
+These remainder operations introduce only additional phase frames in the
+prefix argument. They do not introduce new axes. For fewer than $m$ axes,
+or at the original stopping threshold, evaluate all kernels individually.
+
+For the divisible internal call, (1) and the one-active-child observation give
 \[
- T(n)=O\!\left(n(\log n)^{1-59/10^{11}}\right),\qquad
- \frac{59}{10^{11}}>2^{-31},
+ D(e)\le 2e+64+\max_j D(t_j),\qquad
+ t_j\le\frac{h-1}{h}e,\quad e\ge h^2.
 \]
-conditionally on the identified upstream and extension proofs.
-
-\paragraph{What limits this witness.}
-The complex saving is now stronger than the retained bit saving.
-The constraints $\lambda'>\lambda>\tau$ and the Gaussian margin
-$\epsilon<1/5$ imply the scoped ceiling
+Choose
 \[
- \kappa<\epsilon(1-\lambda')<\frac{1-\tau}{5}
-    =5.92\cdot10^{-10}<2^{-30}.
+ C\ge8,\qquad \frac{C}{h}\ge 2+\frac{64}{h^2}.
 \]
-The new witness reaches about $99.66\%$ of this ceiling.
-It applies only to the fixed bit exponent and these assembly inequalities;
-it is not a ceiling for other bit networks or multiplication algorithms.
+Then induction proves $D(e)\le Ce$: the second inequality makes
+$2e+64+C(h-1)e/h\le Ce$, and the first covers leaves. A remainder of
+$r$ individually evaluated axes followed by a block of $e-r$ axes
+costs at most $\max\{8r,r+C(e-r)\}\le Ce$, so the same bound covers
+all integer widths. Verified integer choices are
+\[
+       (h,C)=(16,36),\quad(18,40),\quad(24,51).
+\]
+This induction is independent of the stopping exponent $\beta$.
 
-\section{Verification and reproducibility}
-The additional artifacts are \path{scripts/complex_rectangles.py},
-\path{certificates/complex-rectangles.json},
-\path{tests/test_complex_rectangles.py}, and
-\path{patches/complex-rectangles-31.patch}. Run \texttt{make verify}.
-The latest patch applies independently to the unmodified pinned manuscript.
-The current note is regenerated in place by
-\path{scripts/make_complex_rectangles_patch.py}.
+\begin{theorem}[Whole-layer guard]
+Under the inherited exact interfaces and the scalar/phase invariants above,
+$\Delta=128(d+1)$ suffices for one normalized butterfly layer in each
+of the three verified instances.
+\end{theorem}
+\begin{proof}
+Top-level active-axis pieces are disjoint and their total width is at most
+$d$. Completed earlier pieces apply the exact tensor phase operator, so
+collectively they consume at most $d$ semantic guard bits.
+During the currently active piece its extra guard is at most $Cd$.
+Individually handled preprocessing and tail axes contribute at most $8d$;
+this conservatively charges their intermediates as well as their returns.
+The outer phase factors preserve magnitude and denominator. The conversion
+$\mathfrak b^D$, with $\mathfrak b=(1-\ii)/2$, uses at most $d+9$ further guard bits,
+including its binary shift and its possible final factor $\mathfrak b$.
+Thus $(C+10)d+9$ suffices. Since $C\le51$, this is below $128(d+1)$.
+Padding, splitting, copying and changes of address basis do not perform
+arithmetic on coefficient values. The usual fixed-width exact format with
+$p+\Delta$ fractional bits and $\Delta+3$ integer/sign bits therefore
+represents every intermediate value without rounding or overflow.
+\end{proof}
 
-Exact checks cover all $3693800$ ordered neighbor pairs, both frame
-directions on all $33951$ rectangles, every local source-to-frame and
-frame-to-target residual, signed scalar restoration on every input basis
-vector of a small rational instance, a complete three-stage shared-scratch
-network over an odd field, and actual orthonormal-basis phase factorizations
-modulo four. A negative test detects the alternating plane produced by
-naively enlarging a triple line to its three-coordinate space. All
-parameter comparisons and depth bounds use exact fractions and integers.
+\paragraph{Cubic precision with a finite numerical margin.}
+Use the longer digit width $b'=128b^3$ and precision $p=6b'=768b^3$;
+in the notation of the inherited assembly this is $x=2$.
+Set $d=\lfloor b^\epsilon\rfloor$ and $y=\epsilon$, with $0<\epsilon<1$.
+For every integer $b\ge1$, the guard itself satisfies
+\[
+ \Delta=128(d+1)\le256b\le768b^3=p.
+\]
+This inequality is a numerical guard cutoff only: the complete layout and
+prime-selection hypotheses still have to hold.
 
-The earlier artifacts and certificates are preserved. This is an additional
-unreviewed research argument; passing these checks does not establish the
-full upstream theorem. The larger exponent saving is not a claim of a
-comparable practical runtime improvement.
+The inherited Gaussian choices are
+\[
+ \alpha^2=\left\lfloor\frac{p}{48d}\right\rfloor
+          =\left\lfloor\frac{16b^3}{d}\right\rfloor,
+ \qquad \eta=\frac1{4dL^\epsilon}.
+\]
+Once the inherited prime-selection step supplies the constant-factor band
+$\theta_i\ge\eta/2$, use $d\le b^\epsilon$ and $L\le b$.
+Since $b^3/d\ge1$, the floor costs at most one unit and
+\[
+ \alpha^2\ge\frac{15b^3}{d},\qquad
+ \alpha^2\theta_i\ge
+ \frac{15b^3}{8d^2L^\epsilon}
+ \ge\frac{15}{8}b^{3-3\epsilon}\ge\frac{15}{8}>1.
+\]
+Thus no eventual domination of a factor $1/32$ is needed for this particular
+Gaussian inequality. Moreover
+$\gamma=2d\alpha^2\le32b^3=b'/4$, as required by the inherited final
+error estimate. These bounds do not establish the remaining hypotheses of
+that estimate.
+
+The guard condition is now $\epsilon<3$, and the inherited segmented-inverse
+precision condition is $3\epsilon<3$, both automatic for fixed
+$\epsilon<1$. A factor $p^\delta$ contributes exponent $3\delta$ in powers
+of $b$. Choices of $\epsilon,\delta,\beta$ must still satisfy the final
+saving and all other assembly inequalities.
+
+\paragraph{Inherited prime intervals and remaining thresholds.}
+The prime-interval argument is the one in
+\href{https://github.com/Swapnil-jain/integer-mult-kappa/blob/f2176bc/notes/stack-notes.tex}
+{\texttt{notes/stack-notes.tex}, Section 1}; it is not a new prime-gap result
+proved here. It uses the classical prime number theorem with an error term
+$O(X\exp(-c\sqrt{\log X}))$, for a positive constant $c$.
+Here $\log X=\Theta(L/d)$ and the relative interval length
+$\eta=1/(4dL^\epsilon)$ is a fixed inverse power of $L$, hence a fixed
+inverse power of $\log X$ for each fixed $\epsilon<1$.
+The interval main term $\eta X/\log X$ eventually dominates that error
+and supplies more than $d$ primes in each required interval. The constant-factor band
+used above is part of that inherited eventual selection argument.
+This note supplies no explicit common cutoff for the prime intervals,
+record lengths, axis widths, or remaining asymptotic estimates. In
+particular, a small numerical guard cutoff does not make the whole
+multiplication algorithm practical or yield a benchmark.
+
+
+\section{A paired exclusion tree and reassociation of equal sums}
+
+This section changes only the positive addition producer inside the inherited
+retained-total two-stage bit network. It assumes that network's frame compiler,
+common flag-basis lemma, copied-centre schedule, and batched recursion contract.
+It does not independently establish those inherited algorithmic statements.
+
+\paragraph{Paired leave-one-out recursion.}
+Given disjointly supported inputs $z_1,\ldots,z_k$, first remove zero inputs.
+If at most two remain, form the total and each omitted sum directly. Otherwise,
+rotate the last input to the front, group consecutive inputs in pairs, and form
+those pair totals. Recursively compute the total and all omitted pair totals.
+For an input in a pair, add the other member of that pair to its omitted pair
+total. Undo the rotation. An omitted zero input receives the total.
+Induction on $k$ proves that output $i$ is exactly $\sum_{j\ne i}z_j$.
+Every addition has disjoint positive supports. This replaces the prefix/suffix
+leave-one-out routine in the existing paired pair-exclusion construction;
+the global matching order and the retained-point-total construction are unchanged.
+
+\paragraph{Reassociation with exact support equality.}
+For every active sum node with support $S$, enumerate existing nodes with
+supports $A,B$ satisfying $A\cap B=\varnothing$ and $A\cup B=S$.
+Choose another pair only when the integer score described below strictly
+increases. Each operand has strictly smaller support cardinality than its sum,
+so this cannot introduce a cycle. Prune unused nodes and topologically renumber
+by support cardinality. Thus the transformed circuit computes exactly the same
+positive sums. It creates no new source support or source subspace.
+At the chosen dimension, 368 nodes change their operands, and no active node
+is lost or added.
+
+Write $\mathcal I(r)$ for the inherited inner profile: $r$ singleton children
+when $2r\le h$, and $h-r$ singleton children together with a child of width
+$2r-h$ otherwise. For a node of source-span dimension $d$ with operand dimensions
+$a,b$, the changed profile terms are
+\[
+ \mathcal I(a),\quad\mathcal I(d-a),\quad
+ \mathcal I(b),\quad\mathcal I(d-b).
+\]
+The first and third terms account for the operand fan-out slots; the others
+account for the input transitions at the sum node. We maximize the sum of the
+squared widths in these four multisets. This is a deterministic integer search
+heuristic. No optimality of this score, the resulting producer, or its moment
+is claimed; the final complete histogram is certified independently.
+
+\paragraph{Why the inherited source frames apply.}
+Every active support consists of triples containing a common point $c$.
+Let $t_S$ be the indicator of a triple $S$, and let $G=I-J/9$ be the inherited
+Gram form. Then
+\[
+ \langle t_{\{c,i,j\}},t_{\{c,k,l\}}\rangle_G
+ =|\{i,j\}\cap\{k,l\}|.
+\]
+Hence the Gram matrix on a source family is $B^{\mathsf T}B$, where $B$ is the
+unsigned incidence matrix of its pairs on the other $h-1$ points. If a linear
+combination is in $\ker B$, its common coordinate also vanishes, since that
+coordinate is half the sum of its pair coordinates. Thus the source span is
+positive definite and in particular nondegenerate. Its dimension is the
+incidence rank, the number of incident vertices minus the number of bipartite
+connected components.
+
+Disjoint unions produce nested source spans along every physical slot. Each
+side output is still precisely
+\[
+ \{S:c\in S,\ S\cap(T\setminus\{c\})=\varnothing\},
+\]
+so its source span lies in $t_T^\perp$. Each retained output remains the full
+point star and has dimension $h-1$. The tree replacement has the same positive
+common-point property, and reassociation preserves all of its source subspaces.
+The nondegenerate nested frame differences therefore remain within the finite
+family covered by the inherited generic common flag-basis proposition.
+
+\paragraph{Counts and exact moment certificate.}
+At $h=23$ the emitted circuit has
+\[
+ v=\binom{23}{3}=1771,\qquad m=h^2=529,\qquad N=v^2=3136441,
+\]
+34,741 addition nodes, 5,313 side outputs, and 23 retained totals. Consequently
+\[
+ R=40077,\qquad W=2N+2vR=148225616.
+\]
+The selected auxiliary edges, data-edge profiles, and copied-retained-total
+schedule are unchanged. The rank identity is
+\[
+ s=Wm-N+2vh(h-1)=78410006675,
+ \qquad Wm-s=1344189>0.
+\]
+Let $n_w$ denote the emitted histogram of recursive child widths. The exact
+certificate verifies
+\[
+ \sum_w\frac{w n_w}{Wm}\left(\frac mw\right)^{a_b}<1,
+ \qquad a_b=\frac{36943733}{10^{12}}=0.000036943733.
+\]
+It uses rational upper bounds $U_w\ge\log(m/w)$ and, for $0\le z<4$,
+\[
+ e^z\le 1+z+\frac{z^2}{2}+\frac{z^3}{6(1-z/4)}.
+\]
+All arithmetic is rational. The next $10^{-12}$ grid point does not pass this
+particular upper-bound certificate; this is not an upper bound on every possible
+certificate or construction. The older, looser inequality
+$e^z\le(1-z)^{-1}$ with a $10^{-9}$ grid certifies $36941/10^9$ for this same
+network. Thus that small numerical difference comes from sharper certification,
+whereas the improvement in the histogram comes from the changed producer.
+
+\paragraph{Finite checks and their scope.}
+The accompanying checker verifies all 2,047 zero patterns for leave-one-out
+lists of lengths zero through ten; independently recomputes every active global
+support; checks its common point, every side target and every retained total;
+checks all 40,077 nested slot chains; and checks every source rank by the incidence
+formula. It additionally checks all 1,970 local active-node ranks by Gaussian
+elimination modulo an odd prime. The rational rank and nondegeneracy claims
+follow from the incidence argument, rather than from modular experiments alone.
+These checks do not certify the full inherited multiplication algorithm.
+
+
+\section{The smaller complex instance}
+Use the inherited paired-exclusion producer with retained totals and copied
+centres at $h=16$. The exact construction has
+\[
+ m=256,\quad v=560,\quad N=313600,\quad R=12449,\quad
+ W=14570080,\quad s=3729896800.
+\]
+Its largest recursive width is $240=15m/16$, and
+$Wm-s=43680>0$. Rebuilding its complete residual histogram and checking
+its exact rational moment gives
+\[
+ a_c=\frac{9912567}{250000000000}=0.000039650268.
+\]
+The source labels are reconstructed as in the inherited producer: a single
+triple line, the span of triples sharing a pair, or the coordinate span of
+their covered points. At this dimension the checker verifies all 33,956
+entry, exit, producer and piece residual conditions, including nesting,
+nondegeneracy and nonalternation. An independent scalar checker verifies all
+313,600 ordered triple coefficients of the retained scatter plus side pieces.
+The exact rank histogram, positive moment slack and check totals are included
+in \path{certificates/latest.json}.
+
+\section{Two assembly choices}
+Set $\beta=1/16$, $x=2$, $y=\epsilon$, $\tau=1-a_b$ and $\sigma=1-a_c$.
+Then $\sigma<\tau$, the internal exponent is $\chi=\tau$, and
+\[
+ (1-\beta)a_c=0.00003717212625>a_b=0.000036943733.
+\]
+For the respective gap $g$ below, set
+$\lambda=\tau+g$ and $\lambda'=\tau+2g$.
+The exact assembly choices are
+\[
+\begin{array}{c|c|c|c|c}
+ &\epsilon&\delta&g&\kappa\\\hline
+ \text{higher saving}&24999/25000&10^{-6}&10^{-11}&36942/10^9\\
+ \text{lower overhead}&993/1000&1/500&10^{-9}&3668/10^8
+\end{array}
+\]
+Both exceed $\kappa_0$. The respective relative improvements are approximately
+$0.753687\%$ and $0.0391222\%$.
+
+The inherited cost margins, now with $(1+x)\delta=3\delta$, are
+\[
+ 1-\epsilon,\quad \epsilon(1-\lambda'),\quad
+ 1-\epsilon-3\delta,\quad\epsilon,\quad\epsilon a_b.
+\]
+They cover prefix moves, simultaneous butterflies, fine-field/Gaussian/chirp/
+reserved-axis work, packed products, and CRT reversal, respectively.
+Each margin strictly exceeds its chosen $\kappa$. The butterfly row binds,
+with exact remaining gaps
+\[
+ \frac{23525148}{10^{17}}>0
+ \quad\hbox{and}\quad
+ \frac{3140869}{10^{15}}>0.
+\]
+The fine-field/Gaussian/chirp/reservation margins themselves are $0.000037$
+and $0.001$. All other constraints also hold:
+\[
+ \lambda'>\max(\lambda,\sigma+\beta(1-\sigma)),\quad\lambda'<1,
+ \quad\epsilon<\frac1{2-\lambda'},
+\]
+\[
+ \epsilon C_1<3,\qquad 2\epsilon+y=3\epsilon<3,
+ \qquad y\ge\epsilon,\quad0<\delta<1/8.
+\]
+Choose $\mu=(1-\epsilon)/6$ in the record-size condition; then
+$\mu(1+x)=(1-\epsilon)/2<1-\epsilon$.
+The independent exact-rational certificate reports every constraint and margin.
+
+\paragraph{Effect of the precision prefactor.}
+The new coefficient length is $b'=128b^3$, and $p=6b'$.
+The usual digit choice gives $T\in[4n/b',8n/b')$ and therefore
+$Tp=\Theta(n)$, while
+$L=\log_2T=b-3\log_2b+O(1)\sim b$.
+In the nontrivial digit regime $L\le b$; smaller inputs use a base procedure.
+The inherited coefficient capacity and final-error proof uses the same
+$b'$ and $p=6b'$, so it is unaffected by the fixed prefactor.
+The explicit Gaussian bound in the guard section establishes
+$\alpha^2\theta_i>1$ and $2d\alpha^2\le b'/4$.
+
+\paragraph{Other thresholds remain eventual.}
+The segmented-inverse setup requires $\lambda_{\rm block}^2P\le s_i$.
+Here $\lambda_{\rm block}^2=O(b^{3\epsilon})$, $P=O(b^3)$ and
+$s_i=2^{\Theta(b^{1-\epsilon})}$, so it still holds eventually.
+Likewise the record and prime-selection hypotheses are asymptotic statements,
+with the fixed prefactors absorbed by their strict exponent gaps.
+This argument gives no finite crossover for the complete algorithm.
+
+\paragraph{Overhead comparison.}
+The comparator chooses $1-\epsilon\simeq0.0000366657$;
+the lower-overhead profile uses $1-\epsilon=0.007$.
+Thus the power controlling the axis width increases by approximately $191$.
+Its arithmetic allowance is $\delta=0.002$, instead of approximately
+$6.8\cdot10^{-27}$ in the comparator, and its two strict exponent gaps are
+$10^{-9}$ instead of $10^{-16}$.
+The guard exponent is one, and the coefficient precision is cubic rather than
+of degree $14696$. These comparisons address distinct overhead requirements;
+they are not multiplicative runtime speedups. In particular the $h=16$
+complex recursion already needs at least $256$ active axes, and the bit
+recursion uses dimension $529$. The complete construction remains galactic.
+
+\section{Reproduction, limitations and earlier work}
+Run \texttt{python3 research/verify.py} from the accompanying repository using
+Python 3.10 or newer. It uses only the standard library. Eighteen required
+upstream files are included unchanged and checked against a SHA-256 manifest
+pinned to the source commit. The new circuit, moments, scalar guards and
+assembly checks are regenerated into \path{certificates/latest.json}.
+The checker includes nine unit tests with negative controls, all 2,047 small
+omitted-sum zero patterns, all 40,077 bit slot chains, 1,970 local rank checks,
+all 313,600 complex matrix coefficients, and 33,956 complex frame checks.
+A complete smaller scalar network restores 100,912 dirty scratch values
+across 112 invocations; an incorrectly timed retained copy fails its control.
+
+These checks concern exact arithmetic and finite identities. They do not
+constitute formal verification of the inherited multiplication theorem,
+independent review of this proposal, or a timing benchmark. In particular
+no concrete rational bit basis or end-to-end fixed-tape implementation is
+claimed by this bundle.
+
+The earlier signed-rectangle extension with $\kappa=59/10^{11}$ is preserved
+in \path{notes/archive/complex-rectangles-note.tex} and its existing manuscript
+patch. That older patch does not implement the extension in this note.
+The present construction is specified by this note and its reproducible
+research sources, with the inherited assumptions listed at the beginning.
+
 \end{document}

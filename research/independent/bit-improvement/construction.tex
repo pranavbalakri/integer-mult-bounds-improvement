@@ -1,0 +1,117 @@
+\section{A paired exclusion tree and reassociation of equal sums}
+
+This section changes only the positive addition producer inside the inherited
+retained-total two-stage bit network. It assumes that network's frame compiler,
+common flag-basis lemma, copied-centre schedule, and batched recursion contract.
+It does not independently establish those inherited algorithmic statements.
+
+\paragraph{Paired leave-one-out recursion.}
+Given disjointly supported inputs $z_1,\ldots,z_k$, first remove zero inputs.
+If at most two remain, form the total and each omitted sum directly. Otherwise,
+rotate the last input to the front, group consecutive inputs in pairs, and form
+those pair totals. Recursively compute the total and all omitted pair totals.
+For an input in a pair, add the other member of that pair to its omitted pair
+total. Undo the rotation. An omitted zero input receives the total.
+Induction on $k$ proves that output $i$ is exactly $\sum_{j\ne i}z_j$.
+Every addition has disjoint positive supports. This replaces the prefix/suffix
+leave-one-out routine in the existing paired pair-exclusion construction;
+the global matching order and the retained-point-total construction are unchanged.
+
+\paragraph{Reassociation with exact support equality.}
+For every active sum node with support $S$, enumerate existing nodes with
+supports $A,B$ satisfying $A\cap B=\varnothing$ and $A\cup B=S$.
+Choose another pair only when the integer score described below strictly
+increases. Each operand has strictly smaller support cardinality than its sum,
+so this cannot introduce a cycle. Prune unused nodes and topologically renumber
+by support cardinality. Thus the transformed circuit computes exactly the same
+positive sums. It creates no new source support or source subspace.
+At the chosen dimension, 368 nodes change their operands, and no active node
+is lost or added.
+
+Write $\mathcal I(r)$ for the inherited inner profile: $r$ singleton children
+when $2r\le h$, and $h-r$ singleton children together with a child of width
+$2r-h$ otherwise. For a node of source-span dimension $d$ with operand dimensions
+$a,b$, the changed profile terms are
+\[
+ \mathcal I(a),\quad\mathcal I(d-a),\quad
+ \mathcal I(b),\quad\mathcal I(d-b).
+\]
+The first and third terms account for the operand fan-out slots; the others
+account for the input transitions at the sum node. We maximize the sum of the
+squared widths in these four multisets. This is a deterministic integer search
+heuristic. No optimality of this score, the resulting producer, or its moment
+is claimed; the final complete histogram is certified independently.
+
+\paragraph{Why the inherited source frames apply.}
+Every active support consists of triples containing a common point $c$.
+Let $t_S$ be the indicator of a triple $S$, and let $G=I-J/9$ be the inherited
+Gram form. Then
+\[
+ \langle t_{\{c,i,j\}},t_{\{c,k,l\}}\rangle_G
+ =|\{i,j\}\cap\{k,l\}|.
+\]
+Hence the Gram matrix on a source family is $B^{\mathsf T}B$, where $B$ is the
+unsigned incidence matrix of its pairs on the other $h-1$ points. If a linear
+combination is in $\ker B$, its common coordinate also vanishes, since that
+coordinate is half the sum of its pair coordinates. Thus the source span is
+positive definite and in particular nondegenerate. Its dimension is the
+incidence rank, the number of incident vertices minus the number of bipartite
+connected components.
+
+Disjoint unions produce nested source spans along every physical slot. Each
+side output is still precisely
+\[
+ \{S:c\in S,\ S\cap(T\setminus\{c\})=\varnothing\},
+\]
+so its source span lies in $t_T^\perp$. Each retained output remains the full
+point star and has dimension $h-1$. The tree replacement has the same positive
+common-point property, and reassociation preserves all of its source subspaces.
+The nondegenerate nested frame differences therefore remain within the finite
+family covered by the inherited generic common flag-basis proposition.
+
+\paragraph{Counts and exact moment certificate.}
+At $h=23$ the emitted circuit has
+\[
+ v=\binom{23}{3}=1771,\qquad m=h^2=529,\qquad N=v^2=3136441,
+\]
+34,741 addition nodes, 5,313 side outputs, and 23 retained totals. Consequently
+\[
+ R=40077,\qquad W=2N+2vR=148225616.
+\]
+The selected auxiliary edges, data-edge profiles, and copied-retained-total
+schedule are unchanged. The rank identity is
+\[
+ s=Wm-N+2vh(h-1)=78410006675,
+ \qquad Wm-s=1344189>0.
+\]
+Let $n_w$ denote the emitted histogram of recursive child widths. The exact
+certificate verifies
+\[
+ \sum_w\frac{w n_w}{Wm}\left(\frac mw\right)^{a_b}<1,
+ \qquad a_b=\frac{36943733}{10^{12}}=0.000036943733.
+\]
+It uses rational upper bounds $U_w\ge\log(m/w)$ and, for $0\le z<4$,
+\[
+ e^z\le 1+z+\frac{z^2}{2}+\frac{z^3}{6(1-z/4)}.
+\]
+All arithmetic is rational. The next $10^{-12}$ grid point does not pass this
+particular upper-bound certificate; this is not an upper bound on every possible
+certificate or construction. The older, looser inequality
+$e^z\le(1-z)^{-1}$ with a $10^{-9}$ grid certifies $36941/10^9$ for this same
+network. Thus that small numerical difference comes from sharper certification,
+whereas the improvement in the histogram comes from the changed producer.
+
+\paragraph{Finite checks and their scope.}
+The accompanying checker verifies all 2,047 zero patterns for leave-one-out
+lists of lengths zero through ten; independently recomputes every active global
+support; checks its common point, every side target and every retained total;
+checks all 40,077 nested slot chains; and checks every source rank by the incidence
+formula. It additionally checks all 1,970 local active-node ranks by Gaussian
+elimination modulo an odd prime. The rational rank and nondegeneracy claims
+follow from the incidence argument, rather than from modular experiments alone.
+These checks do not certify the full inherited multiplication algorithm.
+
+\section{Assembly choices with a linear phase guard}
+The final profiles, including their relaxed strict exponent gaps and $\beta=1/16$,
+are specified in \path{notes/latest-assembly.tex} and certified by
+\path{research/independent/bit-improvement/assembly_options.py}.
