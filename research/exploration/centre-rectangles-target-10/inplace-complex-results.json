@@ -1,0 +1,20 @@
+[
+  {
+    "h": 8,
+    "v": 56,
+    "old_auxiliary_roles": 901,
+    "new_auxiliary_roles": 845,
+    "total_scalar_roles": 957,
+    "borrowed_source_roles": 56,
+    "elementary_producer_updates": 1154,
+    "early_cancellation_updates": 3951,
+    "centre_reads": 266,
+    "side_reads": 584,
+    "word_length": 7109,
+    "full_dirty_basis_forward": true,
+    "full_dirty_basis_same_order_inverse_transpose": true,
+    "local_phase_histories_valid": true,
+    "omitted_cancellation_leaves_nonzero_dirty_coefficient": true,
+    "scope": "Exact scalar and local frame audit; lifted histogram and global recursion not certified"
+  }
+]

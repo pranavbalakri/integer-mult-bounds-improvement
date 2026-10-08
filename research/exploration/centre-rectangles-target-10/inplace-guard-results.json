@@ -1,0 +1,44 @@
+[
+  {
+    "h": 8,
+    "roles_before": 901,
+    "roles_after": 845,
+    "forward_prefix_G": "948",
+    "inverse_transpose_prefix_G": "3168",
+    "two_stage_endpoint_G": "6006528",
+    "two_stage_denominator_bits": 2,
+    "ceil_log2_G": 23,
+    "constant_prefix_charge": 64,
+    "recursive_guard_coefficient": 24,
+    "same_128_layer_guard_numeric_check": true,
+    "scope": "Exact scalar envelopes; conditional on the proposed word and inherited whole-residual width interface"
+  },
+  {
+    "h": 16,
+    "roles_before": 12449,
+    "roles_after": 11889,
+    "forward_prefix_G": "27370",
+    "inverse_transpose_prefix_G": "68264",
+    "two_stage_endpoint_G": "3736771360",
+    "two_stage_denominator_bits": 2,
+    "ceil_log2_G": 32,
+    "constant_prefix_charge": 64,
+    "recursive_guard_coefficient": 36,
+    "same_128_layer_guard_numeric_check": true,
+    "scope": "Exact scalar envelopes; conditional on the proposed word and inherited whole-residual width interface"
+  },
+  {
+    "h": 18,
+    "roles_before": 18799,
+    "roles_after": 17983,
+    "forward_prefix_G": "46256",
+    "inverse_transpose_prefix_G": "123054",
+    "two_stage_endpoint_G": "11383971648",
+    "two_stage_denominator_bits": 2,
+    "ceil_log2_G": 34,
+    "constant_prefix_charge": 64,
+    "recursive_guard_coefficient": 40,
+    "same_128_layer_guard_numeric_check": true,
+    "scope": "Exact scalar envelopes; conditional on the proposed word and inherited whole-residual width interface"
+  }
+]

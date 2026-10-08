@@ -1,0 +1,148 @@
+\section{Using the data rows as source pivots}
+\label{sec:borrowed-source-pivots}
+
+This section proves a replacement finite bit word and describes its conditional
+histogram under the inherited two-stage partial-swap transfer. It does not
+independently prove the all-size machine simulation or multiplication assembly.
+All scalar coefficients in this section lie in $\mathbb F_2$.
+
+\paragraph{Finite-word identity.}
+Let $X=(X_S)_{S\in\binom{[h]}3}$ be the source data bank, $Y$ the target bank,
+and $Z$ the remaining arbitrary auxiliary inputs. In the positive producer,
+replace each of the $v=\binom h3$ leaf-pivot roles by the corresponding data row
+$X_S$. Keep all middle CNOTs and every other physical role. Write $M$ for this
+invertible middle word on $(X,Z)$, and $J$ for its scatter map, including both
+retained-centre and side contributions. The unchanged coefficient construction
+says
+\[
+ JM(X,Z)=X+DZ
+\]
+for a fixed binary matrix $D$. Apply the following operations in chronological
+order:
+\[
+ Y\gets Y+DZ;\qquad M;\qquad Y\gets Y+JM(X,Z);\qquad M^{-1}.
+\]
+In the scatter term, $J$ reads the current middle-word outputs. Thus the two
+occurrences of $DZ$ cancel, $X$ and $Z$ are restored, and the exact public map is
+\[
+ (X,Y,Z)\longmapsto(X,Y+X,Z).
+\]
+No invertibility of an auxiliary-only restriction of $M$ is assumed. The
+arbitrary auxiliary contribution is computed explicitly, rather than treated
+as zero.
+
+\paragraph{Forward frame chronology.}
+Use the inherited factor-space labels, with base frame $D_0$, full stage frame
+$D_1$, source line $\langle t_S\rangle$, retained point-star span $U_c$, and
+side-target frame $t_T^\perp$. The early correction uses only $Y$ and $Z$, both
+at $D_0$; it never reads $X$ at that frame. During the middle word, $X_S$ starts
+at its source-line frame, which is precisely the old leaf pivot's first
+incidence label. Every later incidence therefore has the same nested source
+span as in the original producer. Every remaining auxiliary role is explicitly placed at
+$D_0$, including roles whose column in $D$ vanishes. Thus their selected
+outer edges remain exactly the inherited ones, rather than being folded into
+a larger first middle jump. No middle CNOT involves $Y$.
+
+After completing $M$, first perform all retained-centre contributions while
+every $Y_T$ is still at $D_0$. Read each retained total from its existing $U_c$
+role through the usual fresh temporary copied from $U_c$ to $D_0$, paying rank
+$h-1$. These values have already been computed by $M$; the original $X$ rows
+need not still contain their input values. Next grow each $Y_T$ to its target
+frame and perform the side scatters. Finally grow all $X$ and $Z$ roles to
+$D_1$ and execute $M^{-1}$ pointwise there. The retained-centre roles never
+return. Performing side scatters before centre reads would require a forbidden
+return of $Y$ to $D_0$ and is explicitly rejected by the checker.
+
+\paragraph{The opposite shear with the same chronology.}
+Transpose every elementary CNOT while retaining its chronological position.
+Since a CNOT is its own inverse, the resulting total matrix is the
+inverse transpose of the forward word. The forward public shear is itself an
+involution, so the public map becomes
+\[
+ (X,Y,Z)\longmapsto(X+Y,Y,Z).
+\]
+A transposed CNOT touches exactly the same two roles at the same common frame;
+therefore every established frame incidence remains valid. The transposed
+retained-centre bridge first gathers its target rows into a fresh temporary at
+$D_0$, moves that temporary from $D_0$ to $U_c$, and adds it to the retained
+role there. Its charged rank is again $h-1$. The source-span interpretation of
+the new intermediate scalar values is not needed: compatibility follows from
+the literal common-frame gates and their transpose identities.
+
+For the second tensor stage put $P=\langle t_{a_1}\rangle$ and
+$B=P^\perp\subset F$. The increasing local frame $U$ is lifted to
+\[
+ D_U=(B\otimes F)\mathbin{\perp}(P\otimes U).
+\]
+The inherited stage-two entrances place $X$ at $D_{\langle t_{a_2}\rangle}$
+and $Y$ at $D_0$. Insert an explicit identity vertex at this source-line frame
+for every $X$ role, even when its first actual middle CNOT occurs at a larger
+frame. This retains the original data-corner edge from $F\otimes
+\langle t_{a_2}\rangle$ before the unchanged local source chain starts;
+no entrance is merged with the first middle growth. The same-chronology inverse-transpose word then ends at
+$D_F=F^{\otimes2}$ on $X$ and
+$D_{t_{a_2}^\perp}=u_a^\perp$ on $Y$, exactly the required endpoints.
+The first stage uses the original forward lift tensored with the fixed
+second-factor source line. Thus the two scalar shears and the charged endpoint
+correction are unchanged.
+
+\paragraph{A sparse implementation of the early correction.}
+The literal matrix $D$ is fixed, so the early correction is always a finite
+pointwise XOR program. Alternatively, supply $v$ freshly allocated zero
+streams as the old leaf pivots, run the original middle word on these and $Z$,
+scatter at $D_0$, and undo that middle word. This computes $DZ$, restores $Z$,
+and returns the fresh streams to zero. It uses $2|M|+|J|$ pointwise gates.
+For the inverse-transpose realization, the private fresh streams may receive
+$Y$-dependent values; clear them at $D_0$ after that early block. Their contents
+are not arbitrary public inputs and no address change is involved. Both
+orientations are checked on every public input basis vector. The direct dense
+realization is also checked and avoids dependence on this storage optimization.
+
+\paragraph{Profile accounting.}
+Let $R,W,H=(n_w)$ be the original retained-total role count, volume denominator,
+and child histogram at $m=h^2$, $N=v^2$. Then
+\[
+ R'=R-v,\qquad W'=W-2N.
+\]
+A borrowed source data row follows the old pivot's path after its source line,
+replacing the old direct data edge of rank $h-1$. For each of the $2N$ absorbed
+source pivots, remove its selected auxiliary edge with child widths
+$\{m-2h,h\}$, its initial singleton entrance, and that old direct data edge.
+Write $\mathcal I(h-1)=\{h-2,1\}$ for the inherited inner profile. Thus
+\[
+ H'=H-2N\bigl(\{m-2h,h\}+\{1\}+\mathcal I(h-1)\bigr).
+\]
+The removed child widths sum to $m$. Consequently
+\[
+ s'=s-2Nm,\qquad W'm-s'=Wm-s.
+\]
+Every remaining child has its original width and its original frame idempotent;
+no new generic-basis condition is introduced by this change. The borrowed data
+rows replace existing direct edges; their internal growth is not counted twice.
+The retained-centre loss and endpoint correction remain fully charged.
+
+\paragraph{Exact dimension-23 result and limits.}
+For the paired-tree, reassociated producer,
+\[
+ h=23,\quad v=1771,\quad R'=38306,\quad
+ W'=141952734,\quad s'=75091652097,
+\]
+with unchanged deficit $1344189$. The complete candidate histogram has the
+exact rational exponential-moment certificate
+\[
+ a_b=\frac{38238149}{10^{12}}=0.000038238149,
+\]
+compared with $36943733/10^{12}$ for that producer before borrowing the source
+rows. This is approximately a $3.5\%$ improvement in this bit saving, not a
+measured runtime improvement and not the requested $2^{-10}$ witness.
+
+The finite replay covers all $41848$ arbitrary public scalar basis inputs at
+$h=23$, the forward and same-chronology transposed words, every monotone middle
+source-frame history, and the centre-before-side ordering. It also covers
+$h=5,6,7,8$. Omitting a nonzero early cancellation gate fails the full dirty
+identity; moving side scatters before centre reads fails the frame chronology.
+The dimension-23 middle word has $73047$ CNOTs, and its sparse complete
+realization has $313440$ pointwise gates plus initialization and clearing of
+private temporary storage. The remaining global fixed-tape, recursive,
+ordered-affine, and analytic interfaces are inherited obligations, not facts
+established solely by these finite tests.

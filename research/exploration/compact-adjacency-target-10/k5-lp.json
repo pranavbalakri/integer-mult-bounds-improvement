@@ -1,0 +1,994 @@
+[
+  {
+    "h": 10,
+    "k": 5,
+    "lp_bound": "56/3",
+    "integer_bound": 18,
+    "retained_centre_threshold": 180,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "25/3",
+      "0",
+      "25/3",
+      "1"
+    ],
+    "active": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "dual": [
+      "7/3",
+      "0",
+      "25/3",
+      "7"
+    ]
+  },
+  {
+    "h": 11,
+    "k": 5,
+    "lp_bound": "462/17",
+    "integer_bound": 27,
+    "retained_centre_threshold": 220,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "120/17",
+      "160/17",
+      "165/17",
+      "0"
+    ],
+    "active": [
+      0,
+      3,
+      4,
+      8
+    ],
+    "dual": [
+      "60/17",
+      "275/51",
+      "880/51",
+      "154/51"
+    ]
+  },
+  {
+    "h": 12,
+    "k": 5,
+    "lp_bound": "36",
+    "integer_bound": 36,
+    "retained_centre_threshold": 264,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "35/11",
+      "280/11",
+      "70/11",
+      "0"
+    ],
+    "active": [
+      0,
+      1,
+      4,
+      8
+    ],
+    "dual": [
+      "5",
+      "0",
+      "30",
+      "4"
+    ]
+  },
+  {
+    "h": 13,
+    "k": 5,
+    "lp_bound": "117/2",
+    "integer_bound": 58,
+    "retained_centre_threshold": 312,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "5",
+      "35",
+      "35/2",
+      "0"
+    ],
+    "active": [
+      0,
+      1,
+      4,
+      8
+    ],
+    "dual": [
+      "255/44",
+      "65/22",
+      "195/4",
+      "39/16"
+    ]
+  },
+  {
+    "h": 14,
+    "k": 5,
+    "lp_bound": "4550/53",
+    "integer_bound": 85,
+    "retained_centre_threshold": 364,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "369/53",
+      "2256/53",
+      "1872/53",
+      "0"
+    ],
+    "active": [
+      0,
+      1,
+      4,
+      8
+    ],
+    "dual": [
+      "325/53",
+      "350/53",
+      "3822/53",
+      "182/159"
+    ]
+  },
+  {
+    "h": 15,
+    "k": 5,
+    "lp_bound": "231/2",
+    "integer_bound": 115,
+    "retained_centre_threshold": 420,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "50/13",
+      "1000/13",
+      "475/26",
+      "201/13"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "77/13",
+      "275/26",
+      "0",
+      "98"
+    ]
+  },
+  {
+    "h": 16,
+    "k": 5,
+    "lp_bound": "168",
+    "integer_bound": 168,
+    "retained_centre_threshold": 480,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "5",
+      "100",
+      "75/2",
+      "49/2"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "945/143",
+      "14",
+      "50/13",
+      "1568/11"
+    ]
+  },
+  {
+    "h": 17,
+    "k": 5,
+    "lp_bound": "11492/49",
+    "integer_bound": 234,
+    "retained_centre_threshold": 544,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "300/49",
+      "880/7",
+      "3135/49",
+      "264/7"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "2496/343",
+      "867/49",
+      "2992/343",
+      "9792/49"
+    ]
+  },
+  {
+    "h": 18,
+    "k": 5,
+    "lp_bound": "952/3",
+    "integer_bound": 317,
+    "retained_centre_threshold": 612,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "65/9",
+      "4160/27",
+      "2665/27",
+      "169/3"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "119/15",
+      "65/3",
+      "221/15",
+      "272"
+    ]
+  },
+  {
+    "h": 19,
+    "k": 5,
+    "lp_bound": "49419/118",
+    "integer_bound": 418,
+    "retained_centre_threshold": 684,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "490/59",
+      "10920/59",
+      "16835/118",
+      "4823/59"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "2025/236",
+      "3059/118",
+      "5187/236",
+      "21318/59"
+    ]
+  },
+  {
+    "h": 20,
+    "k": 5,
+    "lp_bound": "1083/2",
+    "integer_bound": 541,
+    "retained_centre_threshold": 760,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "75/8",
+      "875/4",
+      "1575/8",
+      "231/2"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "627/68",
+      "975/32",
+      "16625/544",
+      "1881/4"
+    ]
+  },
+  {
+    "h": 21,
+    "k": 5,
+    "lp_bound": "15827/23",
+    "integer_bound": 688,
+    "retained_centre_threshold": 840,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "240/23",
+      "17600/69",
+      "18100/69",
+      "3664/23"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "680/69",
+      "812/23",
+      "2800/69",
+      "13832/23"
+    ]
+  },
+  {
+    "h": 22,
+    "k": 5,
+    "lp_bound": "31878/37",
+    "integer_bound": 861,
+    "retained_centre_threshold": 924,
+    "can_pass_retained_threshold": false,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "425/37",
+      "10880/37",
+      "340",
+      "7956/37"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "7371/703",
+      "1496/37",
+      "36652/703",
+      "28028/37"
+    ]
+  },
+  {
+    "h": 23,
+    "k": 5,
+    "lp_bound": "168245/158",
+    "integer_bound": 1064,
+    "retained_centre_threshold": 1012,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "990/79",
+      "26520/79",
+      "68085/158",
+      "22491/79"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "4389/395",
+      "7245/158",
+      "25806/395",
+      "74382/79"
+    ]
+  },
+  {
+    "h": 24,
+    "k": 5,
+    "lp_bound": "9108/7",
+    "integer_bound": 1301,
+    "retained_centre_threshold": 1104,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "95/7",
+      "380",
+      "7505/14",
+      "741/2"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "575/49",
+      "361/7",
+      "3933/49",
+      "8096/7"
+    ]
+  },
+  {
+    "h": 25,
+    "k": 5,
+    "lp_bound": "140070/89",
+    "integer_bound": 1573,
+    "retained_centre_threshold": 1200,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "1300/89",
+      "38000/89",
+      "58425/89",
+      "42256/89"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "12096/979",
+      "5125/89",
+      "95000/979",
+      "125120/89"
+    ]
+  },
+  {
+    "h": 26,
+    "k": 5,
+    "lp_bound": "88660/47",
+    "integer_bound": 1886,
+    "retained_centre_threshold": 1300,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "735/47",
+      "22400/47",
+      "37275/47",
+      "28203/47"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "14025/1081",
+      "3003/47",
+      "125125/1081",
+      "79560/47"
+    ]
+  },
+  {
+    "h": 27,
+    "k": 5,
+    "lp_bound": "4485/2",
+    "integer_bound": 2242,
+    "retained_centre_threshold": 1404,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "50/3",
+      "4760/9",
+      "17045/18",
+      "749"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "299/22",
+      "141/2",
+      "273/2",
+      "22230/11"
+    ]
+  },
+  {
+    "h": 28,
+    "k": 5,
+    "lp_bound": "2646",
+    "integer_bound": 2646,
+    "retained_centre_threshold": 1512,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "230/13",
+      "7590/13",
+      "29095/26",
+      "24035/26"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "4617/325",
+      "4025/52",
+      "15939/100",
+      "2394"
+    ]
+  },
+  {
+    "h": 29,
+    "k": 5,
+    "lp_bound": "337995/109",
+    "integer_bound": 3100,
+    "retained_centre_threshold": 1624,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "2040/109",
+      "69920/109",
+      "142830/109",
+      "123096/109"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "21000/1417",
+      "9222/109",
+      "261464/1417",
+      "306936/109"
+    ]
+  },
+  {
+    "h": 30,
+    "k": 5,
+    "lp_bound": "68614/19",
+    "integer_bound": 3611,
+    "retained_centre_threshold": 1740,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "375/19",
+      "40000/57",
+      "86750/57",
+      "25970/19"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "2639/171",
+      "1750/19",
+      "36250/171",
+      "62524/19"
+    ]
+  },
+  {
+    "h": 31,
+    "k": 5,
+    "lp_bound": "995193/238",
+    "integer_bound": 4181,
+    "retained_centre_threshold": 1860,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "2470/119",
+      "13000/17",
+      "417625/238",
+      "27885/17"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "13365/833",
+      "23777/238",
+      "201500/833",
+      "454894/119"
+    ]
+  },
+  {
+    "h": 32,
+    "k": 5,
+    "lp_bound": "4816",
+    "integer_bound": 4816,
+    "retained_centre_threshold": 1984,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "675/31",
+      "25740/31",
+      "124605/62",
+      "121095/62"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "483/29",
+      "108",
+      "7956/29",
+      "4416"
+    ]
+  },
+  {
+    "h": 33,
+    "k": 5,
+    "lp_bound": "237336/43",
+    "integer_bound": 5519,
+    "retained_centre_threshold": 2112,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "980/43",
+      "38640/43",
+      "98385/43",
+      "99288/43"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "3712/215",
+      "5005/43",
+      "66528/215",
+      "218240/43"
+    ]
+  },
+  {
+    "h": 34,
+    "k": 5,
+    "lp_bound": "421872/67",
+    "integer_bound": 6296,
+    "retained_centre_threshold": 2244,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "1595/67",
+      "64960/67",
+      "173565/67",
+      "181685/67"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "37125/2077",
+      "8381/67",
+      "721259/2077",
+      "388960/67"
+    ]
+  },
+  {
+    "h": 35,
+    "k": 5,
+    "lp_bound": "1988371/278",
+    "integer_bound": 7152,
+    "retained_centre_threshold": 2380,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "3450/139",
+      "145000/139",
+      "811275/278",
+      "439959/139"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "20553/1112",
+      "37275/278",
+      "431375/1112",
+      "918918/139"
+    ]
+  },
+  {
+    "h": 36,
+    "k": 5,
+    "lp_bound": "8092",
+    "integer_bound": 8092,
+    "retained_centre_threshold": 2520,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "155/6",
+      "10075/9",
+      "29450/9",
+      "7347/2"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "210/11",
+      "1147/8",
+      "37975/88",
+      "7497"
+    ]
+  },
+  {
+    "h": 37,
+    "k": 5,
+    "lp_bound": "1358973/149",
+    "integer_bound": 9120,
+    "retained_centre_threshold": 2664,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "4000/149",
+      "178560/149",
+      "544360/149",
+      "631904/149"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "49896/2533",
+      "22792/149",
+      "1211232/2533",
+      "1261848/149"
+    ]
+  },
+  {
+    "h": 38,
+    "k": 5,
+    "lp_bound": "71706/7",
+    "integer_bound": 10243,
+    "retained_centre_threshold": 2812,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "195/7",
+      "1280",
+      "28440/7",
+      "4872"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "54723/2695",
+      "1140/7",
+      "129352/245",
+      "733932/77"
+    ]
+  },
+  {
+    "h": 39,
+    "k": 5,
+    "lp_bound": "1215487/106",
+    "integer_bound": 11466,
+    "retained_centre_threshold": 2964,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "1530/53",
+      "216920/159",
+      "1431485/318",
+      "295273/53"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "3325/159",
+      "18343/106",
+      "92378/159",
+      "566618/53"
+    ]
+  },
+  {
+    "h": 40,
+    "k": 5,
+    "lp_bound": "524628/41",
+    "integer_bound": 12795,
+    "retained_centre_threshold": 3120,
+    "can_pass_retained_threshold": true,
+    "distances": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "primal": [
+      "1225/41",
+      "59500/41",
+      "407575/82",
+      "520149/82"
+    ],
+    "active": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dual": [
+      "32643/1517",
+      "7525/41",
+      "966875/1517",
+      "490048/41"
+    ]
+  }
+]

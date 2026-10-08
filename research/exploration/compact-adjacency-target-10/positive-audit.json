@@ -1,0 +1,60 @@
+[
+  {
+    "h": 5,
+    "v": 10,
+    "adds": 20,
+    "full_side_outputs": 10,
+    "side_roles": 30,
+    "cnot_count": 40,
+    "all_source_frames_positive_definite": true,
+    "all_monotone_frames_checked": true,
+    "all_side_coefficients_checked": true,
+    "inner_rank_histogram": {
+      "1": 80,
+      "2": 20,
+      "3": 10
+    },
+    "W": 900,
+    "m": 25,
+    "rank_sum": 22900,
+    "rank_deficit": -400,
+    "child_histogram": {
+      "1": 4700,
+      "3": 600,
+      "5": 900,
+      "7": 200,
+      "15": 700
+    },
+    "conclusion": "Valid positive side producer; no positive saving under direct copied-centre assembly."
+  },
+  {
+    "h": 6,
+    "v": 20,
+    "adds": 93,
+    "full_side_outputs": 20,
+    "side_roles": 113,
+    "cnot_count": 186,
+    "all_source_frames_positive_definite": true,
+    "all_monotone_frames_checked": true,
+    "all_side_coefficients_checked": true,
+    "inner_rank_histogram": {
+      "1": 223,
+      "2": 101,
+      "3": 43,
+      "4": 31
+    },
+    "W": 5560,
+    "m": 36,
+    "rank_sum": 201200,
+    "rank_deficit": -1040,
+    "child_histogram": {
+      "1": 32240,
+      "2": 1240,
+      "4": 2400,
+      "6": 5240,
+      "14": 800,
+      "24": 4760
+    },
+    "conclusion": "Valid positive side producer; no positive saving under direct copied-centre assembly."
+  }
+]

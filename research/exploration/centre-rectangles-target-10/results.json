@@ -1,0 +1,62 @@
+[
+  {
+    "h": 6,
+    "v": 20,
+    "ordered_scalar_pairs": 400,
+    "point_star_centre_rank_cost": 30,
+    "inherited_centre_rank_cost": 31,
+    "pair_star_centre_rank_cost": 60,
+    "copied_two_stage_deficit_point_stars": -800,
+    "valid_cross_read_examples": 60,
+    "alternating_cross_reads_rejected": 6,
+    "scope": "Local identities and frame facts only; no complete word or new saving"
+  },
+  {
+    "h": 8,
+    "v": 56,
+    "ordered_scalar_pairs": 3136,
+    "point_star_centre_rank_cost": 56,
+    "inherited_centre_rank_cost": 57,
+    "pair_star_centre_rank_cost": 168,
+    "copied_two_stage_deficit_point_stars": -3136,
+    "valid_cross_read_examples": 112,
+    "alternating_cross_reads_rejected": 8,
+    "scope": "Local identities and frame facts only; no complete word or new saving"
+  },
+  {
+    "h": 10,
+    "v": 120,
+    "ordered_scalar_pairs": 14400,
+    "point_star_centre_rank_cost": 90,
+    "inherited_centre_rank_cost": 91,
+    "pair_star_centre_rank_cost": 360,
+    "copied_two_stage_deficit_point_stars": -7200,
+    "valid_cross_read_examples": 180,
+    "alternating_cross_reads_rejected": 10,
+    "scope": "Local identities and frame facts only; no complete word or new saving"
+  },
+  {
+    "h": 12,
+    "v": 220,
+    "ordered_scalar_pairs": 48400,
+    "point_star_centre_rank_cost": 132,
+    "inherited_centre_rank_cost": 133,
+    "pair_star_centre_rank_cost": 660,
+    "copied_two_stage_deficit_point_stars": -9680,
+    "valid_cross_read_examples": 264,
+    "alternating_cross_reads_rejected": 12,
+    "scope": "Local identities and frame facts only; no complete word or new saving"
+  },
+  {
+    "h": 14,
+    "v": 364,
+    "ordered_scalar_pairs": 132496,
+    "point_star_centre_rank_cost": 182,
+    "inherited_centre_rank_cost": 183,
+    "pair_star_centre_rank_cost": 1092,
+    "copied_two_stage_deficit_point_stars": 0,
+    "valid_cross_read_examples": 364,
+    "alternating_cross_reads_rejected": 14,
+    "scope": "Local identities and frame facts only; no complete word or new saving"
+  }
+]

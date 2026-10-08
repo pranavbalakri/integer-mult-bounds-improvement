@@ -1,0 +1,29 @@
+{
+  "status": "Finite geometry PASS; no positive recursive deficit in the stated minimal-centre schedule",
+  "root_lines": 120,
+  "rational_rank": 8,
+  "binary_rank": 9,
+  "off_diagonal_inner_products": [
+    -1,
+    0,
+    1
+  ],
+  "binary_functionals_checked": 511,
+  "binary_functional_support_rational_ranks": {
+    "8": 511
+  },
+  "binary_functional_support_sizes": {
+    "64": 255,
+    "56": 255,
+    "120": 1
+  },
+  "rational_projective_lower_bound": 8,
+  "binary_projective_clique_lower_bound": 8,
+  "stronger_binary_projective_lower_bound": "117/14",
+  "pair_block_obstruction": 28,
+  "minimal_factorization_centre_loss_per_axis": 72,
+  "data_indices": 14400,
+  "two_stage_centre_loss": 17280,
+  "rank_deficit": -2880,
+  "scope": "Does not exclude nonminimal central decompositions, new endpoint schedules, or other motifs"
+}

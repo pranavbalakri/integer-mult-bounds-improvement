@@ -1,0 +1,133 @@
+{
+  "status": "Exact candidate assembly inequalities PASS; complete global theorem remains conditional and unreviewed",
+  "borrowed_bit_word": "borrowed_indexed.py; borrowed-sources.tex",
+  "original_bit_source_commit": "88ca39571907343a49e97f328971ec7bcd26fbfd",
+  "credit": "New wrapper around Chafik Boukhalfa and contributors' credited PR84 producer; see ../indexed-cycle-target-10/UPSTREAM-NOTICE",
+  "bridge": {
+    "axes": {
+      "bit": {
+        "m": 575,
+        "W": 124319508,
+        "maxchild": 529,
+        "halving_degree": 9,
+        "wire_bits": 27
+      },
+      "complex": {
+        "m": 324,
+        "W": 32011680,
+        "maxchild": 306,
+        "halving_degree": 13,
+        "wire_bits": 25
+      }
+    },
+    "row_coefficient": 568,
+    "row_degree": 1200,
+    "row_degree_gap": "1032/25",
+    "suffix_slope": 4800,
+    "guard": "128*(d+1)",
+    "scope": "Arithmetic template only; new combined bridge has not been globally integrated"
+  },
+  "profiles": [
+    {
+      "name": "larger conditional saving",
+      "bit_saving": "343/6250000",
+      "complex_saving": "7411559/125000000000",
+      "epsilon": "9999/10000",
+      "delta": "1/1000000",
+      "beta": "1/16",
+      "lambda_gap": "1/100000000000",
+      "lambda_value": "99994512001/100000000000",
+      "lambda_prime": "49997256001/50000000000",
+      "x": "2",
+      "y": "9999/10000",
+      "C1": "1",
+      "kappa": "5487/100000000",
+      "precision_power": "3",
+      "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+      "mu": "1/60000",
+      "axis_width_power": "1/10000",
+      "Gaussian_uniform_lower_bound_coefficient": "15/8",
+      "Gaussian_lower_bound_power": "3/10000",
+      "constraints": {
+        "bit saving positive": "343/6250000",
+        "complex saving above bit": "551559/125000000000",
+        "leaf saving above bit": "282677/400000000000",
+        "lambda above tau sigma internal": "1/100000000000",
+        "lambda_prime above lambda leaf": "1/100000000000",
+        "lambda_prime below one": "2743999/50000000000",
+        "beta in (0,1)": "1/16",
+        "guard exponent": "20001/10000",
+        "Gaussian precision exponent": "3/10000",
+        "reservations": "22562753999/499950000000000",
+        "record regime": "1/10000",
+        "delta in (0,1/8)": "1/1000000"
+      },
+      "margins": {
+        "prefix": "1/10000",
+        "butterflies": "27437246001/500000000000000",
+        "fine fields Gaussian chirps reserved axes": "97/1000000",
+        "packed products": "9999/10000",
+        "CRT reversal": "3429657/62500000000"
+      },
+      "minimum_margin": "27437246001/500000000000000",
+      "strict_surplus": "2246001/500000000000000",
+      "bit_moment_gap": "8496925495838080750534491487868225264838666696390454015756163/2000000000000000000000000000000000000000000000000000000000000000000000",
+      "bit_moment_gap_float": 4.248462747919041e-09
+    },
+    {
+      "name": "lower precision and wider analytic margins",
+      "bit_saving": "343/6250000",
+      "complex_saving": "7411559/125000000000",
+      "epsilon": "71/100",
+      "delta": "9/100",
+      "beta": "1/16",
+      "lambda_gap": "1/100000000",
+      "lambda_value": "99994513/100000000",
+      "lambda_prime": "49997257/50000000",
+      "x": "23/20",
+      "y": "71/100",
+      "C1": "1",
+      "kappa": "389/10000000",
+      "precision_power": "43/20",
+      "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+      "mu": "29/430",
+      "axis_width_power": "29/100",
+      "Gaussian_uniform_lower_bound_coefficient": "15/8",
+      "Gaussian_lower_bound_power": "1/50",
+      "constraints": {
+        "bit saving positive": "343/6250000",
+        "complex saving above bit": "551559/125000000000",
+        "leaf saving above bit": "282677/400000000000",
+        "lambda above tau sigma internal": "1/100000000",
+        "lambda_prime above lambda leaf": "1/100000000",
+        "lambda_prime below one": "2743/50000000",
+        "beta in (0,1)": "1/16",
+        "guard exponent": "36/25",
+        "Gaussian precision exponent": "1/50",
+        "reservations": "1449805247/3550000000",
+        "record regime": "29/100",
+        "delta in (0,1/8)": "7/200"
+      },
+      "margins": {
+        "prefix": "29/100",
+        "butterflies": "194753/5000000000",
+        "fine fields Gaussian chirps reserved axes": "193/2000",
+        "packed products": "71/100",
+        "CRT reversal": "24353/625000000"
+      },
+      "minimum_margin": "194753/5000000000",
+      "strict_surplus": "253/5000000000",
+      "bit_moment_gap": "8496925495838080750534491487868225264838666696390454015756163/2000000000000000000000000000000000000000000000000000000000000000000000",
+      "bit_moment_gap_float": 4.248462747919041e-09
+    }
+  ],
+  "inherited_complex": "Existing h18 two-stage word and linear guard, unchanged",
+  "target_met": false,
+  "limitations": [
+    "The ordered residual compiler, common rational flags, compact routing, prime selection, exact recovery and fixed-tape interfaces remain assumptions.",
+    "The new wrapper has separate full-dirty-basis replay and a lifted-frame argument, rather than a complete all-size executable implementation.",
+    "The lower-precision variant deliberately has a smaller kappa; the two parameter choices must not be combined.",
+    "Role counts and precision requirements are not running times or operational crossover thresholds.",
+    "Main certificate and open LaTeX note have not been changed."
+  ]
+}

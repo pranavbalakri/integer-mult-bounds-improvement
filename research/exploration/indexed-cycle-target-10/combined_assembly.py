@@ -17,10 +17,10 @@ AC = Q(59292472, 10**12)
 PR84 = Q(408390793141, 7812500000000000)
 
 
-def bridge():
+def bridge(bit_width=132466108):
     axes = {}
     for name, m, child, width in (
-        ('bit', 575, 529, 132466108), ('complex', 324, 306, 32011680)
+        ('bit', 575, 529, bit_width), ('complex', 324, 306, 32011680)
     ):
         degree = 1
         while m**degree <= 2*child**degree:
@@ -38,7 +38,7 @@ def bridge():
                 scope='Arithmetic template only; new combined bridge has not been globally integrated')
 
 
-def evaluate(name, ab, eps, delta, gap, kappa, power=Q(3)):
+def evaluate(name, ab, eps, delta, gap, kappa, power=Q(3), *, bit_profile=None):
     beta, x, c1, y = Q(1,16), power-1, Q(1), eps
     tau, sigma = 1-ab, 1-AC
     internal = tau+(1-beta)*max(sigma-tau,Q(0))
@@ -69,7 +69,7 @@ def evaluate(name, ab, eps, delta, gap, kappa, power=Q(3)):
     }
     assert all(v > 0 for v in constraints.values())
     assert min(margins.values()) > kappa > 0
-    _, upper = moment(profile(),ab)
+    _, upper = moment(profile() if bit_profile is None else bit_profile,ab)
     assert upper < 1
     return dict(name=name, bit_saving=ab, complex_saving=AC, epsilon=eps,
                 delta=delta, beta=beta, lambda_gap=gap, lambda_value=lam,

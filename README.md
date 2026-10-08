@@ -87,8 +87,12 @@ bit common-basis theorem and other global interfaces remain assumptions.
 The ongoing [search toward `kappa > 2^-10`](research/exploration/README.md) has
 not reached that target. It includes exact obstructions for the current network
 family, rejected finite candidates, an attributed audit of a newer public bit
-network, and a lower-precision combination still under review. These research
-files do not replace the main certificate above.
+network, and a new source-role borrowing wrapper. Exact finite replays and
+assembly checks support a **conditional candidate kappa=0.00005487** using
+that credited producer, or **kappa=0.0000389** with precision
+`768 ceil(b^(43/20))`. The wrapper removes about 6.15% of the pinned producer's
+bit-network roles. The global interfaces remain inherited, and these research
+files do not replace the main certificate above or establish practical timing.
 
 The earlier `kappa = 59/10^11` rectangle extension is preserved in
 [its archived note](notes/archive/complex-rectangles-note.tex),

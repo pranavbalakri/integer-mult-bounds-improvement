@@ -1,0 +1,48 @@
+{
+  "W": 124319508,
+  "m": 575,
+  "N": 4073300,
+  "total_rank": 71481870200,
+  "rank_deficit": 1846900,
+  "direct_reconstruction_matches_subtraction": true,
+  "per_axis_accounting": {
+    "23": {
+      "borrowed_per_invocation": 1771,
+      "invocations": 2300,
+      "removed_global_roles": 4073300,
+      "removed_rank": 2342147500,
+      "old_direct_edge": [
+        21,
+        1
+      ],
+      "old_selected_edge": [
+        529,
+        23
+      ],
+      "old_leaf_entrance": [
+        1
+      ]
+    },
+    "25": {
+      "borrowed_per_invocation": 2300,
+      "invocations": 1771,
+      "removed_global_roles": 4073300,
+      "removed_rank": 2342147500,
+      "old_direct_edge": [
+        23,
+        1
+      ],
+      "old_selected_edge": [
+        525,
+        25
+      ],
+      "old_leaf_entrance": [
+        1
+      ]
+    }
+  },
+  "bit_saving": "343/6250000",
+  "exact_moment_gap": "8496925495838080750534491487868225264838666696390454015756163/2000000000000000000000000000000000000000000000000000000000000000000000",
+  "target_10_bit_moment_excess_lower": "2175635883427468858746601101017814771635772314401646583318383568351/5000000000000000000000000000000000000000000000000000000000000000000000",
+  "scope": "Independent finite-profile arithmetic; assumes the new lifted frame word and inherited global interfaces."
+}

@@ -1,0 +1,123 @@
+[
+  {
+    "h": 5,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 3,
+    "maximum_covered_by_two_other_targets": 2,
+    "all_other_target_pairs_checked": 36
+  },
+  {
+    "h": 6,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 9,
+    "maximum_covered_by_two_other_targets": 8,
+    "all_other_target_pairs_checked": 171
+  },
+  {
+    "h": 7,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 18,
+    "maximum_covered_by_two_other_targets": 15,
+    "all_other_target_pairs_checked": 561
+  },
+  {
+    "h": 8,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 30,
+    "maximum_covered_by_two_other_targets": 27,
+    "all_other_target_pairs_checked": 1485
+  },
+  {
+    "h": 9,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 45,
+    "maximum_covered_by_two_other_targets": 40,
+    "all_other_target_pairs_checked": 3403
+  },
+  {
+    "h": 10,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 63,
+    "maximum_covered_by_two_other_targets": 57,
+    "all_other_target_pairs_checked": 7021
+  },
+  {
+    "h": 11,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 84,
+    "maximum_covered_by_two_other_targets": 77,
+    "all_other_target_pairs_checked": 13366
+  },
+  {
+    "h": 12,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 108,
+    "maximum_covered_by_two_other_targets": 100,
+    "all_other_target_pairs_checked": 23871
+  },
+  {
+    "h": 13,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 135,
+    "maximum_covered_by_two_other_targets": 126,
+    "all_other_target_pairs_checked": 40470
+  },
+  {
+    "h": 14,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 165,
+    "maximum_covered_by_two_other_targets": 155,
+    "all_other_target_pairs_checked": 65703
+  },
+  {
+    "h": 15,
+    "target": [
+      0,
+      1,
+      2
+    ],
+    "neighbor_count": 198,
+    "maximum_covered_by_two_other_targets": 187,
+    "all_other_target_pairs_checked": 102831
+  }
+]

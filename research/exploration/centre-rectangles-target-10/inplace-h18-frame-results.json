@@ -1,0 +1,21 @@
+[
+  {
+    "h": 18,
+    "v": 816,
+    "old_auxiliary_roles": 18799,
+    "new_auxiliary_roles": 17983,
+    "common_frame_middle_gates": 11437,
+    "elementary_producer_updates": 28604,
+    "exact_distinct_local_frame_transitions": 46096,
+    "centre_copy_frames_checked": 18,
+    "side_incidence_frames_checked": 8160,
+    "final_producer_role_growths_checked": 18799,
+    "triple_perpendicular_spaces_checked": 816,
+    "tensor_data_entry_family": "a_perp tensor b_perp; all factors nondegenerate and nonalternating",
+    "tensor_outer_family": "a_perp tensor F and F tensor b_perp; all factors nondegenerate and nonalternating",
+    "tensor_local_family": "a tensor residual or residual tensor b; odd norm lines preserve Gram form",
+    "explicit_source_line_and_low_frame_vertices": true,
+    "all_local_frame_checks_pass": true,
+    "scope": "Actual local role histories plus exact tensor-factor residual proof; global recursion not certified"
+  }
+]

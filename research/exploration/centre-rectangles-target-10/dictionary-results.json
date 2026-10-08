@@ -1,0 +1,125 @@
+{
+  "h": 14,
+  "lower_bound": 182,
+  "rank": 14,
+  "minimum_term_basis_classes": [
+    {
+      "exclusions": 0,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 1,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 2,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 3,
+      "result": "singular"
+    },
+    {
+      "exclusions": 4,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 5,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 6,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 7,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 8,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 9,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 10,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 11,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 12,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 13,
+      "result": "dual outside dictionary"
+    },
+    {
+      "exclusions": 14,
+      "result": "dual outside dictionary"
+    }
+  ],
+  "double_index_basis_classes": [
+    {
+      "other_exclusions": 0,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 1,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 2,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 3,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 4,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 5,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 6,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 7,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 8,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 9,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 10,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 11,
+      "result": "dual outside dictionary"
+    },
+    {
+      "other_exclusions": 12,
+      "result": "dual outside dictionary"
+    }
+  ],
+  "fifteen_term_pair_coverage_max": 27,
+  "required_pair_coverage": 91,
+  "identity_factorization_acceptance_control": true,
+  "scope": "P_i/E_i rank-one rectangles only; rational or complex coefficients allowed"
+}
