@@ -1,0 +1,28 @@
+This artifact bundle derives from CrocSwap/integer-mult-bounds, commit
+6e564879f51ae16f23d392e9e196c605f36d90df. The notice below is retained from
+that project and describes its authorship, files, and upstream provenance.
+Paths in the retained notice refer to the original project, not this bundle.
+
+The additional complex stage-sharing extension, note, and revised patch in
+this bundle were prepared with OpenAI Codex at the repository owner's request.
+They are conditional research artifacts without independent mathematical review.
+The Apache-2.0 license is included as LICENSE.
+
+----- Retained original project notice -----
+
+A sharper exponent for integer multiplication
+Copyright 2026 Douglas Colkitt
+
+This project includes unmodified source files from OpenAI's manuscript
+"Integer multiplication below n log n" and its accompanying repository:
+https://github.com/openai/math
+Commit: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+
+The original manuscript identifies OpenAI as its author. Its Apache-2.0
+license is retained at upstream/LICENSE. The exact source URLs and hashes
+are recorded in upstream/manifest.json. Proposed modifications are supplied
+as separate files under patches/; upstream source files remain unchanged.
+
+The new research note, scripts, certificates, patches, and documentation
+were prepared by Douglas Colkitt with assistance from OpenAI Codex.
+This project is not an official OpenAI release or an OpenAI endorsement.

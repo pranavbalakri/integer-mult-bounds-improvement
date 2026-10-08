@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\title{Complex scratch sharing improves the conditional saving beyond $2^{-33}$}
+\author{Research extension prepared with OpenAI Codex}
+\date{October 7, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We extend the compact-control integer-multiplication draft by sharing
+first-stage and third-stage auxiliary roles in its complex network.
+The bridge residuals are nondegenerate and nonalternating over $\mathbb F_2$,
+so the original translation-kernel phase interface survives. With the same
+bit primitive and retained assembly, this yields the conditional bound
+$T(n)=O(n(\log n)^{1-\kappa})$ for
+$\kappa=125/10^{12}=1.25\cdot10^{-10}>2^{-33}$.
+This increases the previous displayed saving $83/10^{12}$ by the factor
+$125/83\approx1.506$. The upstream theorem and prior compact-control
+extensions are assumed. This new extension has not been independently reviewed.
+\end{abstract}
+
+\section{Scope}
+The baseline is Douglas Colkitt's \texttt{CrocSwap/integer-mult-bounds},
+commit \texttt{6e564879f51ae16f23d392e9e196c605f36d90df}, and its pinned
+OpenAI manuscript, commit
+\texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}.
+The model remains a fixed finite alphabet and a fixed finite number of
+one-dimensional Turing-machine tapes. We retain the paired bit network at
+$h_{\rm b}=50$, the compact-control movement and reservation proofs,
+local exceptional repair, independent complex arity, generalized stopped
+guard, Gaussian choice, resampling, and final rounding interfaces.
+Only the complex scratch allocation and final parameter choices change.
+The new argument below is a mathematical derivation, supported by exact
+arithmetic and finite checks; it is not a formal or independent verification.
+
+\section{Construction and binary phase proof}
+\subsection{Sharing scratch in the complex network}
+\label{sec:complex-stage-reuse}
+This extension retains every scalar gate and every gate label of the original
+complex network at $h=25$. It identifies certain first-stage scratch roles
+with third-stage scratch roles. The bit network and all its interfaces remain
+unchanged. The following proof supplies the binary residual obligation that
+is additional to rational stage sharing.
+
+Write $F=\mathbb F_2^h$, $\mathcal T=\binom{[h]}3$, $v=\binom h3$,
+$m=h^3$, and $z=\binom{h-3}3+3(h-3)$. Work with the ordinary dot product
+on $F$ and the induced product on $F^{\otimes3}$. Triple indicators have
+norm one. Neighbors are distinct triples with even intersection.
+
+\paragraph{A disjoint-image permutation.}
+Identify $[h]$ with $\mathbb Z/h\mathbb Z$. Partition triples into translation
+orbits. In each orbit choose its lexicographically first representative $T$
+and the least positive shift $k$ with $T\cap(T+k)=\varnothing$; apply that
+same shift to every member of the orbit. Such a shift exists for $h\ge8$,
+because $T-T$ contains at most seven residues. Translation permutes the orbit,
+even if it has a stabilizer. The resulting permutation $\pi$ of all triples
+therefore satisfies $t_A\cdot t_{\pi(A)}=0$ for every $A$.
+
+\paragraph{Two explicit role matchings.}
+Fix a common ordering of triples, and write $n_S(j)$ for the $j$th neighbor
+of $S$, $0\le j<z$. A first-stage side role with fixed second and third
+triples $(A,B)$ and physical first-coordinate target/source pair
+$(S,n_S(j))$ is identified with the third-stage side role having fixed first
+and second triples $(S,\pi(A))$ and third-coordinate target/source pair
+$(B,n_B(j))$. This is bijective: $A$ is recovered by $\pi^{-1}$, while
+$S,B,j$ are read from the third-stage role. Separately, identify central role
+$i\in[h]\cup\{*\}$ of the first-stage invocation $(A,B)$ with central
+role $i$ of the third-stage invocation $(B,\pi(A))$. This is also bijective.
+Second-stage scratch remains separate. No roles used simultaneously are
+identified.
+
+Each invocation restores arbitrary scalar scratch, so these identifications
+preserve the signed exchange $(X,Y)\mapsto(-Y,X)$ and fix every remaining
+scratch role. In particular the argument does not assume zero temporary values.
+
+\paragraph{Nested binary frames.}
+The last first-stage label on either type of shared role is
+\[
+ E=F\otimes\langle t_A\rangle\otimes\langle t_B\rangle,
+ \qquad \dim E=h.
+\]
+For the paired side role the first third-stage label is
+\[
+ H_{\rm side}=
+ \langle t_S\otimes t_{\pi(A)}\rangle^\perp_{F\otimes F}
+ \otimes\langle t_B\rangle,
+ \qquad \dim H_{\rm side}=h^2-1.
+\]
+For the paired central role it is
+\[
+ H_{\rm center}=
+ \langle t_B\otimes t_{\pi(A)}\rangle^\perp_{F\otimes F}
+ \otimes F,
+ \qquad \dim H_{\rm center}=m-h.
+\]
+The disjointness of $A$ and $\pi(A)$ implies $E\subset H$ in both cases.
+All these spaces are nondegenerate: their defining lines have norm one,
+and they are tensor products of nondegenerate spaces. Hence the new edge
+has nondegenerate orthogonal residual $R=H\cap E^\perp$.
+
+Nondegeneracy alone would not suffice over $\mathbb F_2$. For a side bridge,
+choose $x\notin S$ and $y\notin A$. The vector
+$e_x\otimes e_y\otimes t_B$ belongs to $H_{\rm side}\cap E^\perp$
+and has norm one. For a central bridge choose $x\notin B$, $y\notin A$
+and any $q\in[h]$. Then $e_x\otimes e_y\otimes e_q$ belongs to
+$H_{\rm center}\cap E^\perp$ and has norm one. Every new residual is
+therefore nonalternating and admits an orthonormal basis by the original
+binary-space lemma. The side and central residual dimensions are respectively
+$h^2-1-h$ and $m-2h$.
+
+All other edges retain their original residuals and orthonormal bases.
+For nested labels $H=E\mathbin\perp R$, orthogonal weight additivity gives
+\[
+ q_H(x)-q_E(x)=\operatorname{wt}(P_Rx)
+ =\sum_{u\in\mathcal B_R}\operatorname{wt}(u)[u\cdot x]\pmod4.
+\]
+Each basis vector has odd weight, so the new edge is implemented by exactly
+$\dim R$ forward or inverse translation kernels, just as in the original
+complex phase interface. This verifies the phase signs, not only the dimensions.
+
+\paragraph{Exact deficit and endpoints.}
+The old two edges on a paired role, $E\to F^{\otimes3}$ and $0\to H$,
+have total residual dimension $m-h+\dim H$. Their replacement $E\to H$
+has dimension $\dim H-h$, saving exactly $m$ per deleted role.
+The total number of deleted roles is
+\[
+ R_0=v^2(vz+h+1)=19540339540000.
+\]
+All central decreases are retained, including those in distinct invocations
+that now share a role. Thus, writing $N=v^3$ and $L=3v^2h(h+1)$,
+\begin{align*}
+ W_{\rm c}^{\rm share}&=2N+2v^2(vz+h+1)=39105013080000,\\
+ s_{\rm c}^{\rm share}&=W_{\rm c}^{\rm share}m-2N+2L
+                       =611015825672000000,\\
+ W_{\rm c}^{\rm share}m-s_{\rm c}^{\rm share}&=3703000000,\\
+ \eta_{\rm c}^{\rm share}&=\frac1{165005625}.
+\end{align*}
+Every surviving scratch role still starts with zero label, ends with the
+full label, and is fixed by the scalar permutation. Data endpoints and their
+weight-27 corrections are unchanged. The original signed-exchange correction
+and tensor-column argument consequently give the same completed all-role
+phase interface, with the displayed smaller $W,s$.
+
+\begin{proposition}\label{prop:shared-complex-interface}
+The shared complex network supports the original phase interface with
+$m=15625$, $W=W_{\rm c}^{\rm share}$, $s=s_{\rm c}^{\rm share}$, and
+$\sigma=1-627/10^{12}$.
+\end{proposition}
+\begin{proof}
+The frame, residual, and endpoint arguments above prove the interface.
+Exact logarithm enclosures certify
+$\eta_{\rm c}^{\rm share}>(627/10^{12})\log(15625)$.
+Since $e^{-x}>1-x$ for $x>0$, this gives $s/W<m^\sigma$.
+\end{proof}
+
+\paragraph{Depth and tape constants.}
+No scalar gate is added, and the number of residual kernels decreases.
+One can retain the original unshared $h=25$ node-depth bound
+$E_{\rm old}=64(W_{\rm old}+m+1)^3$, since its gate schedule is unchanged
+and bridges only delete boundary operations. The old $s_{\rm old}$ also
+dominates $s_{\rm c}^{\rm share}$. Therefore the entire generalized guard
+proof remains valid with $B_{\rm old}=s_{\rm old}+E_{\rm old}$ and its
+original $C_0$. The layer recurrence uses the new $W,s$ for time and row
+splitting, and these conservative old constants only for coefficient depth.
+All matchings, bases, and schedules are fixed finite data, so the retained
+fixed-number-of-tapes argument applies without an input-dependent resource.
+
+\section{Full parameter substitution}
+Let $a_{\rm b}=296/10^{11}$ and $a_{\rm c}=627/10^{12}$. Choose
+\begin{gather*}
+ \tau=1-a_{\rm b},\qquad \sigma=1-a_{\rm c},\qquad
+ \epsilon=\frac{1999}{10000},\qquad c=\frac14,\\
+ \beta=\frac1{1000},\qquad\zeta=\frac1{10000},\qquad
+ \delta=\frac1{10^6},\qquad C_1=5-4\beta+\zeta=\frac{49961}{10000},\\
+ \lambda=1-\frac{6265}{10^{13}},\qquad
+ \lambda'=1-\frac{626}{10^{12}},\qquad
+ \kappa=\frac{125}{10^{12}}.
+\end{gather*}
+The compact-control internal exponent is
+$\chi=\tau+(1-\beta)(\sigma-\tau)$, so
+\[
+ 1-\chi=\frac{629333}{10^{15}},\qquad
+ 1-[\sigma+\beta(1-\sigma)]=\frac{626373}{10^{15}}.
+\]
+Therefore
+\[
+ \max\{\tau,\sigma,\chi\}<\lambda<\lambda'<1,\qquad
+ \max\{\sigma+\beta(1-\sigma),1-c,0\}<\lambda'.
+\]
+The guard condition is unchanged: $\epsilon C_1=99872039/10^8<1$.
+The reservation exponent $1-c=3/4$ is strictly below $\lambda'$.
+Moreover $\epsilon(1+c)=1999/8000<1$, $\epsilon<1/5<1/3$,
+$\epsilon c>0$, and $0<\delta<1/8$.
+
+The seven retained assembly margins are exactly
+\[
+\begin{array}{c|c|c}
+ &\text{expression}&\text{value}\\\hline
+g_1&1-\epsilon(1+c)&6001/8000\\
+g_2&\epsilon c(1-\tau)&73963/(5\cdot10^{14})\\
+g_3&\epsilon(1-\lambda')&625687/(5\cdot10^{15})\\
+g_4&(1-\tau)(1-\epsilon)&296037/(125\cdot10^{12})\\
+g_5&1/4-\delta-5\epsilon/4&31/250000\\
+g_6&1-\delta-\epsilon&800099/10^6\\
+g_7&\epsilon&1999/10000
+\end{array}
+\]
+Thus
+\[
+ G=\min_i g_i=\frac{625687}{5\cdot10^{15}}
+  =1.251374\cdot10^{-10},\qquad
+ G-\kappa=\frac{687}{5\cdot10^{15}}>0.
+\]
+The strict gap absorbs every retained fixed logarithmic factor.
+The old Gaussian and prime comparisons remain unchanged with the same
+$\epsilon,\delta$. In particular
+$\alpha=\Theta(p^{11999/40000})$ and
+$\gamma=O(p^{15997/20000})=o(p)$.
+The changed spacing is $K=\Theta(p^{1999/40000})=o(\ell)$, where
+$\ell=\Theta(p^{8001/10000})$, and $K/\log p\to\infty$.
+The reserved-axis count is $O(\log d+d^{3/4}\log p)=o(d)$.
+Record size remains superpolynomial, and all setup and repair costs retain
+their original charges. This proves the stated conditional bound.
+
+\section{Reproduction and limits}
+The new artifacts are \path{scripts/complex_reuse.py},
+\path{certificates/complex-reuse.json},
+\path{tests/test_complex_reuse.py}, and
+\path{patches/complex-reuse-33.patch}. Run \texttt{make verify}.
+The patch applies independently to the unmodified pinned manuscript.
+The standalone note is regenerated by
+\path{scripts/make_complex_reuse_patch.py}.
+
+Checks enumerate the matching at $h=25$ and other odd and even sizes,
+run complete small shared-scratch scalar networks over the rationals and
+an odd finite field, build actual binary bridge projectors and orthonormal
+bases, verify their phases modulo four, and check all assembly inequalities
+using exact fractions. These checks accompany the general proof above;
+they do not establish the original multiplication theorem.
+
+Within the same shared-role counting family, exact logarithm enclosures
+separate $h=25$ from every integer $22\le h<200$. For $h\ge200$, the
+inequalities $\eta<1/(zm)$ and $\log m>1$ give the decreasing upper bound
+$1/(zm-1)$ on the recurrence saving, excluding the infinite tail.
+This is a limited family comparison, not an optimality claim for other
+complex networks or multiplication algorithms. The improvement in $\kappa$
+does not imply a comparable measured runtime speedup.
+\end{document}
