@@ -1,0 +1,596 @@
+{
+  "source_commit": "f5f9c56e637463cac1e300d1589ccf42838f688a",
+  "pin_report": {
+    "integration": {
+      "matched": 134,
+      "missing": [
+        "research/deferred-signed/validation-prior/frames-replay.log",
+        "research/deferred-signed/validation-prior/lifted-replay.log",
+        "research/deferred-signed/validation-prior/stair-replay.log",
+        "research/deferred-signed/validation-prior/stair_control-replay.log"
+      ],
+      "changed": 0
+    },
+    "imported": {
+      "matched": 102,
+      "missing": [],
+      "changed": 0
+    }
+  },
+  "status": "Exact candidate assembly inequalities; global multiplication interfaces remain inherited and unreviewed.",
+  "new_multiplication_bound": false,
+  "target_met": false,
+  "guard_replayed_in_this_run": true,
+  "actual_guard_receipt": "../deferred-guard-target-10/results.json",
+  "actual_guard_receipt_sha256": "21cd652321378768c5f1f6205589ebdb5e5a0f8e42f7633c1a48f5ad72a5ecb8",
+  "actual_guard_snapshot": {
+    "status": "PASS conditional linear-guard transfer to the actual PR97 signed h24 word",
+    "source_commit": "f5f9c56e637463cac1e300d1589ccf42838f688a",
+    "pin_report": {
+      "integration": {
+        "matched": 134,
+        "missing": [
+          "research/deferred-signed/validation-prior/frames-replay.log",
+          "research/deferred-signed/validation-prior/lifted-replay.log",
+          "research/deferred-signed/validation-prior/stair-replay.log",
+          "research/deferred-signed/validation-prior/stair_control-replay.log"
+        ],
+        "changed": 0
+      },
+      "imported": {
+        "matched": 102,
+        "missing": [],
+        "changed": 0
+      }
+    },
+    "producer_sha256": "e1715616ac8cafa8f63b7c0a2e7deacdba7daea94662e0a84626d5374fd27b5c",
+    "producer_bytes_identical": true,
+    "reproduced_event_count": 535744,
+    "reproduced_event_bytes_sha256": "ab960a43d6b3dee0207ccfdf5709c80570cf7ed54223f833e5c260c9e7736277",
+    "h24_support_identity_coefficients": 4096576,
+    "forward": {
+      "inverse": false,
+      "largest_scalar_prefix": "1006577",
+      "largest_literal_numerator_product": "520904",
+      "scalar_denominator_bits": 1,
+      "scalar_updates": 374340,
+      "explicit_copied_temporaries": 24,
+      "largest_coefficient": "19/2",
+      "every_ordinary_gate_has_equal_frames": true,
+      "every_copied_scatter_uses_its_actual_live_source": true
+    },
+    "inverse_opposite": {
+      "inverse": true,
+      "largest_scalar_prefix": "1925603",
+      "largest_literal_numerator_product": "1003352",
+      "scalar_denominator_bits": 1,
+      "scalar_updates": 374340,
+      "explicit_copied_temporaries": 24,
+      "largest_coefficient": "19/2",
+      "every_ordinary_gate_has_equal_frames": true,
+      "every_copied_scatter_uses_its_actual_live_source": true
+    },
+    "scalar_prefix_product": "3876535381862",
+    "scalar_denominator_bits": 2,
+    "copied_endpoint_addition_factor": 2,
+    "phase_controls": {
+      "exact_one_axis_inverse_identity": true,
+      "inverse_equals_minus_i_Z_C_Z": true,
+      "inverse_equals_address_swap_C": true,
+      "endpoint_phase_pairs_checked": 16,
+      "wrong_inverse_correction_rejections": 8,
+      "omitted_pretranslation_rejections": 8
+    },
+    "paused_parent_charge": "2e+64",
+    "largest_child_fraction": "23/24",
+    "recursive_guard_coefficient": 51,
+    "layer_guard": "128(d+1)",
+    "C1": 1,
+    "precision": {
+      "exponent": "43/20",
+      "coefficient": 768,
+      "digit_coefficient": 128,
+      "epsilon": "71/100",
+      "gaussian_power_gap": "1/50",
+      "gaussian_uniform_lower_bound": "15/8",
+      "numerical_guard_valid_for_b_at_least": 1
+    },
+    "assumptions": [
+      "Inherited whole-residual signed complex compiler and exact child return contract",
+      "Depth-first one-active-child schedule and disjoint top-level axis pieces",
+      "Fixed-tape exact routing/address wrappers and copied-temporary implementation",
+      "Inherited normalization, prime selection, Gaussian error and recovery interfaces"
+    ],
+    "all_size_compiler_proved": false,
+    "new_multiplication_bound": false
+  },
+  "complex_moment_gap": "18727420802997054195436413853956740008200200484977483383849/10000000000000000000000000000000000000000000000000000000000000000000",
+  "cases": [
+    {
+      "entrance_cap": null,
+      "bit_saving": "31987/500000000",
+      "frame_receipt": null,
+      "bridge": {
+        "bit": {
+          "m": 529,
+          "W": 108516254,
+          "maxchild": 527,
+          "halving_degree": 183
+        },
+        "complex": {
+          "m": 576,
+          "W": 207387136,
+          "maxchild": 552,
+          "halving_degree": 17
+        },
+        "product_row_coefficient": 5417,
+        "rounded_row_degree": 12000,
+        "strict_row_degree_gap": "23733/25",
+        "guard": "128(d+1)"
+      },
+      "choices": [
+        {
+          "name": "larger saving",
+          "bit_saving": "31987/500000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "9999/10000",
+          "delta": "1/1000000",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000000",
+          "lambda_value": "99993602601/100000000000",
+          "lambda_prime": "49996801301/50000000000",
+          "x": "2",
+          "y": "9999/10000",
+          "C1": "1",
+          "kappa": "1599/25000000",
+          "precision_power": "3",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "1/60000",
+          "axis_width_power": "1/10000",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "3/10000",
+          "constraints": {
+            "bit saving positive": "31987/500000000",
+            "complex saving above bit": "4939111/500000000000",
+            "leaf saving above bit": "8419933/1600000000000",
+            "lambda above tau sigma internal": "1/100000000000",
+            "lambda_prime above lambda leaf": "1/100000000000",
+            "lambda_prime below one": "3198699/50000000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "20001/10000",
+            "Gaussian precision exponent": "3/10000",
+            "reservations": "18016208699/499950000000000",
+            "record regime": "1/10000",
+            "delta in (0,1/8)": "1/1000000"
+          },
+          "margins": {
+            "prefix": "1/10000",
+            "butterflies": "31983791301/500000000000000",
+            "fine fields Gaussian chirps reserved axes": "97/1000000",
+            "packed products": "9999/10000",
+            "CRT reversal": "319838013/5000000000000"
+          },
+          "minimum_margin": "31983791301/500000000000000",
+          "strict_surplus": "3791301/500000000000000",
+          "bit_moment_gap": "32990208238805507919940495008638490453105097448517116450995047/10000000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 3.2990208238805507e-09
+        },
+        {
+          "name": "lower precision and wider margins",
+          "bit_saving": "31987/500000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "71/100",
+          "delta": "9/100",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000",
+          "lambda_value": "249984009/250000000",
+          "lambda_prime": "499968023/500000000",
+          "x": "23/20",
+          "y": "71/100",
+          "C1": "1",
+          "kappa": "227/5000000",
+          "precision_power": "43/20",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "29/430",
+          "axis_width_power": "29/100",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "1/50",
+          "constraints": {
+            "bit saving positive": "31987/500000000",
+            "complex saving above bit": "4939111/500000000000",
+            "leaf saving above bit": "8419933/1600000000000",
+            "lambda above tau sigma internal": "1/100000000",
+            "lambda_prime above lambda leaf": "1/100000000",
+            "lambda_prime below one": "31977/500000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "36/25",
+            "Gaussian precision exponent": "1/50",
+            "reservations": "14497729633/35500000000",
+            "record regime": "29/100",
+            "delta in (0,1/8)": "7/200"
+          },
+          "margins": {
+            "prefix": "29/100",
+            "butterflies": "2270367/50000000000",
+            "fine fields Gaussian chirps reserved axes": "193/2000",
+            "packed products": "71/100",
+            "CRT reversal": "2271077/50000000000"
+          },
+          "minimum_margin": "2270367/50000000000",
+          "strict_surplus": "367/50000000000",
+          "bit_moment_gap": "32990208238805507919940495008638490453105097448517116450995047/10000000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 3.2990208238805507e-09
+        }
+      ]
+    },
+    {
+      "entrance_cap": 21,
+      "bit_saving": "637083/10000000000",
+      "frame_receipt": {
+        "path": "../deferred-truncation-target-10/cap21-results.json",
+        "sha256": "2e7ed8fcc26b5e7095bfb832c81ed183aeed33135832c5e1c5a200c0068968b4"
+      },
+      "bridge": {
+        "bit": {
+          "m": 529,
+          "W": 108516254,
+          "maxchild": 525,
+          "halving_degree": 92
+        },
+        "complex": {
+          "m": 576,
+          "W": 207387136,
+          "maxchild": 552,
+          "halving_degree": 17
+        },
+        "product_row_coefficient": 2960,
+        "rounded_row_degree": 7000,
+        "strict_row_degree_gap": "4808/5",
+        "guard": "128(d+1)"
+      },
+      "choices": [
+        {
+          "name": "larger saving",
+          "bit_saving": "637083/10000000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "9999/10000",
+          "delta": "1/1000000",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000000",
+          "lambda_value": "99993629171/100000000000",
+          "lambda_prime": "24998407293/25000000000",
+          "x": "2",
+          "y": "9999/10000",
+          "C1": "1",
+          "kappa": "637/10000000",
+          "precision_power": "3",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "1/60000",
+          "axis_width_power": "1/10000",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "3/10000",
+          "constraints": {
+            "bit saving positive": "637083/10000000000",
+            "complex saving above bit": "5071961/500000000000",
+            "leaf saving above bit": "8845053/1600000000000",
+            "lambda above tau sigma internal": "1/100000000000",
+            "lambda_prime above lambda leaf": "1/100000000000",
+            "lambda_prime below one": "1592707/25000000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "20001/10000",
+            "Gaussian precision exponent": "3/10000",
+            "reservations": "9074522707/249975000000000",
+            "record regime": "1/10000",
+            "delta in (0,1/8)": "1/1000000"
+          },
+          "margins": {
+            "prefix": "1/10000",
+            "butterflies": "15925477293/250000000000000",
+            "fine fields Gaussian chirps reserved axes": "97/1000000",
+            "packed products": "9999/10000",
+            "CRT reversal": "6370192917/100000000000000"
+          },
+          "minimum_margin": "15925477293/250000000000000",
+          "strict_surplus": "477293/250000000000000",
+          "bit_moment_gap": "2633592373722572836903030340220974563842628804290137151973/625000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 4.213747797956117e-12
+        },
+        {
+          "name": "lower precision and wider margins",
+          "bit_saving": "637083/10000000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "71/100",
+          "delta": "9/100",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000",
+          "lambda_value": "9999363017/10000000000",
+          "lambda_prime": "9999363117/10000000000",
+          "x": "23/20",
+          "y": "71/100",
+          "C1": "1",
+          "kappa": "4521/100000000",
+          "precision_power": "43/20",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "29/430",
+          "axis_width_power": "29/100",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "1/50",
+          "constraints": {
+            "bit saving positive": "637083/10000000000",
+            "complex saving above bit": "5071961/500000000000",
+            "leaf saving above bit": "8845053/1600000000000",
+            "lambda above tau sigma internal": "1/100000000",
+            "lambda_prime above lambda leaf": "1/100000000",
+            "lambda_prime below one": "636883/10000000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "36/25",
+            "Gaussian precision exponent": "1/50",
+            "reservations": "289954781307/710000000000",
+            "record regime": "29/100",
+            "delta in (0,1/8)": "7/200"
+          },
+          "margins": {
+            "prefix": "29/100",
+            "butterflies": "45218693/1000000000000",
+            "fine fields Gaussian chirps reserved axes": "193/2000",
+            "packed products": "71/100",
+            "CRT reversal": "45232893/1000000000000"
+          },
+          "minimum_margin": "45218693/1000000000000",
+          "strict_surplus": "8693/1000000000000",
+          "bit_moment_gap": "2633592373722572836903030340220974563842628804290137151973/625000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 4.213747797956117e-12
+        }
+      ]
+    },
+    {
+      "entrance_cap": 20,
+      "bit_saving": "631911/10000000000",
+      "frame_receipt": {
+        "path": "../deferred-cap-target-10/cap20-results.json",
+        "sha256": "f064e9739ea189772375087a3f60059d3fc15ef4417c41ea77a344fecc87f39e"
+      },
+      "bridge": {
+        "bit": {
+          "m": 529,
+          "W": 108516254,
+          "maxchild": 523,
+          "halving_degree": 61
+        },
+        "complex": {
+          "m": 576,
+          "W": 207387136,
+          "maxchild": 552,
+          "halving_degree": 17
+        },
+        "product_row_coefficient": 2123,
+        "rounded_row_degree": 5000,
+        "strict_row_degree_gap": "16727/25",
+        "guard": "128(d+1)"
+      },
+      "choices": [
+        {
+          "name": "larger saving",
+          "bit_saving": "631911/10000000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "9999/10000",
+          "delta": "1/1000000",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000000",
+          "lambda_value": "99993680891/100000000000",
+          "lambda_prime": "24998420223/25000000000",
+          "x": "2",
+          "y": "9999/10000",
+          "C1": "1",
+          "kappa": "3159/50000000",
+          "precision_power": "3",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "1/60000",
+          "axis_width_power": "1/10000",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "3/10000",
+          "constraints": {
+            "bit saving positive": "631911/10000000000",
+            "complex saving above bit": "5330561/500000000000",
+            "leaf saving above bit": "9672573/1600000000000",
+            "lambda above tau sigma internal": "1/100000000000",
+            "lambda_prime above lambda leaf": "1/100000000000",
+            "lambda_prime below one": "1579777/25000000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "20001/10000",
+            "Gaussian precision exponent": "3/10000",
+            "reservations": "9203809777/249975000000000",
+            "record regime": "1/10000",
+            "delta in (0,1/8)": "1/1000000"
+          },
+          "margins": {
+            "prefix": "1/10000",
+            "butterflies": "15796190223/250000000000000",
+            "fine fields Gaussian chirps reserved axes": "97/1000000",
+            "packed products": "9999/10000",
+            "CRT reversal": "6318478089/100000000000000"
+          },
+          "minimum_margin": "15796190223/250000000000000",
+          "strict_surplus": "1190223/250000000000000",
+          "bit_moment_gap": "17719395531733095479053383020436032323609334910363127931669/625000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 2.8351032850772953e-11
+        },
+        {
+          "name": "lower precision and wider margins",
+          "bit_saving": "631911/10000000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "71/100",
+          "delta": "9/100",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000",
+          "lambda_value": "9999368189/10000000000",
+          "lambda_prime": "9999368289/10000000000",
+          "x": "23/20",
+          "y": "71/100",
+          "C1": "1",
+          "kappa": "897/20000000",
+          "precision_power": "43/20",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "29/430",
+          "axis_width_power": "29/100",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "1/50",
+          "constraints": {
+            "bit saving positive": "631911/10000000000",
+            "complex saving above bit": "5330561/500000000000",
+            "leaf saving above bit": "9672573/1600000000000",
+            "lambda above tau sigma internal": "1/100000000",
+            "lambda_prime above lambda leaf": "1/100000000",
+            "lambda_prime below one": "631711/10000000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "36/25",
+            "Gaussian precision exponent": "1/50",
+            "reservations": "289955148519/710000000000",
+            "record regime": "29/100",
+            "delta in (0,1/8)": "7/200"
+          },
+          "margins": {
+            "prefix": "29/100",
+            "butterflies": "44851481/1000000000000",
+            "fine fields Gaussian chirps reserved axes": "193/2000",
+            "packed products": "71/100",
+            "CRT reversal": "44865681/1000000000000"
+          },
+          "minimum_margin": "44851481/1000000000000",
+          "strict_surplus": "1481/1000000000000",
+          "bit_moment_gap": "17719395531733095479053383020436032323609334910363127931669/625000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 2.8351032850772953e-11
+        }
+      ]
+    },
+    {
+      "entrance_cap": 19,
+      "bit_saving": "156217/2500000000",
+      "frame_receipt": {
+        "path": "../deferred-cap-target-10/cap19-results.json",
+        "sha256": "6c878a1d96bd2c05290c4c711938c4cb47d5f5bb397e94b94afd195776cd1830"
+      },
+      "bridge": {
+        "bit": {
+          "m": 529,
+          "W": 108516254,
+          "maxchild": 521,
+          "halving_degree": 46
+        },
+        "complex": {
+          "m": 576,
+          "W": 207387136,
+          "maxchild": 552,
+          "halving_degree": 17
+        },
+        "product_row_coefficient": 1718,
+        "rounded_row_degree": 4000,
+        "strict_row_degree_gap": "12382/25",
+        "guard": "128(d+1)"
+      },
+      "choices": [
+        {
+          "name": "larger saving",
+          "bit_saving": "156217/2500000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "9999/10000",
+          "delta": "1/1000000",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000000",
+          "lambda_value": "99993751321/100000000000",
+          "lambda_prime": "49996875661/50000000000",
+          "x": "2",
+          "y": "9999/10000",
+          "C1": "1",
+          "kappa": "781/12500000",
+          "precision_power": "3",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "1/60000",
+          "axis_width_power": "1/10000",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "3/10000",
+          "constraints": {
+            "bit saving positive": "156217/2500000000",
+            "complex saving above bit": "5682711/500000000000",
+            "leaf saving above bit": "10799453/1600000000000",
+            "lambda above tau sigma internal": "1/100000000000",
+            "lambda_prime above lambda leaf": "1/100000000000",
+            "lambda_prime below one": "3124339/50000000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "20001/10000",
+            "Gaussian precision exponent": "3/10000",
+            "reservations": "18759734339/499950000000000",
+            "record regime": "1/10000",
+            "delta in (0,1/8)": "1/1000000"
+          },
+          "margins": {
+            "prefix": "1/10000",
+            "butterflies": "31240265661/500000000000000",
+            "fine fields Gaussian chirps reserved axes": "97/1000000",
+            "packed products": "9999/10000",
+            "CRT reversal": "1562013783/25000000000000"
+          },
+          "minimum_margin": "31240265661/500000000000000",
+          "strict_surplus": "265661/500000000000000",
+          "bit_moment_gap": "45820608338096200676271295713738869574523561035911862734349/5000000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 9.16412166761924e-12
+        },
+        {
+          "name": "lower precision and wider margins",
+          "bit_saving": "156217/2500000000",
+          "complex_saving": "36926111/500000000000",
+          "epsilon": "71/100",
+          "delta": "9/100",
+          "beta": "1/16",
+          "lambda_gap": "1/100000000",
+          "lambda_value": "78120119/78125000",
+          "lambda_prime": "2499843833/2500000000",
+          "x": "23/20",
+          "y": "71/100",
+          "C1": "1",
+          "kappa": "887/20000000",
+          "precision_power": "43/20",
+          "precision": "b_prime=128*ceil(b^P); p=768*ceil(b^P)",
+          "mu": "29/430",
+          "axis_width_power": "29/100",
+          "Gaussian_uniform_lower_bound_coefficient": "15/8",
+          "Gaussian_lower_bound_power": "1/50",
+          "constraints": {
+            "bit saving positive": "156217/2500000000",
+            "complex saving above bit": "5682711/500000000000",
+            "leaf saving above bit": "10799453/1600000000000",
+            "lambda above tau sigma internal": "1/100000000",
+            "lambda_prime above lambda leaf": "1/100000000",
+            "lambda_prime below one": "156167/2500000000",
+            "beta in (0,1)": "1/16",
+            "guard exponent": "36/25",
+            "Gaussian precision exponent": "1/50",
+            "reservations": "72488912143/177500000000",
+            "record regime": "29/100",
+            "delta in (0,1/8)": "7/200"
+          },
+          "margins": {
+            "prefix": "29/100",
+            "butterflies": "11087857/250000000000",
+            "fine fields Gaussian chirps reserved axes": "193/2000",
+            "packed products": "71/100",
+            "CRT reversal": "11091407/250000000000"
+          },
+          "minimum_margin": "11087857/250000000000",
+          "strict_surplus": "357/250000000000",
+          "bit_moment_gap": "45820608338096200676271295713738869574523561035911862734349/5000000000000000000000000000000000000000000000000000000000000000000000",
+          "bit_moment_gap_float": 9.16412166761924e-12
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "Inherited whole-residual signed complex compiler and exact child return contract",
+    "Depth-first one-active-child schedule and disjoint top-level axis pieces",
+    "Fixed-tape exact routing/address wrappers and copied-temporary implementation",
+    "Inherited normalization, prime selection, Gaussian error and recovery interfaces",
+    "Changed bit-frame certificates and original deferred word/geometry checks",
+    "Common rational basis, ordered residuals, compact routing and exact recovery",
+    "The enlarged-precision macro stack, distinct from PR97 balanced assembly"
+  ]
+}

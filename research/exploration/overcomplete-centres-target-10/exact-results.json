@@ -1,0 +1,309 @@
+{
+  "status": "PASS",
+  "root_lines": 120,
+  "code_dimension": 9,
+  "all_nonzero_codeword_support_ranks": 8,
+  "code_weight_histogram": {
+    "0": 1,
+    "56": 255,
+    "64": 255,
+    "120": 1
+  },
+  "simple_reflections_checked": 960,
+  "simple_basis_root_coefficients_checked": 120,
+  "hyperplane_orbit_representatives": [
+    {
+      "deleted_simple_root": 1,
+      "primitive_normal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "root_lines_in_hyperplane": 42,
+      "smallest_nonzero_punctured_weight": 14,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "14": 1,
+        "34": 14,
+        "35": 128,
+        "36": 42,
+        "38": 70,
+        "40": 70,
+        "42": 42,
+        "43": 128,
+        "44": 14,
+        "64": 1,
+        "78": 1
+      }
+    },
+    {
+      "deleted_simple_root": 2,
+      "primitive_normal": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      "root_lines_in_hyperplane": 28,
+      "smallest_nonzero_punctured_weight": 28,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "28": 1,
+        "35": 8,
+        "41": 56,
+        "43": 64,
+        "44": 126,
+        "48": 126,
+        "49": 64,
+        "51": 56,
+        "57": 8,
+        "64": 1,
+        "92": 1
+      }
+    },
+    {
+      "deleted_simple_root": 3,
+      "primitive_normal": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -7
+      ],
+      "root_lines_in_hyperplane": 22,
+      "smallest_nonzero_punctured_weight": 35,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "35": 2,
+        "40": 7,
+        "42": 1,
+        "44": 56,
+        "45": 42,
+        "46": 56,
+        "47": 70,
+        "48": 7,
+        "49": 28,
+        "50": 7,
+        "51": 70,
+        "52": 56,
+        "53": 42,
+        "54": 56,
+        "56": 1,
+        "58": 7,
+        "63": 2,
+        "98": 1
+      }
+    },
+    {
+      "deleted_simple_root": 4,
+      "primitive_normal": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      "root_lines_in_hyperplane": 14,
+      "smallest_nonzero_punctured_weight": 43,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "43": 2,
+        "44": 3,
+        "46": 5,
+        "47": 10,
+        "48": 55,
+        "49": 50,
+        "50": 56,
+        "51": 60,
+        "52": 8,
+        "53": 12,
+        "54": 8,
+        "55": 60,
+        "56": 56,
+        "57": 50,
+        "58": 55,
+        "59": 10,
+        "60": 5,
+        "62": 3,
+        "63": 2,
+        "106": 1
+      }
+    },
+    {
+      "deleted_simple_root": 5,
+      "primitive_normal": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "root_lines_in_hyperplane": 16,
+      "smallest_nonzero_punctured_weight": 40,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "40": 1,
+        "43": 4,
+        "44": 10,
+        "47": 60,
+        "48": 30,
+        "49": 60,
+        "50": 80,
+        "51": 4,
+        "52": 12,
+        "53": 4,
+        "54": 80,
+        "55": 60,
+        "56": 30,
+        "57": 60,
+        "60": 10,
+        "61": 4,
+        "64": 1,
+        "104": 1
+      }
+    },
+    {
+      "deleted_simple_root": 6,
+      "primitive_normal": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        3
+      ],
+      "root_lines_in_hyperplane": 23,
+      "smallest_nonzero_punctured_weight": 33,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "33": 1,
+        "41": 10,
+        "43": 22,
+        "44": 68,
+        "45": 48,
+        "46": 46,
+        "47": 60,
+        "50": 60,
+        "51": 46,
+        "52": 48,
+        "53": 68,
+        "54": 22,
+        "56": 10,
+        "64": 1,
+        "97": 1
+      }
+    },
+    {
+      "deleted_simple_root": 7,
+      "primitive_normal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      "root_lines_in_hyperplane": 37,
+      "smallest_nonzero_punctured_weight": 27,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "27": 1,
+        "28": 2,
+        "35": 27,
+        "36": 36,
+        "39": 90,
+        "40": 99,
+        "43": 99,
+        "44": 90,
+        "47": 36,
+        "48": 27,
+        "55": 2,
+        "56": 1,
+        "83": 1
+      }
+    },
+    {
+      "deleted_simple_root": 8,
+      "primitive_normal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "root_lines_in_hyperplane": 63,
+      "smallest_nonzero_punctured_weight": 1,
+      "punctured_weight_histogram": {
+        "0": 1,
+        "1": 1,
+        "24": 63,
+        "25": 63,
+        "28": 128,
+        "29": 128,
+        "32": 63,
+        "33": 63,
+        "56": 1,
+        "57": 1
+      }
+    }
+  ],
+  "E7_moment_tensor_entries_checked": 43920,
+  "E7_minimum_rank_dropping_deletion_bound": 27,
+  "sparse_extra_direction_weight_limit": 13,
+  "lower_bound_on_total_source_rank": 72,
+  "sharp_overcomplete_dictionary": {
+    "rows_hex": [
+      "0x1",
+      "0xffffffff00000000fffffffc000002",
+      "0xfffffffffffffffc000003",
+      "0xffff0000ffff0000fffff003ff000c",
+      "0xff00ff00ff00ff00fff00ff3fcc030",
+      "0xf0f0f0f0f0f0f0f0fc0fcfcff3c0c0",
+      "0xccccccccccccccccc3cf3f3fcfc300",
+      "0xaaaaaaaaaaaaaaaa333cfcff3fcc00",
+      "0x96696996699696690cf3f3fcfff000",
+      "0x177e7ee87ee8e881a6595956555aaa"
+    ],
+    "source_ranks": [
+      1,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "independent_rows": 10,
+    "total_cost": 72
+  },
+  "scope": "Rows in C+<f> for one f of weight at most13; arbitrary source supports allowed",
+  "target": "Unmet; denser or multiple extra directions and other motifs remain open"
+}

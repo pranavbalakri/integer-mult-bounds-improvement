@@ -39,6 +39,39 @@ The higher candidate is about 4.97% above the pinned PR84 headline; this is an
 extension of that credited construction, not an independent discovery of its
 underlying producer. No claim is made about priority over later public work.
 
+## New deferred-frame choices and a checked guard transfer
+
+[Jain's round-seven construction and Chen's PR97 integration](deferred-interface-target-10/README.md)
+supply a separately credited conditional saving above `2^-14`. We reproduced
+their finite moments, literal ledgers, signed controls and native frame checks.
+The pinned upstream top-level verifier itself stops on four absent historical
+log files; our new replay receipts record that distinction explicitly.
+
+We then constructed smaller deferred entrance frames while preserving the
+scalar word. [Exact rational frame checks](deferred-truncation-target-10/README.md)
+and [coordinated caps](deferred-cap-target-10/README.md) certify every changed
+containment and both fixed-basis pivot profiles. Our existing linear numerical
+guard also applies to the [actual signed h24 event word](deferred-guard-target-10/README.md),
+including its copied centres and inverse phase correction.
+
+The resulting exact candidate assembly choices are:
+
+| Entrance choice | Larger-saving kappa, precision `768 b^3` | Lower-precision kappa, precision `768 ceil(b^(43/20))` | Rounded stock degree |
+|---|---:|---:|---:|
+| Original credited deferred word | 0.00006396 | 0.00004540 | 12000 |
+| Cap 21 | 0.00006370 | 0.00004521 | 7000 |
+| Cap 20 | 0.00006318 | 0.00004485 | 5000 |
+| Cap 19 | 0.00006248 | 0.00004435 | 4000 |
+
+The two precision columns are different parameter choices. Cap 19 lowers
+the worst-child halving depth from 183 to 46, with roughly 2.3% loss of the
+finite bit saving. It keeps a candidate above `2^-14`; it does not reach
+`2^-10`. The stock degrees are sufficient theoretical bounds, not runtime
+or crossover measurements. These choices also do not dominate our earlier
+borrowed PR84/h18 choice, which has a smaller saving and stock degree 1200.
+All inherited global compiler, routing, prime, recovery and tape assumptions
+remain explicit, and the main certificate is unchanged.
+
 ## What the search established
 
 - [Augmented triple motif](asymmetric-fit-target-10/README.md): adjoining
@@ -60,7 +93,10 @@ underlying producer. No claim is made about priority over later public work.
   dimensions 152 and 171. Side costs and a recursive moment remain unproved.
   The note also excludes adding higher-norm vectors under the fixed E8 parity
   rule and one specific extra-source recoding; general overcomplete source
-  factorizations remain open.
+  factorizations remain open. A [stronger sparse-source exclusion](overcomplete-centres-target-10/README.md)
+  proves that adding one arbitrary binary direction of weight at most 13
+  cannot lower the total individual source-span cost below 72, even when
+  overcomplete sources lie outside the original row space.
 - [Typed phase interfaces](typed-phase-target-10/README.md): exact relative
   mixer and four-channel identities do close algebraically. However, making
   a batched two-bank endpoint free using pointwise maps around a common full
@@ -77,10 +113,12 @@ underlying producer. No claim is made about priority over later public work.
 - [Auxiliary unmixing at the sink](sink-unmixing-target-10/README.md): a new
   scalar word uses dirty references to remove each producer role's dependence
   on data before restoring the auxiliary block at the common full frame.
-  Complete input-basis checks pass in both orientations at h5 through h8.
-  This permits a different first-stage retirement schedule, but all added
-  reference paths and actual cleanup frames still need a complete histogram.
-  No moment saving is claimed.
+  Complete input-basis checks pass. Exact fixed-basis profiles now show both
+  full-reference versions lose to the borrowed-source construction. Even
+  free references and source detours cannot rescue the tested point-star
+  cleanup family. A [zero-reference hierarchy](sink-reference-target-10/README.md)
+  passes full dirty-basis and frame/profile checks, but its bit saving
+  `0.0000534519499` also remains below the existing borrowed-source result.
 - [Borrowed-source limits](borrowed-ceiling-target-10/README.md): keeping the
   specified data endpoints and centre copies cannot reach the target with two
   auxiliary roles per output, even if all internal paths are ideally batched.

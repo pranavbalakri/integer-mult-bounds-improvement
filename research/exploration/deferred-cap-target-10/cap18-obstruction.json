@@ -1,0 +1,834 @@
+{
+  "source_repository": "https://github.com/Swapnil-jain/integer-mult-kappa",
+  "source_commit": "741e7aa078392553815df7926ee17ac5e25a8c38",
+  "source_sha256": {
+    "certificates/round7/witness_23.json.gz": "b2486aa2bb222bacea6e52162a3920780e45dd8edc5d7cb03eabea336a1c6588",
+    "certificates/round7/deferred_23.json.gz": "8c38e947ff9e021e308000dd82bb5e2194eb265d8b75194e22ce783d3e75317c",
+    "independent/deferred-readout/deferred.py": "e92ac1db9fce8608cf5302336f05750fa327eda99f7170ed32e7323220ffc164",
+    "independent/deferred-readout/linalg.py": "56cc779911a3c5c901bc5194ccaf97f720157a2c4ba602b07ee8642af2676b8b",
+    "independent/deferred-readout/check_lifted.py": "c3e87ad6b31f377df549421f53d22b99131d2228dcd08a1956913211383cbd6c",
+    "independent/deferred-readout/check_frames.py": "1cb2b8cde2a8b3f12008da0d335dcdd38005cc692367423d9589aa1f4d6306e8"
+  },
+  "h": 23,
+  "cap": 18,
+  "blocked_slot": 23806,
+  "old_slot_dimension": 19,
+  "required_targets": [
+    {
+      "target_id": 41,
+      "target": [
+        0,
+        3,
+        4
+      ],
+      "predecessor_slot": 24415,
+      "predecessor_dimension": 18,
+      "readout_coefficient": 1
+    },
+    {
+      "target_id": 42,
+      "target": [
+        0,
+        3,
+        5
+      ],
+      "predecessor_slot": 25074,
+      "predecessor_dimension": 18,
+      "readout_coefficient": 1
+    }
+  ],
+  "predecessor_union_rank_exact": 19,
+  "predecessor_intersection_dimension": 17,
+  "original_readout_order_retained": true,
+  "unchanged_predecessors_at_dimensions_at_most_18": true,
+  "applies_to_integer_and_F2_readout_supports": true,
+  "nonzero_integer_minor_dimension": 19,
+  "minor_columns": [
+    0,
+    2,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    4
+  ],
+  "minor_rows_from_slot_and_basis_row": [
+    [
+      24415,
+      0
+    ],
+    [
+      24415,
+      1
+    ],
+    [
+      24415,
+      2
+    ],
+    [
+      24415,
+      3
+    ],
+    [
+      24415,
+      4
+    ],
+    [
+      24415,
+      5
+    ],
+    [
+      24415,
+      6
+    ],
+    [
+      24415,
+      7
+    ],
+    [
+      24415,
+      8
+    ],
+    [
+      24415,
+      9
+    ],
+    [
+      24415,
+      10
+    ],
+    [
+      24415,
+      11
+    ],
+    [
+      24415,
+      12
+    ],
+    [
+      24415,
+      13
+    ],
+    [
+      24415,
+      14
+    ],
+    [
+      24415,
+      15
+    ],
+    [
+      24415,
+      16
+    ],
+    [
+      24415,
+      17
+    ],
+    [
+      25074,
+      0
+    ]
+  ],
+  "exact_integer_minor": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "exact_integer_determinant": 1,
+  "old_slot_annihilator": [
+    [
+      -1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      -1,
+      0,
+      -1,
+      0,
+      -1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "all_local_obstructions": [
+    {
+      "slot": 23806,
+      "old_dimension": 19,
+      "targets": [
+        41,
+        42
+      ],
+      "predecessors": [
+        24415,
+        25074
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23808,
+      "old_dimension": 19,
+      "targets": [
+        23,
+        42
+      ],
+      "predecessors": [
+        24245,
+        25074
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23897,
+      "old_dimension": 19,
+      "targets": [
+        784,
+        785
+      ],
+      "predecessors": [
+        23063,
+        23606
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23951,
+      "old_dimension": 19,
+      "targets": [
+        1073,
+        1074
+      ],
+      "predecessors": [
+        22864,
+        23157
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23953,
+      "old_dimension": 19,
+      "targets": [
+        1060,
+        1061
+      ],
+      "predecessors": [
+        22723,
+        22850
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23932,
+      "old_dimension": 20,
+      "targets": [
+        72,
+        282
+      ],
+      "predecessors": [
+        22659,
+        22930
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23934,
+      "old_dimension": 20,
+      "targets": [
+        74,
+        284
+      ],
+      "predecessors": [
+        22932,
+        22981
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23976,
+      "old_dimension": 20,
+      "targets": [
+        99,
+        309
+      ],
+      "predecessors": [
+        22630,
+        23833
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23978,
+      "old_dimension": 20,
+      "targets": [
+        101,
+        311
+      ],
+      "predecessors": [
+        22632,
+        23834
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23980,
+      "old_dimension": 20,
+      "targets": [
+        103,
+        313
+      ],
+      "predecessors": [
+        22634,
+        22952
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23982,
+      "old_dimension": 20,
+      "targets": [
+        105,
+        315
+      ],
+      "predecessors": [
+        22636,
+        22657
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 23984,
+      "old_dimension": 20,
+      "targets": [
+        107,
+        317
+      ],
+      "predecessors": [
+        22638,
+        22979
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 24070,
+      "old_dimension": 20,
+      "targets": [
+        159,
+        369
+      ],
+      "predecessors": [
+        22653,
+        23804
+      ],
+      "rank_lower_bound": 19
+    },
+    {
+      "slot": 24108,
+      "old_dimension": 20,
+      "targets": [
+        180,
+        390
+      ],
+      "predecessors": [
+        22651,
+        23803
+      ],
+      "rank_lower_bound": 19
+    }
+  ],
+  "conclusion": "No <=18-dimensional replacement for slot23806 can contain both unchanged preceding18-planes. This is an obstruction to this frame-capping ansatz and retained order, not to other algorithms or changed lower frames."
+}

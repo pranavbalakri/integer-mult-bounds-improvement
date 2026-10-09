@@ -1,0 +1,81 @@
+{
+  "status": "PASS conditional linear-guard transfer to the actual PR97 signed h24 word",
+  "source_commit": "f5f9c56e637463cac1e300d1589ccf42838f688a",
+  "pin_report": {
+    "integration": {
+      "matched": 134,
+      "missing": [
+        "research/deferred-signed/validation-prior/frames-replay.log",
+        "research/deferred-signed/validation-prior/lifted-replay.log",
+        "research/deferred-signed/validation-prior/stair-replay.log",
+        "research/deferred-signed/validation-prior/stair_control-replay.log"
+      ],
+      "changed": 0
+    },
+    "imported": {
+      "matched": 102,
+      "missing": [],
+      "changed": 0
+    }
+  },
+  "producer_sha256": "e1715616ac8cafa8f63b7c0a2e7deacdba7daea94662e0a84626d5374fd27b5c",
+  "producer_bytes_identical": true,
+  "reproduced_event_count": 535744,
+  "reproduced_event_bytes_sha256": "ab960a43d6b3dee0207ccfdf5709c80570cf7ed54223f833e5c260c9e7736277",
+  "h24_support_identity_coefficients": 4096576,
+  "forward": {
+    "inverse": false,
+    "largest_scalar_prefix": "1006577",
+    "largest_literal_numerator_product": "520904",
+    "scalar_denominator_bits": 1,
+    "scalar_updates": 374340,
+    "explicit_copied_temporaries": 24,
+    "largest_coefficient": "19/2",
+    "every_ordinary_gate_has_equal_frames": true,
+    "every_copied_scatter_uses_its_actual_live_source": true
+  },
+  "inverse_opposite": {
+    "inverse": true,
+    "largest_scalar_prefix": "1925603",
+    "largest_literal_numerator_product": "1003352",
+    "scalar_denominator_bits": 1,
+    "scalar_updates": 374340,
+    "explicit_copied_temporaries": 24,
+    "largest_coefficient": "19/2",
+    "every_ordinary_gate_has_equal_frames": true,
+    "every_copied_scatter_uses_its_actual_live_source": true
+  },
+  "scalar_prefix_product": "3876535381862",
+  "scalar_denominator_bits": 2,
+  "copied_endpoint_addition_factor": 2,
+  "phase_controls": {
+    "exact_one_axis_inverse_identity": true,
+    "inverse_equals_minus_i_Z_C_Z": true,
+    "inverse_equals_address_swap_C": true,
+    "endpoint_phase_pairs_checked": 16,
+    "wrong_inverse_correction_rejections": 8,
+    "omitted_pretranslation_rejections": 8
+  },
+  "paused_parent_charge": "2e+64",
+  "largest_child_fraction": "23/24",
+  "recursive_guard_coefficient": 51,
+  "layer_guard": "128(d+1)",
+  "C1": 1,
+  "precision": {
+    "exponent": "43/20",
+    "coefficient": 768,
+    "digit_coefficient": 128,
+    "epsilon": "71/100",
+    "gaussian_power_gap": "1/50",
+    "gaussian_uniform_lower_bound": "15/8",
+    "numerical_guard_valid_for_b_at_least": 1
+  },
+  "assumptions": [
+    "Inherited whole-residual signed complex compiler and exact child return contract",
+    "Depth-first one-active-child schedule and disjoint top-level axis pieces",
+    "Fixed-tape exact routing/address wrappers and copied-temporary implementation",
+    "Inherited normalization, prime selection, Gaussian error and recovery interfaces"
+  ],
+  "all_size_compiler_proved": false,
+  "new_multiplication_bound": false
+}

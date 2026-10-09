@@ -1,0 +1,63 @@
+{
+  "source_commit": "f5f9c56e637463cac1e300d1589ccf42838f688a",
+  "source_working_directory": "research/deferred-signed/swapnil-round7",
+  "replays": [
+    {
+      "argv": [
+        "python3",
+        "independent/deferred-readout/check_word.py",
+        "23"
+      ],
+      "observed_exit_code": 0,
+      "expected_success_marker": "ALL PASS",
+      "stdout_sha256": "2840aa3991660502b421f15eef71455cd0ef557c15c096743e650f4795842547",
+      "stdout": "[    1s] A. disjoint additions; out(c,T) = {S: S cap T = {c}}; retained(c) = star(c) (5313 outputs, 23 totals) PASS\n[    1s] A. schedule computes the DAG: 82983 ops, R = adds + outputs + totals - links = 28866, node lists follow the replay PASS\n[    1s] B. garbage coefficients by the transpose sweep: 1681205 nonzero over Z, 669262 odd                   PASS\n[    1s] C. deferred slots (11565, 5116 of them V leaves) untouched by phase 1 (10962 of 82983 ops); totals complete in phase 1 PASS\n[    1s] C. release rule: readouts by dim sigma_u, deferred V gates by dim s_i, X_S = early then deferred V gates PASS\n[    3s] D. scalar identity over F2 (3 random scratch/data): scratch restored, y_T += x_T and == definition sums PASS\n[    3s] D. scalar identity over Z, exact integer readout coefficients                                        PASS\n[    5s] D. NEG control drop               breaks the identity (F2, 8 trials; and Z)                          PASS\n[    6s] D. NEG control late_readout       breaks the identity (F2, 8 trials; and Z)                          PASS\n[    9s] D. NEG control V_before_readout   breaks the identity (F2, 8 trials; and Z)                          PASS\n[   10s] D. NEG control phase1_slot        breaks the identity (F2, 8 trials; and Z)                          PASS\n[   10s] D. NEG control F2 coefficients used over Z break the Z identity                                      PASS\n[   10s] ALL PASS\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "independent/deferred-readout/check_frames.py",
+        "23"
+      ],
+      "observed_exit_code": 0,
+      "expected_success_marker": "ALL PASS",
+      "stdout_sha256": "eb509833bae22c7b19bcc10eb36a432b5a928c3a11f713684652c5ddec1bf0df",
+      "stdout": "[   94s] exact base frames: 64042 node frames (56460 lifted), 1396 late-copy intersections\n[   94s] X. recorded frame dims == exact dims (64042 node frames, 1396 late-copy intersections)               PASS\n[   94s] X. every slot moves along slot successors of the witness, starts at its use, ends at its root (28866 slots) PASS\n[   95s] Q. sigma_u and s_i bases independent (rank mod 2^31-1 == row count; 11565 + 11374 frames, max |entry| 13) PASS\n[  125s] Q. sigma_u <= F0(u) exactly (11565 deferred slots)                                                   PASS\n[  126s] Q. sigma_u <= t_T^perp exactly for every Z-support target (a superset of the F2 targets)             PASS\n[  130s] Q. deferred levels on every y_T nested in time order, exactly (Z targets 0 bad, F2 targets 0 bad)    PASS\n[  143s] Q. G nondegenerate on every sigma_u and s_i (Gram det != 0 mod 2^31-1 => over Z)                     PASS\n[  214s] Q. V leaves exactly: t_S <= s_i (0 bad), s_i <= N_i, the first frame of the use (0 bad), 11374 slots PASS\n[  217s] Q. X_S chains nested exactly in time order (<t_S>, early V gates, deferred V gates, F; 1771 leaves)  PASS\n[  382s] S. frames used only by the new steps: 4803, G-degenerate mod 2^31-1 0, reduction dimension mismatches 0 PASS\n[ 1870s] S. side lemma (generic NE pivots, both conjugations, mod 2^31-1) on all 3084 new high-rank steps {'corner': 1049, 'slot': 16, 'ydata': 248, 'xdata': 1771} PASS\n[ 1873s] F. round-six corner: rank sum == s (Z and F2 y supports), a_b = 12599/200000000 (6.299500e-05), kappa = 6299103187973/100000000000000000 (6.2991032e-05) ok=True, F2 a_b = 12599/200000000 PASS\n[ 1873s] F. staircase corner: rank sum == s (Z and F2 y supports), a_b = 31987/500000000 (6.397400e-05), kappa = 1599247689723/25000000000000000 (6.3969908e-05) ok=True, F2 a_b = 31987/500000000 PASS\n[ 1873s] F. claims: a_b 12599/200000000, kappa 6299103187973/10^17; staircase a_b 31987/500000000, kappa 1599247689723/(2.5*10^16) PASS\n[ 1876s] N. NEG reversed readout order breaks the y_T chains (11879 bad)                                      PASS\n[ 1876s] N. NEG readouts at F0(u) instead of sigma_u break the y_T chains (3276 breaks on 300 targets)        PASS\n[ 1876s] N. NEG perturbed sigma frames fail sigma <= F0 (200 / 200)                                           PASS\n[ 1878s] N. NEG deferred V gates before the early ones break the X_S chains (1760 bad)                        PASS\n[ 1879s] N. NEG side lemma with U = V = I fails (600 / 600)                                                   PASS\n[ 1879s] ALL PASS\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "independent/deferred-readout/check_lifted.py",
+        "23"
+      ],
+      "observed_exit_code": 0,
+      "expected_success_marker": "ALL PASS",
+      "stdout_sha256": "6fb39eb0f4ec14b8b633b3623356cd42ebfe12ecc2f9f95a8667e4c88bf03d08",
+      "stdout": "[    0s] h=23: A. DAG semantics OK (64042 nodes, 62271 additions, 38741 links, 56460 lifted, 834 late)\n[    8s] B. compiled: R=28866 (claimed 28866), ops 91137, late copies 1396\n[    9s] C. dirty-scratch replay (F2/Z x word/mirror x midread/endread): ALL OK\n[   15s] D. nesting facts: j-monotone failures 0, link span failures 0, root containment failures 0, F invertible True\n[   33s]    co-bases K_n done\n[   88s]    lifted frame dims exact: {'SF full mod q': 56460, 'KF full mod q': 56460}\n[   88s]    every lifted frame is the largest admissible frame U_n: True (56460 / 56460; the flag only switches span -> U_n)\n[  100s]    late-copy intersections exact: 1396 frames\n[  100s]    chain steps: sum of ranks 663918 = h R 663918: True; histogram equals claim: True; distinct steps 151898 (2r>h: 15115)\n[ 4153s] E. frames used 70776: G-degenerate 0, reduction dimension mismatches 0\n[ 5166s]    side lemma 5000/15138, failures 0\n[ 5421s]    side lemma 10000/15138, failures 0\n[ 5790s]    side lemma 15000/15138, failures 0\n[ 5792s]    side lemma at one integer point: failures 0 over 15138 distinct high-rank steps x 2 conjugations\n[ 5792s] F. round6 corner: s=57403754177 W=108516254 a_b=50171/1000000000 (5.017100e-05, root 5.017627e-05) kappa=2508424149841/50000000000000000 (5.0168483e-05) ok=True\n[ 5792s] F. staircase: s=57403754177 W=108516254 a_b=5079/100000000 (5.079000e-05, root 5.079516e-05) kappa=507874205067/10000000000000000 (5.0787421e-05) ok=True\n[ 5792s] ALL PASS\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "independent/deferred-readout/check_stair.py",
+        "23"
+      ],
+      "observed_exit_code": 0,
+      "expected_success_marker": "certified=True",
+      "stdout_sha256": "8a7cad5cb0ff905203c46da45642224d178cfd8c9d7d97a1502f1195705f0231",
+      "stdout": "1. sparse flag family: trace conditions OK; f1..f4 zeros 0 over 1771 lines x 23 rows; inner-corner zeros 0\n2-3. 20 pairs, distinct pivot patterns 1; runs [1, 21, 1, 1, 1, 18, 1, 1] invertible True; nontrivial NE blocks 689, symbolic bound above evaluated rank on 0\nRESULT h=23 kind=stair runs=[21, 18, 1, 1, 1, 1, 1, 1] certified=True\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "independent/deferred-readout/check_stair.py",
+        "23",
+        "--control"
+      ],
+      "observed_exit_code": 0,
+      "expected_success_marker": "certified=False",
+      "stdout_sha256": "82bf3dda4e3f5ec4e3ca796a5544364e2864a28a877642773132e902da4755d6",
+      "stdout": "1. sparse flag family: trace conditions OK; f1..f4 zeros 0 over 1771 lines x 23 rows; inner-corner zeros 0\n2-3. 20 pairs, distinct pivot patterns 1; runs [1, 21, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] invertible False; nontrivial NE blocks 403, symbolic bound above evaluated rank on 3\nRESULT h=23 kind=rand1 runs=[21, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] certified=False\n"
+    }
+  ],
+  "scope": "New independent executions of the pinned native checks. These do not replace the absent historical upstream logs."
+}

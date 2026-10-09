@@ -1,0 +1,84 @@
+{
+  "source_commit": "f5f9c56e637463cac1e300d1589ccf42838f688a",
+  "pins": {
+    "integration": {
+      "matched": 134,
+      "missing": [
+        "research/deferred-signed/validation-prior/frames-replay.log",
+        "research/deferred-signed/validation-prior/lifted-replay.log",
+        "research/deferred-signed/validation-prior/stair-replay.log",
+        "research/deferred-signed/validation-prior/stair_control-replay.log"
+      ],
+      "changed": 0
+    },
+    "imported": {
+      "matched": 102,
+      "missing": [],
+      "changed": 0
+    }
+  },
+  "moments": {
+    "bit": {
+      "m": 529,
+      "W": 108516254,
+      "mass": 57403754177,
+      "deficit": 1344189,
+      "saving": "31987/500000000",
+      "exact_acceptance_gap": "32990208238805507919940495008638490453105097448517116450995047/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "target_rejection_gap": "1673347711744807901296778834780792834925904606674083607398971607991/5000000000000000000000000000000000000000000000000000000000000000000000",
+      "maxchild": 527
+    },
+    "complex": {
+      "m": 576,
+      "W": 207387136,
+      "mass": 119453132304,
+      "deficit": 1858032,
+      "saving": "36926111/500000000000",
+      "exact_acceptance_gap": "18727420802997054195436413853956740008200200484977483383849/10000000000000000000000000000000000000000000000000000000000000000000",
+      "target_rejection_gap": "1904007937145012794377148117828844195852717712188733349351586557911/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "maxchild": 552
+    }
+  },
+  "upstream_top_level_verifier_passes": false,
+  "upstream_failure": "Four pinned historical validation logs are absent from this commit.",
+  "replay": [
+    {
+      "script": "round7_literal_frame_ledger.py",
+      "returncode": 0,
+      "output_matches_pinned": true,
+      "stdout_sha256": "4bcb62ce5fe8625954044b9154957f7d1f16c762e509d513dc8f744286b530cb"
+    },
+    {
+      "script": "round7_tensor_endpoint_controls.py",
+      "returncode": 0,
+      "output_matches_pinned": true,
+      "stdout_sha256": "04f117f162a04e9c57669e9fc162ac10650167934579f4ab1faf262f8d2d4cce"
+    },
+    {
+      "script": "round6_complex_interface_controls.py",
+      "returncode": 0,
+      "output_matches_pinned": true,
+      "stdout_sha256": "4b988a706c30f6c2ab1a8e478f82854e2389b58b9cee63482e7a7493d843ed37"
+    },
+    {
+      "script": "round6_complex_literal_ledger.py",
+      "returncode": 0,
+      "output_matches_pinned": true,
+      "stdout_sha256": "7fff71f72c1f2b99b9e49e1ea6eb92854359e72f15d8632d53dc072612a6f825"
+    },
+    {
+      "script": "check_complex_identity.py",
+      "returncode": 0,
+      "output_matches_pinned": false,
+      "stdout_sha256": "c44096a55a2baa821876a3e34f8079b39d9300e0d38200f84e4935cf752039f3"
+    },
+    {
+      "script": "round7_balanced_assembly_candidate.py",
+      "returncode": 0,
+      "output_matches_pinned": true,
+      "stdout_sha256": "1ba1cf225f1f594956506eb8e9408527353543db228737532684a5996989cf66"
+    }
+  ],
+  "scope": "Finite numerical and optional literal checks only; inherited analytic and tape assumptions remain.",
+  "new_multiplication_bound": false
+}

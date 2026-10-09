@@ -3,9 +3,11 @@
 This is a checked scalar prototype and a proposed common-frame schedule. It
 changes the arbitrary-source word, rather than merely changing the endpoints
 of the existing borrowed word. The complete scalar identity, including all
-reference dirt, passes finite checks. No new fixed-basis child histogram,
-exponent, or practical-speed claim is made. Additional reference roles may
-outweigh the benefit of merged retirement edges.
+reference dirt, passes finite checks. The exact fixed-basis first-stage
+profiles are now in [PROFILE.md](PROFILE.md): both full reference versions
+lose to the checked borrowed-source construction. A stronger relaxed check
+also rejects improving that bound with point-star cleanup alone. Earlier
+cleanup at nested original frames remains a separate possibility.
 
 ## Exact scalar identity
 
@@ -152,12 +154,12 @@ creation and the primary-source data paths.
 - data independence and invertibility of the intermediate auxiliary block;
 - rejection when the final reference-dirt unmixing is omitted.
 
-The next obligations are to emit and audit the exact rational frame matrices,
-profile the new residuals in the fixed basis, charge all reference and data
-paths, and test the resulting full moment. Pointwise gate counts and the
-inherited finite/global interfaces also need updating if the profile improves.
-Until those checks are complete, this is a concrete scalar construction with
-frame obligations, not an exponent certificate.
+The first-stage frame matrices, all changed reference/data paths, and complete
+moments have now been checked against the pinned PR84 baseline; see
+[PROFILE.md](PROFILE.md). The result is negative for the full reference
+versions, so no updated multiplication exponent is claimed. A different
+cleanup schedule would still require its own full path account, literal-word
+integration, pointwise costs, and inherited global interfaces.
 
 ```sh
 python3 research/exploration/sink-unmixing-target-10/scalar_word.py
